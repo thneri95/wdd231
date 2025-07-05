@@ -1,6 +1,6 @@
 
 
-// Course List Array:  ---> (PLACEHOLDER - REPLACE WITH YOUR ACTUAL DATA)
+// Course List Array:  --->
 const courses = [
     {
         subject: 'WDD',
