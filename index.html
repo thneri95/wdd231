@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tiago Borges - Home Page for WDD231 Course showcasing projects and skills">
+    <meta name="author" content="Tiago Borges">
+    <title>Tiago Borges | WDD231 Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=YourChosenFont&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="site-branding">
+            <img src="images/lesson.svg" alt="Site Logo" class="site-logo">
+            <span class="site-name-text">BSc - Software Development - WDD231</span>
+        </a>
+
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="main-nav">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="chamber.html" class="nav-link">Chamber Project</a></li>
+                <li class="nav-item"><a href="final.html" class="nav-link">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+        <div class="content-grid">
+            <section class="about-me-section">
+                <h2>About Me</h2>
+                <p>Hello! I'm Tiago — a finance professional transitioning into the tech industry.
+
+                    With a Bachelor's in Economics and an MBA in Finance, I bring over 10 years of experience across the
+                    financial and technology sectors, having held positions at institutions like Itaú Unibanco and
+                    Santander. My career has spanned key areas such as fraud prevention, credit analysis, investment
+                    consulting, and commercial negotiation.
+
+                    Currently, I work as a Sales Specialist in the tech space, focusing on cybersecurity and fraud
+                    prevention. I use my financial expertise to help clients — from startups to multinational companies
+                    — implement secure, data-driven solutions.
+
+                    Now, I'm channeling my analytical mindset and problem-solving skills into software development. I'm
+                    pursuing a Bachelor's in Software Development at BYU-Idaho, with the goal of building scalable,
+                    impactful web applications that combine financial logic with intuitive, user-focused design.</p>
+            </section>
+
+            <section class="student-photo-section">
+                <h2>Tiago Neri</h2>
+                <img src="images/profile1.jpg" alt="Student Photo of Tiago Borges" class="student-photo">
+            </section>
+        </div>
+
+        <section class="courses-section">
+            <h2>Web Certificate Courses</h2>
+            <div class="course-filter-buttons">
+                <button id="filterAll" class="filter-button active">All</button>
+                <button id="filterCSE" class="filter-button">CSE</button>
+                <button id="filterWDD" class="filter-button">WDD</button>
+            </div>
+            <div id="courseList" class="course-list-display">
+            </div>
+            <p>The total credits for course listed above is <span id="totalCredits">0</span></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/thneri95" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/tiago-neri-cfa-if-50935814b/" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/tiagoneri.banker/?hl=pt-br" target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&#169; <span id="currentyear"></span> &#x2022; Tiago Borges &#x2022; Brazil</p>
+        <p id="lastModified"></p>
+
+
+    </footer>
+
+</body>
+
+</html>

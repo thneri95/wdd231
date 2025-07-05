@@ -1,0 +1,371 @@
+/* Google Fonts - Make sure this is linked in your HTML <head> or via @import */
+/* @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap'); */
+
+:root {
+    /* Define your custom color schema */
+    --primary-color: #262626;
+    /* Dark background for header/footer */
+    --secondary-color: #e4e2ef;
+    /* Light background for content */
+    --accent-color: dodgerblue;
+    /* For hover effects, links */
+    --text-color-light: #eee;
+    --text-color-dark: #3D405b;
+
+    --heading-font: 'Mukta', sans-serif;
+    --body-font: 'Mukta', sans-serif;
+}
+
+/* Universal selector, using CSS variables for better maintainability */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* Ensures padding and border are included in the element's total width and height */
+}
+
+/* Base styles for the body */
+body {
+    font-family: var(--body-font);
+    color: var(--text-color-dark);
+    /* Default text color for body */
+    line-height: 1.6;
+    min-height: 100vh;
+    /* Ensure body takes at least full viewport height */
+    display: flex;
+    /* Helps sticky footer */
+    flex-direction: column;
+    /* Helps sticky footer */
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: white;
+    /* Default link color (will be overridden in main content) */
+    text-decoration: none;
+}
+
+/* ================== Header Styles (Mobile) ================== */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 1rem;
+    display: flex;
+    /* Use flexbox for header content */
+    justify-content: space-between;
+    /* Site branding left, hamburger right */
+    align-items: center;
+    border-bottom: solid 2px #ddd;
+    /* Matches your previous design */
+    position: relative;
+    /* For absolutely positioned nav-menu */
+    z-index: 1000;
+    /* Ensure header is on top */
+    min-height: 70px;
+    /* To align with top: 70px for nav-menu */
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
+    color: var(--text-color-light);
+    /* Make sure link color is visible */
+    font-size: 1.2rem;
+    gap: 0.5rem;
+    /* Space between logo and text */
+}
+
+.site-logo {
+    height: 40px;
+    /* Adjust as needed for your SVG */
+    width: auto;
+}
+
+.site-name-text {
+    font-weight: 600;
+    /* Or bolder */
+    color: var(--text-color-light);
+    /* Ensure text is white */
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: block;
+    /* Visible by default on mobile */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    position: relative;
+    /* For accessibility if using ::before/::after for icon */
+    z-index: 1001;
+    /* Ensure hamburger is above nav menu when open */
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+/* Hamburger active state (transforms to 'X') */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* New bar (added in your HTML but not used in your active transformation, keeping for consistency) */
+.hamburger.active .bar:nth-child(4) {
+    opacity: 0;
+    /* Or transform similar to bar 2 */
+}
+
+
+/* ================== Navigation Menu Styles (Mobile) ================== */
+.main-nav {
+    position: fixed;
+    left: -100%;
+    /* Hidden off-screen by default */
+    top: 70px;
+    /* Position below the header */
+    width: 100%;
+    height: calc(100vh - 70px);
+    /* Take up remaining viewport height */
+    background-color: var(--primary-color);
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    z-index: 999;
+    /* Below the header but above main content */
+    overflow-y: auto;
+    /* Enable scrolling if menu content overflows */
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    padding: 20px 0;
+    /* Vertical padding inside the menu */
+}
+
+.nav-item {
+    margin: 16px 0;
+    /* Space between menu items */
+}
+
+.nav-link {
+    color: var(--text-color-light);
+    /* White links */
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    display: block;
+    /* Make the whole area clickable */
+    transition: 0.3s ease-out;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-color);
+    /* Hover effect and active page indicator */
+}
+
+/* Menu active state (visible) */
+.main-nav.active {
+    left: 0;
+    /* Slide into view */
+}
+
+/* ================== Main Content Styles (Mobile) ================== */
+main {
+    flex: 1;
+    /* Allow main to grow and fill available space */
+    padding: 1rem;
+    /* Base padding for all sides */
+    max-width: 100%;
+    /* Prevent horizontal scrolling */
+    margin: 0 auto;
+    /* Center content if less than 100% width */
+}
+
+h1 {
+    font-size: 2rem;
+    /* Adjust as needed */
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+section {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    /* Space between sections */
+    border-radius: 8px;
+    /* Slightly rounded corners */
+}
+
+section h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    /* Headings centered as per wireframe */
+}
+
+/* About Me section */
+.about-me-section p {
+    font-size: 1rem;
+    /* Adjusted from 2rem in your large.css */
+    text-align: justify;
+    /* Aligned text as per wireframe */
+    color: var(--text-color-dark);
+}
+
+/* Student Photo section */
+.student-photo-section {
+    text-align: center;
+    /* Center the image */
+}
+
+.student-photo-section img {
+    max-width: 100%;
+    /* Ensure image fits container */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Remove extra space below image */
+    margin: 0 auto;
+    /* Center the image */
+    border-radius: 4px;
+    /* Optional: subtle rounding for image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: subtle shadow */
+}
+
+/* Web Certificate Courses section */
+.courses-section {
+    /* Styles for the section container */
+}
+
+.course-filter-buttons {
+    display: flex;
+    justify-content: center;
+    /* Center buttons */
+    flex-wrap: wrap;
+    /* Allow buttons to wrap on smaller screens */
+    gap: 10px;
+    /* Space between buttons */
+    margin-bottom: 1rem;
+}
+
+.filter-button {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.course-list-display {
+    display: grid;
+    /* Use grid for courses, even on mobile, for consistent spacing */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Auto-adjust columns */
+    gap: 10px;
+    /* Space between course cards */
+    margin-top: 1rem;
+}
+
+.course-card {
+    background-color: white;
+    /* Card background */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.course-card.completed {
+    background-color: lightgreen;
+    /* Example for completed courses */
+    border-color: darkgreen;
+    color: #333;
+    font-weight: bold;
+}
+
+.course-card p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.courses-section>p {
+    /* For "The total credits..." >>>>  paragraph */
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--text-color-dark);
+}
+
+
+/* ================== Footer Styles ================== */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+    /* Pushes footer to the bottom xD */
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: var(--text-color-light);
+    font-size: 1.8rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+footer p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Ensure no horizontal scrolling between 320px and 1200px */
+/* This is primarily achieved by max-width: 100% and proper padding/margins */
+/* and flex-wrap on elements that might overflow horizontally! */
+
+@media (max-width: 1200px) and (min-width: 320px) {
+    body {
+        overflow-x: hidden;
+    }
+}
