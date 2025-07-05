@@ -137,6 +137,7 @@
         /* Place social links above text on desktop if desired */
         margin-bottom: 0.5rem;
         /* Reduce margin */
+        font-size: x-large;
     }
 
     footer p {

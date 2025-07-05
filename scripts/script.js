@@ -47,7 +47,23 @@ const courses = [
     {
         subject: 'CSE',
         number: 210,
+        title: 'Introduction to Databases',
+        credits: 3,
+        completed: false
+    },
+
+    {
+        subject: 'CSE',
+        number: 212,
         title: 'Programming with Data Structures',
+        credits: 2,
+        completed: false
+    },
+
+    {
+        subject: 'CSE',
+        number: 340,
+        title: ' Web Backend Development',
         credits: 3,
         completed: false
     },
@@ -64,7 +80,17 @@ const courses = [
         title: 'Web Frontend Development II',
         credits: 3,
         completed: false
+    },
+    {
+        subject: 'WDD',
+        number: 430,
+        title: 'Web Full-Stack Development',
+        credits: 3,
+        completed: false
     }
+
+
+
 ];
 
 
