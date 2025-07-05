@@ -12,7 +12,7 @@ const courses = [
     {
         subject: 'WDD',
         number: 131,
-        title: 'Programming with Functions',
+        title: 'Dynamic Web Fundamentals',
         credits: 2,
         completed: true
     },
