@@ -94,9 +94,9 @@ const courses = [
 ];
 
 
-// ================== Mobile Navigation Toggle ==================
+//  Mobile Navigation Toggle -->
 const hamburger = document.querySelector(".hamburger");
-const mainNav = document.querySelector(".main-nav"); // Changed from navMenu to mainNav as per HTML update
+const mainNav = document.querySelector(".main-nav");
 
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
@@ -109,7 +109,7 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
 }));
 
 
-// ================== Dynamic Course Display and Filtering ==================
+//  Dynamic Course Display and Filtering:
 const courseListDiv = document.getElementById('courseList');
 const filterAllBtn = document.getElementById('filterAll');
 const filterCSEBtn = document.getElementById('filterCSE');
@@ -117,11 +117,12 @@ const filterWDDBtn = document.getElementById('filterWDD');
 const totalCreditsSpan = document.getElementById('totalCredits');
 
 /**
- * Displays a list of courses in the DOM.
- * @param {Array} courseArray The array of course objects to display!
+ * Displays a list of courses in the DOM:
+ * @param {Array} courseArray 
+ * The array of course objects to display
  */
 function displayCourses(courseArray) {
-    courseListDiv.innerHTML = ''; // Clear previous content
+    courseListDiv.innerHTML = ''; // To clear prev content xD
 
     if (courseArray.length === 0) {
         courseListDiv.innerHTML = '<p>No courses found for this filter.</p>';
