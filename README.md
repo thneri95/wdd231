@@ -1,83 +1,87 @@
-🚀 WDD 231: Personal Portfolio & Progress Tracker
-Welcome to my WDD-231 Web Front-end Development I repo — a hands-on showcase of my journey through the fourth term of the Software Development BSc at BYU-Idaho.
+# 🌐 WDD 231 – Web Front-End Dev I  
+### 🚀 Personal Portfolio & Course Progress Tracker  
+> *“Learning by doing. Building by learning.”*
 
-This space is where design meets code, and where concepts evolve into clean, responsive, and interactive web experiences. 💻✨
+Hi! I'm **Tiago Borges**, and this is where my front-end journey levels up!  
+This repo is my digital playground for **WDD-231** at **BYU-Idaho**, where I’m sharpening real-world web dev skills, one commit at a time. 🔥
 
-🎓 About the Course
-WDD231 is all about turning structure into strategy. In this course, I’m diving deep into:
+---
 
-✅ Semantic HTML5
+## 🎯 What’s Inside?
+This isn’t just coursework. It’s a **live portfolio**, a **learning tracker**, and a **showcase of growth** in web development.
 
-🎨 Advanced CSS (Flexbox, Grid, Media Queries)
+Built with:
+- ✅ **Semantic HTML5** – Structure that speaks.
+- 🎨 **Modern CSS** – Flexbox, Grid, custom variables, and mobile-first magic.
+- ⚙️ **JavaScript** – DOM, Events, localStorage, interactivity unleashed.
+- 🧠 **Git + GitHub** – Because version control is power.
+- 📈 **UX & Performance** – Not just pretty, but smart.
 
-⚙️ JavaScript for interactivity (DOM, Events, localStorage)
+---
 
-🚀 Web Performance & UX Optimization
+## 🧭 Week 1: Launching the Home Page
 
-🧠 Real version control using Git + GitHub
+Let’s kick it off strong 💥  
+I’ve built a **responsive, interactive homepage** that sets the stage for everything to come.
 
-📅 Week 1: Home Page Launch
-To kick things off, I’ve created a responsive course home page that showcases both my technical skills and my academic progress.
-It’s more than a landing page — it’s an interactive portal that grows with my learning. 🔥
+🔗 [Live Preview Here](https://thneri95.github.io/wdd231/)
 
-🔗 Check it out here
+It features:
+- 📱 Mobile-first design  
+- 🍔 Hamburger menu  
+- 🧭 Course Tracker w/ real-time updates  
 
-📌 Key Features
-✅ Responsive Design
-Mobile-first approach, scaling beautifully from 320px to 1200px+
+---
 
-Hamburger menu on mobile, horizontal nav on desktop
+## 💡 Highlights
 
-Fluid layouts with no horizontal scroll for smooth UX
+### 📱 Responsive Design
+- Mobile-first, scales up beautifully
+- Hamburger nav on small screens, horizontal nav on desktop
+- Fluid layouts (320px → 1200px+)
+- Zero horizontal scrolling — buttery smooth UX
 
-✅ Semantic HTML5
-Structured layout using header, nav, main, section, and footer
+### 🔍 Semantic HTML5
+- Proper structure with `header`, `nav`, `main`, `section`, `footer`
+- Auto-updating footer with current year + last modified
+- Clean, accessible markup
 
-Dynamic year and last-modified date
+### 🎨 Advanced CSS
+- CSS variables for theming
+- Flexbox + Grid layouts
+- Mukta font + consistent spacing & colors
+- Subtle hover effects for interactivity
 
-Author info and custom SVG logo
+### ⚙️ Dynamic JavaScript
+- Toggle menu, dynamic dates, and more
+- Real-time **Course Tracker**:
+  - 🔄 Filter by: All | WDD | CSE
+  - 🏁 Highlight completed courses
+  - 📊 Credit counter that updates live
 
-✅ Modern CSS
-CSS Variables for easy theming
+---
 
-Flexbox & Grid for layout control
+## 🛠️ Tech Stack
 
-Custom color scheme with Mukta font
+| Tech           | Used For                        |
+|----------------|----------------------------------|
+| `HTML5`        | Markup and structure             |
+| `CSS3`         | Layouts, themes, responsiveness  |
+| `JavaScript`   | DOM, Events, interactivity       |
+| `Google Fonts` | Typography (Mukta)               |
+| `Font Awesome` | Icons                            |
+| `normalize.css`| CSS reset for cross-browser UX   |
 
-UX-focused design: proximity, alignment, contrast
+---
 
-Subtle hover animations
+## 🙌 Credits & About
 
-✅ JavaScript Power
-Interactive hamburger menu toggle
+👨‍💻 **Created by Tiago Borges**  
+🎓 Software Dev Student @ BYU-Idaho  
+📅 Term 4 just started — and I’m all in!  
+💬 Let’s connect on [LinkedIn](https://www.linkedin.com/in/thneri/) or [GitHub](https://github.com/thneri95)
 
-Footer auto-updates with current year & last modified
+---
 
-Course Progress Tracker:
-
-Dynamic course cards
-
-Visual highlight of completed modules
-
-Filter by category: All | WDD | CSE
-
-Real-time credit tracker
-
-🛠️ Tech Stack
-HTML5
-
-CSS3
-
-JavaScript (ES6+)
-
-Google Fonts (Mukta)
-
-Font Awesome Icons
-
-normalize.css for cross-browser harmony
-
-🙌 Acknowledgements
-Developed by Tiago Borges
-💻 BYU-Idaho | BSc in Software Development
-📚 Course: WDD-231 Web Front-end Development I
-🔥 Term 4 started — excited for what’s ahead!
+> This isn’t just code — it’s my evolution in real-time.  
+> Stay tuned. More coming every week. 🔥
