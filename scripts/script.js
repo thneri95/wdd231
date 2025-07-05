@@ -19,7 +19,7 @@ const courses = [
     {
         subject: 'WDD',
         number: 231,
-        title: 'Web Backend Development',
+        title: 'Web Front-end Development I',
         credits: 3,
         completed: false
     },
