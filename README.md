@@ -59,20 +59,8 @@ Font Awesome – Icons
 
 normalize.css – Cross-browser consistency
 
-## Project Structure
+ Project Structure
 
-📁 project-root/
-├── index.html
-├── styles/
-│   ├── normalize.css
-│   ├── small.css        # Mobile-first base styles
-│   └── large.css        # Desktop enhancements via media queries
-├── scripts/
-│   ├── getdates.js      # Handles copyright
-│   └── script.js        # Nav toggle, course logic, filter buttons
-└── images/
-    ├── logo.svg         # Replace with your logo
-    └── profile1.jpg     # Profile image (<125KB recommended)
 
 
 
