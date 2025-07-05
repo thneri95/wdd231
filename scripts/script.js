@@ -21,7 +21,7 @@ const courses = [
         number: 231,
         title: 'Web Front-end Development I',
         credits: 3,
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -33,21 +33,22 @@ const courses = [
     {
         subject: 'CSE',
         number: 111,
-        title: 'Programming with Classes',
+        title: 'Programming with Functions - Python',
         credits: 2,
+        completed: true
+    },
+
+    {
+        subject: 'CSE',
+        number: 210,
+        title: 'Programming with Classes - .Net C#',
+        credits: 3,
         completed: true
     },
     {
         subject: 'WDD',
         number: 232,
         title: 'Dynamic Web Forms',
-        credits: 3,
-        completed: false
-    },
-    {
-        subject: 'CSE',
-        number: 210,
-        title: 'Introduction to Databases',
         credits: 3,
         completed: false
     },
