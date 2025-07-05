@@ -79,9 +79,9 @@ It features:
 👨‍💻 **Created by Tiago Borges**  
 🎓 Software Dev Student @ BYU-Idaho  
 📅 Term 4 just started — and I’m all in!  
-💬 Let’s connect on [LinkedIn](https://www.linkedin.com/in/thneri/) or [GitHub](https://github.com/thneri95)
+💬 Let’s connect on!
 
 ---
 
-> This isn’t just code — it’s my evolution in real-time.  
-> Stay tuned. More coming every week. 🔥
+> This isn’t just code — it’s my evolution in real-time!
+> Stay tuned, More coming every week 🔥
