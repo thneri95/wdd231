@@ -14,7 +14,9 @@
         height: auto;
         /* Remove fixed height */
         background-color: transparent;
+
         /* Transparent background */
+
         transition: none;
         /* No transition for desktop */
         left: auto;
@@ -25,7 +27,7 @@
     .nav-menu {
         flex-direction: row;
         /* Horizontal navigation on desktop */
-        gap: 2rem;
+        gap: 3rem;
         /* Space between nav items */
         padding: 0;
     }
@@ -36,12 +38,10 @@
     }
 
     .nav-link {
-        font-size: 1rem;
-        /* Adjust font size for desktop nav links */
+        font-size: 1.1rem;
+        font-weight: bold;
         color: var(--text-color-light);
-        /* Links are white in header */
         padding: 0;
-        /* Remove padding from link to align better */
     }
 
     /* My Header layout for desktop: */
