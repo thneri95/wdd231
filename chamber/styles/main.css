@@ -36,11 +36,19 @@ body.dark-mode {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Lato', sans-serif;
+    color: var(--primary-color);
 }
 
 a {
