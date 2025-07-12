@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let allBusinesses = [];
 
-    const jsonUrl = 'https://thneri95.github.io/wdd231/chamber/Json/members.json';
+    const jsonUrl = '';
 
     async function fetchBusinesses() {
         try {
