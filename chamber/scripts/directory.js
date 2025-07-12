@@ -1,6 +1,4 @@
-
-const url = 'https://github.com/thneri95/wdd231/blob/main/chamber/Json/members.json';
-
+// js/directory.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const businessListingsContainer = document.getElementById('business-listings');
@@ -10,30 +8,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let allBusinesses = [];
 
+    // Correct URL to fetch the raw JSON content from GitHub Pages:
+    const jsonUrl = 'https://thneri95.github.io/wdd231/chamber/JSON/members.json'; // Use the raw content URL for GitHub Pages
+
     // Function to fetch business data from JSON:
     async function fetchBusinesses() {
         try {
-            const response = await fetch('JSON/members.json');
+            // Use the absolute URL for fetching the JSON
+            const response = await fetch(jsonUrl);
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                // Log the response status and text for better debugging
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status} - ${response.statusText || 'Unknown error'} \nResponse: ${errorText}`);
             }
             allBusinesses = await response.json();
             displayBusinesses(allBusinesses); // Display all businesses after fetching!
         } catch (error) {
             console.error('Error fetching business data:', error);
-            businessListingsContainer.innerHTML = '<p>Failed to load business directory. Please try again later.</p>';
+            businessListingsContainer.innerHTML = '<p>Failed to load business directory. Please try again later. Check console for details.</p>';
         }
     }
 
     // Function to display businesses:
     function displayBusinesses(filteredBusinesses) {
-        businessListingsContainer.innerHTML = '';
+        businessListingsContainer.innerHTML = ''; // Clear previous listings
 
         filteredBusinesses.forEach(business => {
             const businessCard = document.createElement('div');
             businessCard.classList.add('business-card');
-
-
 
             businessCard.innerHTML = `
                 <img src="${business.image}" alt="${business.name} Logo" loading="lazy">
