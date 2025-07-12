@@ -1,67 +1,35 @@
-/* General Styles: Defines global CSS variables and base styling */
 :root {
     /* Cores Principais */
     --primary-color: #0056b3;
-    /* Azul escuro, acessível */
     --secondary-color: #555b62;
-    /* Cinza escuro, com bom contraste */
     --background-color: #f8f9fa;
-    /* Fundo muito claro */
     --text-color: #212529;
-    /* Texto quase preto, alto contraste */
     --light-background: #ffffff;
-    /* Branco puro para cartões/elementos */
     --border-color: #dee2e6;
-    /* Borda clara */
     --shadow-color: rgba(0, 0, 0, 0.1);
-    /* Sombra sutil */
 
-    /* Cores de Interação */
     --hover-color: #004085;
-    /* Azul mais escuro para hover */
 
-    /* Cores de Feedback */
     --success-color: #28a745;
-    /* Verde acessível */
     --error-color: #c82333;
-    /* Vermelho acessível */
 
-    /* Cores para elementos específicos (se necessário, adicione aqui) */
-    --link-visited-color: #6a0dad;
-    /* Exemplo: roxo para links visitados */
 }
 
-/* Dark Mode Variables: Overrides general variables when body has 'dark-mode' class */
 body.dark-mode {
-    /* Cores Principais */
     --primary-color: #4a90e2;
-    /* Azul claro, vibrante no escuro */
     --secondary-color: #c0c5cb;
-    /* Cinza claro, bom contraste no escuro */
     --background-color: #212529;
-    /* Fundo muito escuro */
     --text-color: #f8f9fa;
-    /* Texto quase branco, alto contraste */
     --light-background: #343a40;
-    /* Fundo mais claro para cartões/elementos no modo escuro */
     --border-color: #6c757d;
-    /* Borda mais escura */
     --shadow-color: rgba(255, 255, 255, 0.1);
-    /* Sombra clara */
 
-    /* Cores de Interação */
     --hover-color: #6faee5;
-    /* Azul mais claro para hover no escuro */
 
     /* Cores de Feedback */
     --success-color: #28a745;
-    /* Mantido verde, geralmente funciona bem */
     --error-color: #dc3545;
-    /* Mantido vermelho, geralmente funciona bem */
 
-    /* Cores para elementos específicos (se necessário, adicione aqui) */
-    --link-visited-color: #bb86fc;
-    /* Exemplo: roxo mais claro para links visitados no escuro */
 }
 
 * {
@@ -186,8 +154,9 @@ header {
 }
 
 .site-logo img {
-    height: 50px;
-    width: auto;
+    height: 60px;
+    width: 46px;
+
 }
 
 .main-nav .nav-links {
