@@ -56,7 +56,13 @@
                     <li><a href="discover.html">Discover</a></li>
                 </ul>
             </nav>
-            <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode"> 🌙</button>
+            <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <span class="toggle-track">
+                    <span class="toggle-thumb"></span>
+                </span>
+                <span class="sr-only">Toggle dark mode</span>
+                <!-- Para acessibilidade, texto lido por leitores de tela -->
+            </button>
         </div>
     </header>
 
@@ -93,8 +99,9 @@
                         alt="LinkedIn"></a>
             </div>
             <div class="footer-project-info">
-                <p>WDD231 Class Project | Tiago Neri</p>
-                <p>© <span id="currentyear"></span> Chamber of Commerce</p>
+                <p> WDD231 Class Project</p>
+                <p>© <span id="currentyear"> </span> Maringá Chamber of Commerce</p>
+                <p>Tiago Neri | Byu - Idaho</p>
                 <p>Last Modification: <span id="lastmodified"></span></p>
             </div>
         </div>

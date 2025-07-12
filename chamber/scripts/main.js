@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
 
+
+
     // Create a notification element:
     const notification = document.createElement('div');
     notification.id = 'theme-notification';
