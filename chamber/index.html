@@ -4,18 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Chamber of Commerce</title>
+
+    <title>Home - Maringá, Paraná Chamber of Commerce</title>
     <meta name="description"
-        content="Welcome to the Chamber of Commerce, promoting local businesses and community engagement.">
+        content="Welcome to the Maringá, Paraná Chamber of Commerce. Your hub for community growth, networking, and support for local businesses in Brazil.">
     <meta name="author" content="Tiago Neri">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thneri95.github.io/wdd231/chamber/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thneri95.github.io/wdd231/chamber/index.html" />
+    <meta property="og:title" content="Maringá Chamber of Commerce - Home" />
+    <meta property="og:description"
+        content="Welcome to the official website of the Maringá Chamber of Commerce, fostering business growth and community connection in Maringá, Paraná, Brazil." />
+    <meta property="og:image" content="https://thneri95.github.io/wdd231/chamber/images/og-home-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@MaringaChamber" />
+    <meta name="twitter:title" content="Maringá Chamber of Commerce - Home" />
+    <meta name="twitter:description"
+        content="Maringá Chamber: Your central hub for local business networking, support, and community development in Paraná, Brazil." />
+    <meta name="twitter:image" content="https://thneri95.github.io/wdd231/chamber/images/twitter-home-image.jpg" />
+    <meta name="geo.region" content="BR-PR">
+    <meta name="geo.placename" content="Maringá">
+    <meta name="geo.position" content="-23.4241; -51.9389">
+    <meta name="ICBM" content="-23.4241, -51.9389">
 
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="icon" href="images/favicon.ico">
 
-    <script src="scripts/getdates.js" defer></script>
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/index.js" defer></script>
 </head>
 
 <body>
@@ -41,12 +64,12 @@
     <main class="home-main">
         <section class="hero-home">
             <div class="hero-image-placeholder">
-                <img src="images/maringa.webp" alt="Local Community Image" loading="lazy">
-                <button class="call-to-action-button">Keynote Tickets</button>
+                <img src="images/maringa.webp" alt="Maringá Cityscape" loading="lazy"> <button
+                    class="call-to-action-button">Keynote Tickets</button>
             </div>
             <div class="hero-text">
-                <h2>Empowering Local Businesses</h2>
-                <p>Your hub for community growth, networking, and support in Maringa, Parana.</p>
+                <h1>Empowering Local Businesses</h1>
+                <p>Your hub for community growth, networking, and support in Maringá, Paraná.</p>
             </div>
         </section>
 
@@ -54,7 +77,7 @@
             <div class="card events-section">
                 <h3>Upcoming Events</h3>
                 <div id="events-list">
-                    <p>No upcoming events at this time. Check back soon!</p>
+                    <p>Loading upcoming events...</p>
                 </div>
                 <a href="#" class="view-all-link">View All Events</a>
             </div>
@@ -62,20 +85,19 @@
             <div class="card weather-section">
                 <h3>Current Weather</h3>
                 <div id="current-weather">
-                    <p>75°F</p>
-                    <p>Party Cloudy</p>
-                    <p>High: 85°, Low: 52°</p>
-                    <p>Humidity: 34%</p>
-                    <p>Sunrise: 5:30 AM, Sunset: 6:59 PM</p>
+                    <img id="weather-icon" src="images/weather-placeholder.png" alt="Weather Icon" loading="lazy">
+                    <p><span id="current-temp">--</span>°F</p>
+                    <p id="weather-description">Loading...</p>
+                    <p>High: <span id="high-temp">--</span>°F, Low: <span id="low-temp">--</span>°F</p>
+                    <p>Humidity: <span id="humidity">--</span>%</p>
+                    <p>Sunrise: <span id="sunrise">--:-- AM</span>, Sunset: <span id="sunset">--:-- PM</span></p>
                 </div>
             </div>
 
             <div class="card weather-forecast-section">
                 <h3>Weather Forecast</h3>
                 <div id="weather-forecast">
-                    <p>Today: <strong>90°F</strong></p>
-                    <p>Wednesday: <strong>89°F</strong></p>
-                    <p>Thursday: <strong>68°F</strong></p>
+                    <p>Loading forecast...</p>
                 </div>
             </div>
         </section>
@@ -126,11 +148,15 @@
             </div>
             <div class="footer-project-info">
                 <p>WDD231 Class Project | Tiago Neri</p>
-                <p>&copy; <span id="currentyear"></span> Chamber of Commerce</p>
+                <p>© <span id="currentyear"></span> Chamber of Commerce</p>
                 <p>Last Modification: <span id="lastmodified"></span></p>
             </div>
         </div>
     </footer>
+
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/index.js" defer></script>
 </body>
 
 </html>
