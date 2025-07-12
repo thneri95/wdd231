@@ -64,8 +64,8 @@
     <main class="home-main">
         <section class="hero-home">
             <div class="hero-image-placeholder">
-                <img src="images/maringa.webp" alt="Maringá Cityscape" loading="lazy"> <button
-                    class="call-to-action-button">Keynote Tickets</button>
+                <img src="images/maringa.webp" alt="Maringá Cityscape" loading="lazy">
+                <button class="call-to-action-button">Keynote Tickets</button>
             </div>
             <div class="hero-text">
                 <h1>Empowering Local Businesses</h1>
@@ -82,23 +82,14 @@
                 <a href="#" class="view-all-link">View All Events</a>
             </div>
 
-            <div class="card weather-section">
-                <h3>Current Weather</h3>
-                <div id="current-weather">
-                    <img id="weather-icon" src="images/weather-placeholder.png" alt="Weather Icon" loading="lazy">
-                    <p><span id="current-temp">--</span>°F</p>
-                    <p id="weather-description">Loading...</p>
-                    <p>High: <span id="high-temp">--</span>°F, Low: <span id="low-temp">--</span>°F</p>
-                    <p>Humidity: <span id="humidity">--</span>%</p>
-                    <p>Sunrise: <span id="sunrise">--:-- AM</span>, Sunset: <span id="sunset">--:-- PM</span></p>
-                </div>
-            </div>
-
-            <div class="card weather-forecast-section">
-                <h3>Weather Forecast</h3>
-                <div id="weather-forecast">
-                    <p>Loading forecast...</p>
-                </div>
+            <div class="card weather-widget-container">
+                <h3>Current Weather & Forecast</h3>
+                <div id="weatherapi-weather-widget-3"></div>
+                <script type='text/javascript'
+                    src='https://www.weatherapi.com/weather/widget.ashx?loc=280456&wid=3&tu=1&div=weatherapi-weather-widget-3'
+                    async></script>
+                <noscript><a href="https://www.weatherapi.com/weather/q/maringa-280456"
+                        alt="Hour by hour Maringa weather">10 day hour by hour Maringa weather</a></noscript>
             </div>
         </section>
 
@@ -154,9 +145,7 @@
         </div>
     </footer>
 
-    <script src="scripts/getdates.js" defer></script>
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/index.js" defer></script>
 </body>
 
 </html>
