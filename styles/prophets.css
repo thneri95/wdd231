@@ -1,0 +1,102 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header  */
+header {
+    background-color: #001529;
+    color: #ffffff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Card Grid Container */
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Individual Card */
+section {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Typography */
+h2 {
+    color: #0a9396;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    font-family: bold;
+}
+
+/* Images */
+img {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Footer Styles */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 2rem 1rem;
+    background-color: #001529;
+
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+    color: #eee;
+}
+
+/* Social Media Links */
+.social-links {
+    font-size: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.social-links a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0fd3c6;
+}
