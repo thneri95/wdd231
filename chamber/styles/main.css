@@ -1,6 +1,4 @@
-/* styles/main.css */
-
-/* General Styles */
+/* General Styles: */
 :root {
     --primary-color: #0056b3;
     /* Darker blue for accents */
@@ -19,7 +17,7 @@
     /* Even darker blue for hover */
 }
 
-/* Dark Mode Variables */
+/* Dark Mode Variables: */
 body.dark-mode {
     --primary-color: #4a90e2;
     --secondary-color: #adb5bd;
@@ -92,11 +90,11 @@ header {
 
 .site-logo img {
     height: 50px;
-    /* Adjust as needed */
+    /* Adjust */
     width: auto;
 }
 
-/* Navigation */
+/* Navigation: */
 .main-nav .nav-links {
     list-style: none;
     display: flex;
@@ -213,6 +211,7 @@ footer {
 
 .footer-contact p,
 .footer-project-info p {
+    font-weight: bold;
     font-size: 1rem;
     line-height: 1.5;
 }
