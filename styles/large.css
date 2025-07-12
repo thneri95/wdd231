@@ -1,5 +1,3 @@
-/* Media query for larger screens (desktop view) */
-
 @media (min-width: 768px) {
     /* Changed from 1024px to a more common tablet/desktop breakpoint */
 

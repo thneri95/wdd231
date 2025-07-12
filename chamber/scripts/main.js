@@ -1,5 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+
     // --- Hamburger Menu Toggle ---
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (darkModeToggle) {
-        // Check for saved theme preference in localStorage
+        // Check for saved theme preference in localStorage:
         const savedTheme = localStorage.getItem('theme');
         // Check for user's system preference for dark mode:
         const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -77,7 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Apply theme on initial load:
         // 1. If a theme is saved in localStorage, use it....
         // 2. If no theme is saved, use the system preference...
-        // 3. Otherwise, default to light mode...
+        // 3. Otherwise, default to light mode!
+
         if (savedTheme) {
             applyTheme(savedTheme);
         } else if (prefersDarkScheme.matches) {
