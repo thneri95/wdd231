@@ -99,7 +99,7 @@ git clone https://github.com/thneri95/wdd231.git
 cd wdd231/chamber
 ➡️ Open index.html in your browser to explore the full site.
 
-🔗 Live Demo
+🔗 Live Demo: [text](https://thneri95.github.io/wdd231/chamber/)
 🌐 Visit the site now!
 
 👨‍💻 Author
