@@ -1,11 +1,13 @@
 /* styles/directory.css */
 
+/* Main directory container */
 .directory-main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
+/* Controls for view toggles and search bar */
 .directory-controls {
     display: flex;
     justify-content: center;
@@ -13,8 +15,10 @@
     gap: 1rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
+    /* Allows controls to wrap on smaller screens */
 }
 
+/* Styling for the view toggle buttons (Grid/List) */
 .view-toggle-button {
     background-color: var(--primary-color);
     color: white;
@@ -31,11 +35,31 @@
     transform: translateY(-2px);
 }
 
+/* Active state for the selected view button */
 .view-toggle-button.active {
     background-color: var(--secondary-color);
     cursor: default;
+    /* Indicates it's not clickable again */
 }
 
+/* Focus styles for accessibility (keyboard navigation) */
+.view-toggle-button:focus-visible {
+    outline: 2px solid var(--primary-color);
+    /* Highlight with primary color */
+    outline-offset: 3px;
+    /* Add space between outline and button */
+    border-radius: 5px;
+    /* Match button border-radius */
+}
+
+.view-toggle-button.active:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    /* Use secondary color for active state focus */
+    outline-offset: 3px;
+    border-radius: 5px;
+}
+
+/* Styling for the search bar input field */
 #search-bar {
     padding: 0.8rem 1rem;
     border: 1px solid var(--border-color);
@@ -45,11 +69,26 @@
     /* Full width on smaller screens */
     max-width: 300px;
     /* Max width on larger screens */
+    color: var(--text-color);
+    /* Ensure text color is theme-aware */
+    background-color: var(--light-background);
+    /* Ensure background is theme-aware */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transitions for focus */
 }
 
-/* Business Listings Container */
+#search-bar:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+    /* Add subtle shadow on focus */
+}
+
+/* Business Listings Container: Grid/List layout base */
 .business-listings {
     display: grid;
+    /* Default to grid for this container */
     gap: 20px;
     padding: 1rem;
     border-radius: 8px;
@@ -57,18 +96,19 @@
     box-shadow: 0 4px 8px var(--shadow-color);
 }
 
-/* Grid View */
+/* Grid View specific styles */
 .business-listings.grid-view {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+/* Styling for individual business cards */
 .business-card {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
     background-color: var(--background-color);
-    /* Lighter than main bg in light mode, darker in dark mode */
+    /* Card background, theme-aware */
     box-shadow: 0 2px 5px var(--shadow-color);
     display: flex;
     flex-direction: column;
@@ -78,19 +118,23 @@
 
 .business-card:hover {
     transform: translateY(-5px);
+    /* Lift effect on hover */
     box-shadow: 0 6px 12px var(--shadow-color);
+    /* Stronger shadow on hover */
 }
 
 .business-card img {
     width: 100px;
-    /* Fixed size for logos */
+    /* Fixed size for logos in grid view */
     height: 100px;
     object-fit: contain;
-    /* Maintain aspect ratio */
+    /* Ensures image fits within bounds */
     margin-bottom: 1rem;
     border-radius: 50%;
     /* Optional: round logos */
     border: 1px solid var(--border-color);
+    flex-shrink: 0;
+    /* Prevents image from shrinking in flex container */
 }
 
 .business-card h3 {
@@ -103,7 +147,9 @@
     font-size: 0.95rem;
     margin-bottom: 0.3rem;
     word-wrap: break-word;
-    /* Ensure long words break */
+    /* Ensures long words break to fit */
+    color: var(--text-color);
+    /* Ensure text color is theme-aware */
 }
 
 .business-card p strong {
@@ -112,7 +158,7 @@
 
 .business-card a {
     word-break: break-all;
-    /* Break long URLs */
+    /* Breaks long URLs to prevent overflow */
 }
 
 .business-card .description {
@@ -123,9 +169,10 @@
 }
 
 
-/* List View */
+/* List View specific styles */
 .business-listings.list-view {
     display: flex;
+    /* Override grid to flex for list layout */
     flex-direction: column;
 }
 
@@ -136,6 +183,7 @@
     align-items: center;
     padding: 1rem 1.5rem;
     gap: 1.5rem;
+    /* Space between image and info */
 }
 
 .business-listings.list-view .business-card img {
@@ -143,35 +191,48 @@
     /* Smaller logo in list view */
     height: 80px;
     margin-bottom: 0;
-    flex-shrink: 0;
-    /* Don't allow image to shrink */
+    /* Reset margin from grid view */
 }
 
 .business-listings.list-view .business-card-info {
     flex-grow: 1;
-    /* Allow info to take remaining space */
+    /* Allows info to take remaining space */
+    display: flex;
+    /* Use flex for info content */
+    flex-direction: column;
 }
 
 .business-listings.list-view .business-card h3 {
     margin-top: 0;
+    /* Reset margin from grid view */
 }
 
+/* Responsive adjustments for smaller screens */
 @media (max-width: 600px) {
     .directory-controls {
         flex-direction: column;
+        /* Stack controls vertically */
     }
 
     #search-bar {
         margin-top: 1rem;
     }
 
+    /* In list view on very small screens, stack business cards vertically again */
     .business-listings.list-view .business-card {
         flex-direction: column;
-        /* Stack back on very small screens */
         text-align: center;
+        padding: 1.5rem;
+        /* Revert to larger padding for stacked layout */
+        gap: 0;
+        /* Remove gap when stacked */
     }
 
     .business-listings.list-view .business-card img {
         margin-bottom: 1rem;
+        /* Revert margin for stacked image */
+        width: 100px;
+        /* Revert to larger image size */
+        height: 100px;
     }
 }

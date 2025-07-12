@@ -1,23 +1,17 @@
-/* General Styles: */
+/* styles/main.css */
 :root {
     --primary-color: #0056b3;
-    /* Darker blue for accents */
     --secondary-color: #6c757d;
-    /* Gray for text */
     --background-color: #f8f9fa;
-    /* Light background */
     --text-color: #343a40;
-    /* Dark text */
     --light-background: #ffffff;
-    /* White for cards */
     --border-color: #dee2e6;
-    /* Light border */
     --shadow-color: rgba(0, 0, 0, 0.1);
     --hover-color: #004085;
-    /* Even darker blue for hover */
+    --success-color: #28a745;
+    --error-color: #dc3545;
 }
 
-/* Dark Mode Variables: */
 body.dark-mode {
     --primary-color: #4a90e2;
     --secondary-color: #adb5bd;
@@ -43,12 +37,53 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1,
+
+h1 {
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    padding-left: 1rem;
+
+
+}
+
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
     font-family: 'Lato', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
 
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    margin-bottom: 1em;
+    font-size: 1rem;
 }
 
 a {
@@ -59,6 +94,17 @@ a {
 
 a:hover {
     color: var(--hover-color);
+    text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+    border-radius: 5px;
 }
 
 img {
@@ -67,7 +113,6 @@ img {
     display: block;
 }
 
-/* Header */
 header {
     background-color: var(--light-background);
     padding: 1rem 0;
@@ -91,18 +136,19 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
+    width: auto;
+    height: auto;
     color: var(--text-color);
     font-size: 1.2rem;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .site-logo img {
     height: 50px;
-    /* Adjust */
     width: auto;
 }
 
-/* Navigation: */
 .main-nav .nav-links {
     list-style: none;
     display: flex;
@@ -114,6 +160,7 @@ header {
     display: block;
     font-weight: bold;
     color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
 .main-nav .nav-links a.active,
@@ -125,15 +172,14 @@ header {
 
 .menu-toggle {
     display: none;
-    /* Hidden by default on desktop */
     background: none;
     border: none;
     font-size: 2rem;
     cursor: pointer;
     color: var(--text-color);
+    padding: 0.5rem;
 }
 
-/* Dark Mode Toggle */
 .dark-mode-toggle {
     background: none;
     border: none;
@@ -141,16 +187,25 @@ header {
     cursor: pointer;
     color: var(--text-color);
     margin-left: 1rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
 }
 
-/* Main Content Area */
+.dark-mode-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* Hero Section Styles (common for different pages) */
 .hero-directory,
 .hero-discover,
 .hero-join,
@@ -163,12 +218,13 @@ main {
     margin-bottom: 2rem;
 }
 
-.hero-directory h2,
-.hero-discover h2,
-.hero-join h2,
-.hero-home h2 {
+.hero-directory h1,
+.hero-discover h1,
+.hero-join h1,
+.hero-home h1 .hero-text {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    color: #fff;
 }
 
 .hero-directory p,
@@ -179,7 +235,62 @@ main {
     opacity: 0.9;
 }
 
-/* Footer */
+.card {
+    background-color: var(--light-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin-top: 0.3rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+}
+
 footer {
     background-color: var(--light-background);
     color: var(--text-color);
@@ -187,6 +298,7 @@ footer {
     border-top: 1px solid var(--border-color);
     box-shadow: 0 -2px 4px var(--shadow-color);
     margin-top: 3rem;
+    text-align: center;
 }
 
 .footer-content {
@@ -194,19 +306,15 @@ footer {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    /* Allow wrapping for responsiveness */
     justify-content: space-between;
     gap: 1.5rem;
     padding: 0 1rem;
-    text-align: center;
-    /* Default for mobile */
 }
 
 .footer-contact,
 .footer-social,
 .footer-project-info {
     flex: 1 1 300px;
-    /* Allow items to grow and shrink, with a base width */
     padding: 1rem;
 }
 
@@ -215,12 +323,10 @@ footer {
     color: var(--primary-color);
 }
 
-
-
 .footer-contact p,
 .footer-project-info p {
-    font-weight: bold;
     font-size: 1rem;
+    font-weight: bold;
     line-height: 1.5;
 }
 
@@ -229,7 +335,6 @@ footer {
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
-    /* Space from contact info on smaller screens */
 }
 
 .footer-social img {
@@ -242,7 +347,25 @@ footer {
     transform: scale(1.1);
 }
 
-/* Responsive Design */
+#theme-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    font-size: 0.9em;
+    text-align: center;
+    white-space: nowrap;
+}
+
 @media (max-width: 768px) {
     .header-content {
         flex-wrap: wrap;
@@ -259,18 +382,15 @@ footer {
     .main-nav {
         width: 100%;
         order: 3;
-        /* Move nav below logo and toggles */
     }
 
     .menu-toggle {
         display: block;
-        /* Show hamburger menu on mobile */
         margin: 0 auto;
     }
 
     .main-nav .nav-links {
         display: none;
-        /* Hide nav links by default */
         flex-direction: column;
         width: 100%;
         text-align: center;
@@ -279,7 +399,6 @@ footer {
 
     .main-nav .nav-links.active {
         display: flex;
-        /* Show nav links when active */
     }
 
     .main-nav .nav-links li {
@@ -288,7 +407,6 @@ footer {
 
     .dark-mode-toggle {
         order: 2;
-        /* Position dark mode toggle */
         margin: 0;
     }
 
@@ -302,13 +420,26 @@ footer {
     .footer-social,
     .footer-project-info {
         flex: 1 1 100%;
-        /* Stack items vertically */
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-directory h1,
+    .hero-discover h1,
+    .hero-join h1,
+    .hero-home h1 {
+        font-size: 2rem;
     }
 }
 
 @media (min-width: 769px) {
     .footer-content {
         text-align: left;
-        /* Align left on larger screens */
     }
 }
