@@ -1,0 +1,251 @@
+/* styles/join.css */
+
+.join-main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Membership Benefits Section */
+.membership-benefits {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.membership-benefits h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.benefit-item {
+    background-color: var(--light-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.benefit-item h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.benefit-item p {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+
+/* Membership Levels Section */
+.membership-levels {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.membership-levels h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    align-items: stretch;
+    /* Make cards same height */
+}
+
+.level-card {
+    background-color: var(--light-background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.level-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 15px var(--shadow-color);
+}
+
+.level-card.non-profit {
+    border-top: 5px solid #28a745;
+}
+
+/* Green for non-profit */
+.level-card.silver {
+    border-top: 5px solid #007bff;
+}
+
+/* Blue for silver */
+.level-card.gold {
+    border-top: 5px solid #ffc107;
+}
+
+/* Gold for gold */
+
+
+.level-card h4 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.level-card .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.level-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    /* Pushes description to bottom */
+}
+
+.level-card ul li {
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.level-card ul li::before {
+    content: '✅';
+    /* Checkmark icon */
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    /* Green checkmark */
+}
+
+.level-card .level-description {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-top: 1rem;
+}
+
+/* Application Form Section */
+.application-form {
+    background-color: var(--light-background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    margin-bottom: 3rem;
+}
+
+.application-form h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.application-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.application-form fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.application-form legend {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0 0.5rem;
+}
+
+.application-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.application-form input[type="text"],
+.application-form input[type="email"],
+.application-form input[type="tel"],
+.application-form select,
+.application-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--background-color);
+    /* Matches body background */
+    color: var(--text-color);
+    margin-top: 0.3rem;
+    /* Space between label and input */
+}
+
+.application-form input[type="text"]:focus,
+.application-form input[type="email"]:focus,
+.application-form input[type="tel"]:focus,
+.application-form select:focus,
+.application-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+}
+
+.application-form .hidden-field {
+    display: none;
+}
+
+.submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: center;
+    /* Center the button in the form */
+    margin-top: 1rem;
+}
+
+.submit-button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments for Join Page */
+@media (max-width: 768px) {
+
+    .benefits-grid,
+    .levels-grid {
+        grid-template-columns: 1fr;
+        /* Stack on small screens */
+    }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - Chamber of Commerce</title>
+    <meta name="description" content="Discover the history, demographics, and culture of Maringa, Parana.">
+    <meta name="author" content="Tiago Neri">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/discover.css">
+    <link rel="icon" href="images/favicon.ico">
+
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="site-logo">
+                <img src="images/marketplace.svg" alt="Chamber of Commerce Logo">
+                <h1> Maringá - Chamber of Commerce</h1>
+            </a>
+            <nav class="main-nav">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html" class="active">Discover</a></li>
+                </ul>
+            </nav>
+            <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode"> 🌙</button>
+        </div>
+    </header>
+
+    <main class="discover-main">
+        <section class="hero-discover">
+            <h2>Discover Maringa, Parana</h2>
+            <p>Explore the rich history, vibrant culture, and promising future of our community.</p>
+        </section>
+
+        <section class="discover-content-grid">
+            <div class="card history-section">
+                <h3>Our Rich History</h3>
+                <p>Maringa was founded in 1947, strategically planned with wide avenues and numerous green spaces,
+                    earning it the nickname "Garden City." Its development was driven by coffee cultivation and
+                    diversified agriculture.</p>
+                <p>Key historical milestones include the construction of the iconic Cathedral of Maringa, a symbol of
+                    the city's growth, and its recognition as a leading urban center in Northern Parana.</p>
+                <p>Read more about the pioneers who shaped Maringa's early days and its transformation into a modern
+                    city.</p>
+            </div>
+
+            <div class="card demographics-section">
+                <h3>Current Demographics</h3>
+                <ul>
+                    <li><strong>Population:</strong> Approximately 450,000 residents</li>
+                    <li><strong>Growth Rate:</strong> Steady increase due to economic opportunities</li>
+                    <li><strong>Major Industries:</strong> Agriculture, Services, Education, Technology</li>
+                    <li><strong>Median Age:</strong> 32 years (young and dynamic population)</li>
+                    <li><strong>Cultural Diversity:</strong> Home to diverse communities, contributing to a rich
+                        cultural landscape.</li>
+                </ul>
+                <p>Source: Latest government census and local economic reports (fictional data).</p>
+            </div>
+
+            <div class="card events-section">
+                <h3>Current Events & Happenings</h3>
+                <div id="discover-events-list">
+                    <article class="event-item">
+                        <h4>Maringa Coffee Festival</h4>
+                        <p><strong>Date:</strong> October 15-17, 2025</p>
+                        <p><strong>Location:</strong> City Park Exhibition Center</p>
+                        <p>Join us for tastings, workshops, and celebrating our coffee heritage.</p>
+                    </article>
+                    <article class="event-item">
+                        <h4>Annual Craft Fair</h4>
+                        <p><strong>Date:</strong> November 5-7, 2025</p>
+                        <p><strong>Location:</strong> Central Plaza</p>
+                        <p>Showcasing local artisans, handmade goods, and live music.</p>
+                    </article>
+                </div>
+                <a href="#" class="view-all-link">See All Community Calendar</a>
+            </div>
+        </section>
+
+        <section class="image-montage">
+            <h2>Experience Maringa Through Images</h2>
+            <div class="montage-grid">
+                <figure>
+                    <img src="images/maringa-cathedral.jpg" alt="Maringa Cathedral" loading="lazy">
+                    <figcaption>The iconic Maringa Cathedral, a city landmark.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/horto-florestal.jpg" alt="Horto Florestal" loading="lazy">
+                    <figcaption>The lush greenery of Horto Florestal.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/university-campus.jpg" alt="University Campus" loading="lazy">
+                    <figcaption>Modern campus of the State University of Maringa.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/city-park.jpg" alt="Maringa City Park" loading="lazy">
+                    <figcaption>Families enjoying the spacious City Park.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/local-market.jpg" alt="Local Market" loading="lazy">
+                    <figcaption>Vibrant local market with fresh produce.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/street-art.jpg" alt="Maringa Street Art" loading="lazy">
+                    <figcaption>Colorful street art reflecting local culture.</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>Chamber of Commerce</h3>
+                <p> 948 International Avenue</p>
+                <p> Maringá, Paraná, Brazil </p>
+                <p>Email: <a href="mailto:info@chamber.org">info@chamber.org</a></p>
+                <p>Phone: <a href="tel:+554445552300">(44) 4555-2300</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="https://youtube.com/"><img src="images/youtube.svg" alt="YouTube"></a>
+                <a href="https://www.x.com/" aria-label="Twitter"><img src="images/twitter-x.svg" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.svg"
+                        alt="LinkedIn"></a>
+            </div>
+            <div class="footer-project-info">
+                </span> &copy; <span id="currentyear"></span> Chamber of Commerce</span></p>
+                <p>WDD231 Class Project | Tiago Neri</p>
+                <p> <span id="currentyear"></span>
+                <p>Last Modification: <span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

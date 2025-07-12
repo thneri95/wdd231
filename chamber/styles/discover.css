@@ -1,0 +1,157 @@
+/* styles/discover.css */
+
+.discover-main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Discover Content Grid */
+.discover-content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 3rem;
+}
+
+.card.history-section,
+.card.demographics-section,
+.card.events-section {
+    /* Inherits basic card styling from main.css */
+    background-color: var(--light-background);
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.card.history-section:hover,
+.card.demographics-section:hover,
+.card.events-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card p,
+.card ul {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.card ul {
+    list-style: none;
+    /* Remove default bullet points */
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.card ul li::before {
+    content: '•';
+    /* Custom bullet point */
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Specific Event Styling within Discover */
+.event-item {
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.event-item h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.event-item p {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+
+/* Image Montage Section */
+.image-montage {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.image-montage h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.montage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.montage-grid figure {
+    margin: 0;
+    /* Reset default figure margin */
+    background-color: var(--light-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    overflow: hidden;
+    /* For image border-radius */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.montage-grid figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.montage-grid img {
+    width: 100%;
+    height: 200px;
+    /* Fixed height for consistency */
+    object-fit: cover;
+    /* Cover the area, crop if necessary */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.montage-grid figcaption {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    background-color: var(--background-color);
+    /* Slightly different background for caption */
+}
+
+/* Responsive adjustments for Discover Page */
+@media (max-width: 768px) {
+    .discover-content-grid {
+        grid-template-columns: 1fr;
+        /* Stack on small screens */
+    }
+
+    .montage-grid {
+        grid-template-columns: 1fr;
+        /* Stack on small screens */
+    }
+}

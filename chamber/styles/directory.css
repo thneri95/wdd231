@@ -1,0 +1,177 @@
+/* styles/directory.css */
+
+.directory-main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.directory-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.view-toggle-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-toggle-button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+.view-toggle-button.active {
+    background-color: var(--secondary-color);
+    cursor: default;
+}
+
+#search-bar {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    /* Full width on smaller screens */
+    max-width: 300px;
+    /* Max width on larger screens */
+}
+
+/* Business Listings Container */
+.business-listings {
+    display: grid;
+    gap: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--light-background);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+/* Grid View */
+.business-listings.grid-view {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.business-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: var(--background-color);
+    /* Lighter than main bg in light mode, darker in dark mode */
+    box-shadow: 0 2px 5px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.business-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.business-card img {
+    width: 100px;
+    /* Fixed size for logos */
+    height: 100px;
+    object-fit: contain;
+    /* Maintain aspect ratio */
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    /* Optional: round logos */
+    border: 1px solid var(--border-color);
+}
+
+.business-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.business-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    word-wrap: break-word;
+    /* Ensure long words break */
+}
+
+.business-card p strong {
+    color: var(--secondary-color);
+}
+
+.business-card a {
+    word-break: break-all;
+    /* Break long URLs */
+}
+
+.business-card .description {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+}
+
+
+/* List View */
+.business-listings.list-view {
+    display: flex;
+    flex-direction: column;
+}
+
+.business-listings.list-view .business-card {
+    flex-direction: row;
+    /* Horizontal layout for list view */
+    text-align: left;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    gap: 1.5rem;
+}
+
+.business-listings.list-view .business-card img {
+    width: 80px;
+    /* Smaller logo in list view */
+    height: 80px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    /* Don't allow image to shrink */
+}
+
+.business-listings.list-view .business-card-info {
+    flex-grow: 1;
+    /* Allow info to take remaining space */
+}
+
+.business-listings.list-view .business-card h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 600px) {
+    .directory-controls {
+        flex-direction: column;
+    }
+
+    #search-bar {
+        margin-top: 1rem;
+    }
+
+    .business-listings.list-view .business-card {
+        flex-direction: column;
+        /* Stack back on very small screens */
+        text-align: center;
+    }
+
+    .business-listings.list-view .business-card img {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Maringá Hortifruti Central",
+        "tagline": "Fresh Produce from Local Farms",
+        "image": "images/Hort.svg",
+        "address": "Rua Joubert de Carvalho, 150 - Centro, Maringá, PR, Brazil",
+        "phone": "(44) 3031-1234",
+        "website": "http://www.maringafresh.com",
+        "description": "Providing the freshest fruits, vegetables, and organic goods directly from Maringá's region.",
+        "membership_level": 3
+    },
+    {
+        "name": "Paraná IT Solutions",
+        "tagline": "Innovating Technology for Your Business",
+        "image": "images/It.svg",
+        "address": "Av. Tiradentes, 850 - Zona 01, Maringá, PR, Brazil",
+        "phone": "(44) 3225-5678",
+        "website": "http://www.paranait.com",
+        "description": "Leading IT consultancy and software development firm serving businesses across Paraná.",
+        "membership_level": 3
+    },
+    {
+        "name": "Cafeteria Aurora",
+        "tagline": "Your Daily Dose of Brazilian Coffee",
+        "image": "images/Coffee.svg",
+        "address": "Av. Getúlio Vargas, 200 - Zona 01, Maringá, PR, Brazil",
+        "phone": "(44) 3028-9101",
+        "website": "http://www.cafeteriaaurora.com",
+        "description": "A cozy coffee shop offering traditional Brazilian blends and delightful pastries.",
+        "membership_level": 2
+    },
+    {
+        "name": "Construtora Maringá Excellence",
+        "tagline": "Building Dreams, Brick by Brick",
+        "image": "images/Constructor.svg",
+        "address": "Av. São Paulo, 1200 - Vila Bosque, Maringá, PR, Brazil",
+        "phone": "(44) 3045-2345",
+        "website": "http://www.maringaexcellence.com",
+        "description": "Specializing in residential and commercial construction, delivering quality and innovation.",
+        "membership_level": 3
+    },
+    {
+        "name": "Livraria Cultura e Saber",
+        "tagline": "A World of Knowledge in Every Book",
+        "image": "images/Books.svg",
+        "address": "Av. Colombo, 5790 - Zona 07, Maringá, PR, Brazil",
+        "phone": "(44) 3262-6789",
+        "website": "http://www.livrariaculturaesaber.com",
+        "description": "A comprehensive bookstore and cultural space, hosting events and readings.",
+        "membership_level": 1
+    },
+    {
+        "name": "Clínica Odontológica Sorriso Perfeito",
+        "tagline": "Caring for Your Smile in Maringá",
+        "image": "images/Dental.svg",
+        "address": "Av. Brasil, 450 - Centro, Maringá, PR, Brazil",
+        "phone": "(44) 3026-0011",
+        "website": "http://www.sorrisoperfeito.com",
+        "description": "Modern dental clinic offering a full range of oral health services from general dentistry to orthodontics.",
+        "membership_level": 2
+    },
+    {
+        "name": "Academia Fitness Plus",
+        "tagline": "Achieve Your Health Goals with Us",
+        "image": "images/Gym.svg",
+        "address": "Rua Santos Dumont, 1800 - Zona 01, Maringá, PR, Brazil",
+        "phone": "(44) 3224-5566",
+        "website": "http://www.fitnessplusmga.com",
+        "description": "State-of-the-art gym with diverse classes, personal trainers, and a welcoming environment for all fitness levels.",
+        "membership_level": 3
+    },
+    {
+        "name": "Boutique Elegância Maringaense",
+        "tagline": "Fashion for Every Occasion",
+        "image": "images/Fashion.svg",
+        "address": "Av. Herval, 999 - Zona 07, Maringá, PR, Brazil",
+        "phone": "(44) 3029-7890",
+        "website": "http://www.eleganciamaringaense.com",
+        "description": "Trendy and classic apparel for men and women, featuring local designers and international brands.",
+        "membership_level": 2
+    },
+    {
+        "name": "Agência de Viagens Horizonte Aberto",
+        "tagline": "Your Gateway to Unforgettable Journeys",
+        "image": "images/Travel.svg",
+        "address": "Av. Duque de Caxias, 600 - Zona 01, Maringá, PR, Brazil",
+        "phone": "(44) 3222-3344",
+        "website": "http://www.horizonteaberto.com",
+        "description": "Full-service travel agency specializing in national and international packages, cruises, and custom tours.",
+        "membership_level": 1
+    }
+]

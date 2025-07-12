@@ -1,0 +1,307 @@
+/* styles/main.css */
+
+/* General Styles */
+:root {
+    --primary-color: #0056b3;
+    /* Darker blue for accents */
+    --secondary-color: #6c757d;
+    /* Gray for text */
+    --background-color: #f8f9fa;
+    /* Light background */
+    --text-color: #343a40;
+    /* Dark text */
+    --light-background: #ffffff;
+    /* White for cards */
+    --border-color: #dee2e6;
+    /* Light border */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-color: #004085;
+    /* Even darker blue for hover */
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --primary-color: #4a90e2;
+    --secondary-color: #adb5bd;
+    --background-color: #343a40;
+    --text-color: #f8f9fa;
+    --light-background: #495057;
+    --border-color: #6c757d;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --hover-color: #6faee5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header */
+header {
+    background-color: var(--light-background);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.site-logo img {
+    height: 50px;
+    /* Adjust as needed */
+    width: auto;
+}
+
+/* Navigation */
+.main-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav .nav-links a {
+    padding: 0.5rem 1rem;
+    display: block;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.main-nav .nav-links a.active,
+.main-nav .nav-links a:hover {
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    margin-left: 1rem;
+}
+
+/* Main Content Area */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Hero Section Styles (common for different pages) */
+.hero-directory,
+.hero-discover,
+.hero-join,
+.hero-home {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero-directory h2,
+.hero-discover h2,
+.hero-join h2,
+.hero-home h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-directory p,
+.hero-discover p,
+.hero-join p,
+.hero-home p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    background-color: var(--light-background);
+    color: var(--text-color);
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -2px 4px var(--shadow-color);
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping for responsiveness */
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
+    /* Default for mobile */
+}
+
+.footer-contact,
+.footer-social,
+.footer-project-info {
+    flex: 1 1 300px;
+    /* Allow items to grow and shrink, with a base width */
+    padding: 1rem;
+}
+
+.footer-contact h3 {
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+}
+
+
+
+.footer-contact p,
+.footer-project-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    /* Space from contact info on smaller screens */
+}
+
+.footer-social img {
+    height: 30px;
+    width: 30px;
+    transition: transform 0.2s ease;
+}
+
+.footer-social img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .site-logo {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .main-nav {
+        width: 100%;
+        order: 3;
+        /* Move nav below logo and toggles */
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Show hamburger menu on mobile */
+        margin: 0 auto;
+    }
+
+    .main-nav .nav-links {
+        display: none;
+        /* Hide nav links by default */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .main-nav .nav-links.active {
+        display: flex;
+        /* Show nav links when active */
+    }
+
+    .main-nav .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .dark-mode-toggle {
+        order: 2;
+        /* Position dark mode toggle */
+        margin: 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-contact,
+    .footer-social,
+    .footer-project-info {
+        flex: 1 1 100%;
+        /* Stack items vertically */
+    }
+}
+
+@media (min-width: 769px) {
+    .footer-content {
+        text-align: left;
+        /* Align left on larger screens */
+    }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Chamber of Commerce</title>
+    <meta name="description"
+        content="Learn about the benefits of joining the Chamber of Commerce and apply for membership.">
+    <meta name="author" content="Tiago Neri">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="icon" href="images/favicon.ico">
+
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="site-logo">
+                <img src="images/marketplace.svg" alt="Chamber of Commerce Logo">
+                <h1> Maringá - Chamber of Commerce</h1>
+            </a>
+            <nav class="main-nav">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html" class="active">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
+            <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode"> 🌙</button>
+        </div>
+    </header>
+
+    <main class="join-main">
+        <section class="hero-join">
+            <h2>Join Our Community of Businesses</h2>
+            <p>Become a member of the Chamber of Commerce and unlock new opportunities for growth and networking</p>
+        </section>
+
+        <section class="membership-benefits">
+            <h3>Benefits of Becoming a Member</h3>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>Networking Opportunities</h4>
+                    <p>Connect with other local business owners and leaders through exclusive events and mixers</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Visibility & Marketing</h4>
+                    <p>Get listed in our prominent business directory, receive social media spotlights, and advertising
+                        opportunities</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Advocacy & Support</h4>
+                    <p>We advocate on behalf of the business community, addressing local government and policy issues
+                    </p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Education & Training</h4>
+                    <p>Access workshops, seminars, and resources to help you develop your business skills</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Community Engagement</h4>
+                    <p>Participate in community initiatives and contribute to the local economy's vitality</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Exclusive Discounts</h4>
+                    <p>Benefit from special member-only discounts on services and products from fellow members</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="membership-levels">
+            <h3>Choose Your Membership Level</h3>
+            <div class="levels-grid">
+                <div class="level-card non-profit">
+                    <h4>Non-Profit Membership</h4>
+                    <p class="price">$50 / year</p>
+                    <ul>
+                        <li>Directory Listing (basic)</li>
+                        <li>Newsletter Subscription</li>
+                        <li>Access to select training materials</li>
+                        <li>Invitations to networking events</li>
+                    </ul>
+                    <p class="level-description">Ideal for non-profit organizations looking for community support and
+                        basic visibility.</p>
+                </div>
+                <div class="level-card silver">
+                    <h4>Silver Membership</h4>
+                    <p class="price">$250 / year</p>
+                    <ul>
+                        <li>All Non-Profit Benefits, plus:</li>
+                        <li>Enhanced Directory Listing</li>
+                        <li>Social Media Spotlight (1x per year)</li>
+                        <li>Discounted Training Workshops</li>
+                        <li>Opportunity for event sponsorship</li>
+                    </ul>
+                    <p class="level-description">Great for growing businesses seeking increased exposure and
+                        professional development.</p>
+                </div>
+                <div class="level-card gold">
+                    <h4>Gold Membership</h4>
+                    <p class="price">$500 / year</p>
+                    <ul>
+                        <li>All Silver Benefits, plus:</li>
+                        <li>Premium Directory Listing</li>
+                        <li>Frequent Social Media Spotlights</li>
+                        <li>Free Access to All Training Workshops</li>
+                        <li>Priority Event Sponsorship Opportunities</li>
+                        <li>Annual Luncheon Tickets (2)</li>
+                        <li>Dedicated Chamber Liaison</li>
+                    </ul>
+                    <p class="level-description">Our top tier for established businesses looking for maximum impact and
+                        dedicated support.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="application-form">
+            <h3>Membership Application</h3>
+            <form action="thankyou.html" method="get">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label for="fname">First Name*
+                        <input type="text" id="fname" name="fname" required>
+                    </label>
+                    <label for="lname">Last Name*
+                        <input type="text" id="lname" name="lname" required>
+                    </label>
+                    <label for="orgtitle">Title/Position*
+                        <input type="text" id="orgtitle" name="orgtitle" pattern="[A-Za-z\s\-]{7,}"
+                            title="Minimum 7 characters, only letters, spaces, or hyphens." required>
+                    </label>
+                    <label for="email">Email*
+                        <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                    </label>
+                    <label for="phone">Phone*
+                        <input type="tel" id="phone" name="phone" placeholder="123-555-6789" required>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Business Information</legend>
+                    <label for="orgname">Business/Organization Name*
+                        <input type="text" id="orgname" name="orgname" required>
+                    </label>
+                    <label for="address">Business Address*
+                        <input type="text" id="address" name="address" required>
+                    </label>
+                    <label for="membership-level">Choose Membership Level*</label>
+                    <select id="membership-level" name="membership-level" required>
+                        <option value="" disabled selected>Select a Level</option>
+                        <option value="non-profit">Non-Profit ($50)</option>
+                        <option value="silver">Silver ($250)</option>
+                        <option value="gold">Gold ($750)</option>
+                    </select>
+
+                    <label for="business-description">Business Description (Max 500 characters)</label>
+                    <textarea id="business-description" name="business-description" rows="5" maxlength="500"></textarea>
+
+                    <label for="timestamp" class="hidden-field">Submission Date:
+                        <input type="hidden" id="timestamp" name="timestamp">
+                    </label>
+                </fieldset>
+                <button type="submit" class="submit-button">Join the Chamber</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>Chamber of Commerce</h3>
+                <p> 948 International Avenue</p>
+                <p> Maringá, Paraná, Brazil </p>
+                <p>Email: <a href="mailto:info@chamber.org">info@chamber.org</a></p>
+                <p>Phone: <a href="tel:+554445552300">(44) 4555-2300</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="https://youtube.com/"><img src="images/youtube.svg" alt="YouTube"></a>
+                <a href="https://www.x.com/" aria-label="Twitter"><img src="images/twitter-x.svg" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.svg"
+                        alt="LinkedIn"></a>
+            </div>
+            <div class="footer-project-info">
+                </span> &copy; <span id="currentyear"></span> Chamber of Commerce</span></p>
+                <p>WDD231 Class Project | Tiago Neri</p>
+                <p> <span id="currentyear"></span>
+                <p>Last Modification: <span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

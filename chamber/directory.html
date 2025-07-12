@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory - Maringá, Paraná Chamber of Commerce</title>
+    <meta name="description"
+        content="Find local businesses and organizations in Maringá, Paraná, Brazil through the Chamber of Commerce directory.">
+    <meta name="author" content="Tiago Neri">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="icon" href="images/favicon.ico">
+
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="site-logo">
+                <img src="images/marketplace.svg" alt="Chamber of Commerce Logo">
+                <h1> Maringá - Chamber of Commerce</h1>
+            </a>
+            <nav class="main-nav">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html" class="active">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
+            <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode"> 🌙</button>
+        </div>
+    </header>
+
+    <main class="directory-main">
+        <section class="hero-directory">
+            <h2>Our Business Directory</h2>
+            <p>Connect with local businesses and organizations that are members of the Maringá, Paraná Chamber of
+                Commerce.</p>
+        </section>
+
+        <section class="directory-controls">
+            <button id="grid-view" class="view-toggle-button active">Grid View</button>
+            <button id="list-view" class="view-toggle-button">List View</button>
+            <input type="text" id="search-bar" placeholder="Search businesses...">
+        </section>
+
+        <section id="business-listings" class="business-listings grid-view">
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>Chamber of Commerce</h3>
+                <p> 948 International Avenue</p>
+                <p> Maringá, Paraná, Brazil </p>
+                <p>Email: <a href="mailto:info@chamber.org">info@chamber.org</a></p>
+                <p>Phone: <a href="tel:+554445552300">(44) 4555-2300</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="https://youtube.com/"><img src="images/youtube.svg" alt="YouTube"></a>
+                <a href="https://www.x.com/" aria-label="Twitter"><img src="images/twitter-x.svg" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.svg"
+                        alt="LinkedIn"></a>
+            </div>
+            <div class="footer-project-info">
+                </span> &copy; <span id="currentyear"></span> Chamber of Commerce</span></p>
+                <p>WDD231 Class Project | Tiago Neri</p>
+                <p> <span id="currentyear"></span>
+                <p>Last Modification: <span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/directory.js"></script>
+</body>
+
+</html>

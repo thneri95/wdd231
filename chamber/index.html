@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Chamber of Commerce</title>
+    <meta name="description"
+        content="Welcome to the Chamber of Commerce, promoting local businesses and community engagement.">
+    <meta name="author" content="Tiago Neri">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="icon" href="images/favicon.ico">
+
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="site-logo">
+                <img src="images/marketplace.svg" alt="Chamber of Commerce Logo">
+                <h1> Maringá - Chamber of Commerce</h1>
+            </a>
+            <nav class="main-nav">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
+            <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode"> 🌙</button>
+        </div>
+    </header>
+
+    <main class="home-main">
+        <section class="hero-home">
+            <div class="hero-image-placeholder">
+                <img src="images/maringa.webp" alt="Local Community Image" loading="lazy">
+                <button class="call-to-action-button">Keynote Tickets</button>
+            </div>
+            <div class="hero-text">
+                <h2>Empowering Local Businesses</h2>
+                <p>Your hub for community growth, networking, and support in Maringa, Parana.</p>
+            </div>
+        </section>
+
+        <section class="community-info-grid">
+            <div class="card events-section">
+                <h3>Upcoming Events</h3>
+                <div id="events-list">
+                    <p>No upcoming events at this time. Check back soon!</p>
+                </div>
+                <a href="#" class="view-all-link">View All Events</a>
+            </div>
+
+            <div class="card weather-section">
+                <h3>Current Weather</h3>
+                <div id="current-weather">
+                    <p>75°F</p>
+                    <p>Party Cloudy</p>
+                    <p>High: 85°, Low: 52°</p>
+                    <p>Humidity: 34%</p>
+                    <p>Sunrise: 5:30 AM, Sunset: 6:59 PM</p>
+                </div>
+            </div>
+
+            <div class="card weather-forecast-section">
+                <h3>Weather Forecast</h3>
+                <div id="weather-forecast">
+                    <p>Today: <strong>90°F</strong></p>
+                    <p>Wednesday: <strong>89°F</strong></p>
+                    <p>Thursday: <strong>68°F</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="business-spotlights">
+            <h2>Featured Businesses</h2>
+            <div class="spotlight-grid">
+                <div class="business-card-spotlight">
+                    <img src="images/business-logo-1.png" alt="Business One Logo">
+                    <h3>Business Name One</h3>
+                    <p>Innovative solutions provider.</p>
+                    <p><a href="http://www.businessone.com" target="_blank"
+                            rel="noopener noreferrer">www.businessone.com</a></p>
+                </div>
+                <div class="business-card-spotlight">
+                    <img src="images/business-logo-2.png" alt="Business Two Logo">
+                    <h3>Business Name Two</h3>
+                    <p>Local artisanal bakery.</p>
+                    <p><a href="http://www.businesstwo.com" target="_blank"
+                            rel="noopener noreferrer">www.businesstwo.com</a></p>
+                </div>
+                <div class="business-card-spotlight">
+                    <img src="images/business-logo-3.png" alt="Business Three Logo">
+                    <h3>Business Name Three</h3>
+                    <p>Community wellness center.</p>
+                    <p><a href="http://www.businessthree.com" target="_blank"
+                            rel="noopener noreferrer">www.businessthree.com</a></p>
+                </div>
+            </div>
+            <a href="directory.html" class="view-all-link">View All Businesses</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>Chamber of Commerce</h3>
+                <p> 948 International Avenue</p>
+                <p> Maringá, Paraná, Brazil </p>
+                <p>Email: <a href="mailto:info@chamber.org">info@chamber.org</a></p>
+                <p>Phone: <a href="tel:+554445552300">(44) 4555-2300</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="https://youtube.com/"><img src="images/youtube.svg" alt="YouTube"></a>
+                <a href="https://www.x.com/" aria-label="Twitter"><img src="images/twitter-x.svg" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.svg"
+                        alt="LinkedIn"></a>
+            </div>
+            <div class="footer-project-info">
+                </span> &copy; <span id="currentyear"></span> Chamber of Commerce</span></p>
+                <p>WDD231 Class Project | Tiago Neri</p>
+                <p> <span id="currentyear"></span>
+                <p>Last Modification: <span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
