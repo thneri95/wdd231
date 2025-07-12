@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('active'); // Add/remove 'active' class on the button itself
+            menuToggle.classList.toggle('active');
 
             // Set aria-expanded based on the navigation state:
             const isExpanded = navLinks.classList.contains('active');
