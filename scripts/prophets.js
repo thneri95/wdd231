@@ -4,7 +4,6 @@ const cards = document.querySelector('#cards');
 async function getProphetData() {
     const response = await fetch(url);
     const data = await response.json();
-    // console.table(data.prophets); // Test line
     displayProphets(data.prophets);
 }
 

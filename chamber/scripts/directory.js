@@ -1,4 +1,3 @@
-// js/directory.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const businessListingsContainer = document.getElementById('business-listings');
@@ -8,16 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let allBusinesses = [];
 
-    // Correct URL to fetch the raw JSON content from GitHub Pages:
-    const jsonUrl = 'https://thneri95.github.io/wdd231/chamber/JSON/members.json'; // Use the raw content URL for GitHub Pages
+    const jsonUrl = 'https://thneri95.github.io/wdd231/chamber/Json/members.json';
 
     // Function to fetch business data from JSON:
     async function fetchBusinesses() {
         try {
-            // Use the absolute URL for fetching the JSON
             const response = await fetch(jsonUrl);
             if (!response.ok) {
-                // Log the response status and text for better debugging
                 const errorText = await response.text();
                 throw new Error(`HTTP error! status: ${response.status} - ${response.statusText || 'Unknown error'} \nResponse: ${errorText}`);
             }
@@ -31,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to display businesses:
     function displayBusinesses(filteredBusinesses) {
-        businessListingsContainer.innerHTML = ''; // Clear previous listings
+        businessListingsContainer.innerHTML = ''; // Need Clear previous listings
 
         filteredBusinesses.forEach(business => {
             const businessCard = document.createElement('div');
@@ -55,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to filter businesses based on search input:
     function filterBusinesses() {
         const searchTerm = searchBar.value.toLowerCase();
-        const filtered = allBusinesses.filter(business => // Using 'allBusinesses' as the source for filtering
+        const filtered = allBusinesses.filter(business => // Using 'allBusinesses' 
             business.name.toLowerCase().includes(searchTerm) ||
             business.description.toLowerCase().includes(searchTerm) ||
             business.tagline.toLowerCase().includes(searchTerm) ||
@@ -71,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             businessListingsContainer.classList.remove('list-view');
             gridViewButton.classList.add('active');
             listViewButton.classList.remove('active');
-            // Re-display all businesses. Filtering can be re-applied after this if needed.
+            // Re-display all businesses
             displayBusinesses(allBusinesses);
         });
 
@@ -80,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             businessListingsContainer.classList.remove('grid-view');
             listViewButton.classList.add('active');
             gridViewButton.classList.remove('active');
-            // Re-display all businesses. Filtering can be re-applied after this if needed.
+            // Re-display all businesses
             displayBusinesses(allBusinesses);
         });
     }
