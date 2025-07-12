@@ -2,7 +2,7 @@
     {
         "name": "Maringá Hortifruti Central",
         "tagline": "Fresh Produce from Local Farms",
-        "image": "images/Hort.svg",
+        "image": "images/hort.svg",
         "address": "Rua Joubert de Carvalho, 150 - Centro, Maringá, PR, Brazil",
         "phone": "(44) 3031-1234",
         "website": "http://www.maringafresh.com",
@@ -12,7 +12,7 @@
     {
         "name": "Paraná IT Solutions",
         "tagline": "Innovating Technology for Your Business",
-        "image": "images/It.svg",
+        "image": "images/it.svg",
         "address": "Av. Tiradentes, 850 - Zona 01, Maringá, PR, Brazil",
         "phone": "(44) 3225-5678",
         "website": "http://www.paranait.com",
@@ -22,7 +22,7 @@
     {
         "name": "Cafeteria Aurora",
         "tagline": "Your Daily Dose of Brazilian Coffee",
-        "image": "images/Coffee.svg",
+        "image": "images/coffee.svg",
         "address": "Av. Getúlio Vargas, 200 - Zona 01, Maringá, PR, Brazil",
         "phone": "(44) 3028-9101",
         "website": "http://www.cafeteriaaurora.com",
@@ -32,7 +32,7 @@
     {
         "name": "Construtora Maringá Excellence",
         "tagline": "Building Dreams, Brick by Brick",
-        "image": "images/Constructor.svg",
+        "image": "images/constructor.svg",
         "address": "Av. São Paulo, 1200 - Vila Bosque, Maringá, PR, Brazil",
         "phone": "(44) 3045-2345",
         "website": "http://www.maringaexcellence.com",
@@ -42,7 +42,7 @@
     {
         "name": "Livraria Cultura e Saber",
         "tagline": "A World of Knowledge in Every Book",
-        "image": "images/Books.svg",
+        "image": "images/books.svg",
         "address": "Av. Colombo, 5790 - Zona 07, Maringá, PR, Brazil",
         "phone": "(44) 3262-6789",
         "website": "http://www.livrariaculturaesaber.com",
@@ -52,7 +52,7 @@
     {
         "name": "Clínica Odontológica Sorriso Perfeito",
         "tagline": "Caring for Your Smile in Maringá",
-        "image": "images/Dental.svg",
+        "image": "images/dental.svg",
         "address": "Av. Brasil, 450 - Centro, Maringá, PR, Brazil",
         "phone": "(44) 3026-0011",
         "website": "http://www.sorrisoperfeito.com",
@@ -62,7 +62,7 @@
     {
         "name": "Academia Fitness Plus",
         "tagline": "Achieve Your Health Goals with Us",
-        "image": "images/Gym.svg",
+        "image": "images/gym.svg",
         "address": "Rua Santos Dumont, 1800 - Zona 01, Maringá, PR, Brazil",
         "phone": "(44) 3224-5566",
         "website": "http://www.fitnessplusmga.com",
@@ -72,7 +72,7 @@
     {
         "name": "Boutique Elegância Maringaense",
         "tagline": "Fashion for Every Occasion",
-        "image": "images/Fashion.svg",
+        "image": "images/fashion.svg",
         "address": "Av. Herval, 999 - Zona 07, Maringá, PR, Brazil",
         "phone": "(44) 3029-7890",
         "website": "http://www.eleganciamaringaense.com",
@@ -82,7 +82,7 @@
     {
         "name": "Agência de Viagens Horizonte Aberto",
         "tagline": "Your Gateway to Unforgettable Journeys",
-        "image": "images/Travel.svg",
+        "image": "images/travel.svg",
         "address": "Av. Duque de Caxias, 600 - Zona 01, Maringá, PR, Brazil",
         "phone": "(44) 3222-3344",
         "website": "http://www.horizonteaberto.com",
