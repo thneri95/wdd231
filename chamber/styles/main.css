@@ -1,5 +1,5 @@
 :root {
-    /* Cores Principais */
+    /* Main Colors */
     --primary-color: #0056b3;
     --secondary-color: #555b62;
     --background-color: #f8f9fa;
@@ -12,7 +12,6 @@
 
     --success-color: #28a745;
     --error-color: #c82333;
-
 }
 
 body.dark-mode {
@@ -26,10 +25,9 @@ body.dark-mode {
 
     --hover-color: #6faee5;
 
-    /* Cores de Feedback */
+    /* Feedback Colors */
     --success-color: #28a745;
     --error-color: #dc3545;
-
 }
 
 * {
@@ -46,7 +44,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 h1 {
     font-size: 2rem;
     font-family: 'Lato', sans-serif;
@@ -54,8 +51,6 @@ h1 {
     margin-bottom: 1rem;
     line-height: 1.2;
     padding-left: 1rem;
-
-
 }
 
 h2,
@@ -68,7 +63,6 @@ h6 {
     margin-bottom: 0.8em;
     line-height: 1.2;
 }
-
 
 h2 {
     font-size: 2.2rem;
@@ -127,9 +121,16 @@ header {
     padding: 1rem 0;
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 2px 4px var(--shadow-color);
-    position: static;
+    position: fixed;
+    /* Make the header fixed */
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
+}
+
+body {
+    padding-top: 80px;
 }
 
 .header-content {
@@ -138,7 +139,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
 }
 
 .site-logo {
@@ -156,7 +157,6 @@ header {
 .site-logo img {
     height: 60px;
     width: 46px;
-
 }
 
 .main-nav .nav-links {
@@ -188,15 +188,31 @@ header {
     cursor: pointer;
     color: var(--text-color);
     padding: 0.5rem;
+    transition: transform 0.3s ease;
+
+    /* Fixed positioning for mobile menu button */
+    position: fixed;
+    top: 1rem;
+    /* Adjust as needed */
+    right: 1rem;
+    /* Adjust as needed */
+    z-index: 1001;
+    /* Ensure it's above the header */
+}
+
+.menu-toggle.active {
+    transform: rotate(90deg);
 }
 
 .dark-mode-toggle {
-    background: none;
+    background: var(--background-color);
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--text-color);
+    /* Position relative to its container in the header-content, or fixed if desired */
     margin-left: 1rem;
+    /* Keep this if you want it next to nav-links on desktop */
     padding: 0.5rem;
     border-radius: 50%;
     transition: background-color 0.3s ease;
@@ -205,9 +221,6 @@ header {
 .dark-mode-toggle:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
-
-
-
 
 body.dark-mode .dark-mode-toggle:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -218,6 +231,7 @@ main {
     margin: 2rem auto;
     padding: 0 1rem;
 }
+
 
 .hero-directory,
 .hero-discover,
@@ -234,7 +248,8 @@ main {
 .hero-directory h1,
 .hero-discover h1,
 .hero-join h1,
-.hero-home h1 .hero-text {
+.hero-home h1,
+.hero-text h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     color: #fff;
@@ -379,11 +394,13 @@ footer {
     white-space: nowrap;
 }
 
+/* --- Hamburger Menu Animation Styles --- */
 @media (max-width: 768px) {
     .header-content {
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
+        padding-right: 5rem;
     }
 
     .site-logo {
@@ -395,23 +412,33 @@ footer {
     .main-nav {
         width: 100%;
         order: 3;
+        position: relative;
     }
 
     .menu-toggle {
         display: block;
-        margin: 0 auto;
+        /* The fixed position now controls its location directly */
+        /* margin: 0 auto; removed as it's not needed with fixed positioning */
     }
 
     .main-nav .nav-links {
-        display: none;
+        display: flex;
         flex-direction: column;
         width: 100%;
         text-align: center;
         margin-top: 1rem;
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: max-height 0.5s ease-out, opacity 0.5s ease-out, transform 0.5s ease-out;
     }
 
     .main-nav .nav-links.active {
-        display: flex;
+        max-height: 300px;
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .main-nav .nav-links li {
@@ -421,7 +448,12 @@ footer {
     .dark-mode-toggle {
         order: 2;
         margin: 0;
+        position: relative;
+        top: 1rem;
+        right: 4.5rem;
+        z-index: 1001;
     }
+
 
     .footer-content {
         flex-direction: column;
@@ -446,7 +478,8 @@ footer {
     .hero-directory h1,
     .hero-discover h1,
     .hero-join h1,
-    .hero-home h1 {
+    .hero-home h1,
+    .hero-text h1 {
         font-size: 2rem;
     }
 }
@@ -454,5 +487,31 @@ footer {
 @media (min-width: 769px) {
     .footer-content {
         text-align: left;
+    }
+
+    .main-nav .nav-links {
+        max-height: none;
+        overflow: visible;
+        opacity: 1;
+        transform: translateY(0);
+        transition: none;
+    }
+
+    .menu-toggle {
+        position: static;
+        top: auto;
+        right: auto;
+        z-index: auto;
+    }
+
+    .dark-mode-toggle {
+        position: static;
+        top: auto;
+        z-index: auto;
+        margin-left: 1rem;
+    }
+
+    .header-content {
+        padding-right: 1rem;
     }
 }

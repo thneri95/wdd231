@@ -29,7 +29,6 @@
     background-color: var(--background-color);
 }
 
-/* Você também pode querer ajustar a altura do contêiner para melhor visualização */
 .hero-image-placeholder {
     position: relative;
     width: 80%;
@@ -37,9 +36,7 @@
     /* Mantenha ou ajuste esta altura conforme necessário */
     overflow: hidden;
     margin-bottom: 1.5rem;
-    /* Opcional: Se a imagem tiver barras, um fundo aqui pode ajudar */
     background-color: var(--background-color);
-    /* Ou uma cor que combine com a imagem */
 }
 
 .hero-image-placeholder .call-to-action-button {
@@ -66,7 +63,13 @@
 .hero-text {
     text-align: center;
     padding: 0 1rem 2rem;
-    /* Adjust padding below image */
+    color: black;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
 }
 
 .hero-text h2 {
@@ -77,7 +80,8 @@
 
 .hero-text p {
     font-size: 1.2rem;
-    color: var(--secondary-color);
+    color: black;
+
 }
 
 
