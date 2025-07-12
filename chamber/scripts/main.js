@@ -21,17 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.add('dark-mode');
             darkModeToggle.textContent = '☀️'; // Sun icon for light mode
         } else {
-            darkModeToggle.textContent = '🌙'; // Moon icon for dark mode
+            darkModeToggle.textContent = '🌑'; // Moon icon for dark mode
         }
 
         darkModeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
             if (body.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
-                darkModeToggle.textContent = '☀️';
+                darkModeToggle.textContent = '🌑';
             } else {
                 localStorage.setItem('theme', 'light');
-                darkModeToggle.textContent = '🌙';
+                darkModeToggle.textContent = '☀️';
             }
         });
     }
