@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const jsonUrl = 'https://thneri95.github.io/wdd231/chamber/Json/members.json';
 
-    // Function to fetch business data from JSON:
     async function fetchBusinesses() {
         try {
             const response = await fetch(jsonUrl);
