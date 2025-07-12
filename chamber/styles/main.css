@@ -206,6 +206,9 @@ header {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+
+
+
 body.dark-mode .dark-mode-toggle:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
