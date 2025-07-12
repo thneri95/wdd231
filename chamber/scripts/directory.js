@@ -1,5 +1,4 @@
-
-
+// js/directory.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const businessListingsContainer = document.getElementById('business-listings');
@@ -32,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const businessCard = document.createElement('div');
             businessCard.classList.add('business-card');
 
+            // The optional styling block below was removed as it was commented out and not functional.
+            // If you decide to add specific styling logic for list/grid in JS later,
+            // you can re-implement it here.
 
             businessCard.innerHTML = `
                 <img src="${business.image}" alt="${business.name} Logo" loading="lazy">
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to filter businesses based on search input:
     function filterBusinesses() {
         const searchTerm = searchBar.value.toLowerCase();
-        const filtered = allBusinesses.filter(business => //  allBusinesses 
+        const filtered = allBusinesses.filter(business => // Using 'allBusinesses' as the source for filtering
             business.name.toLowerCase().includes(searchTerm) ||
             business.description.toLowerCase().includes(searchTerm) ||
             business.tagline.toLowerCase().includes(searchTerm) ||
@@ -67,7 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
             businessListingsContainer.classList.remove('list-view');
             gridViewButton.classList.add('active');
             listViewButton.classList.remove('active');
-            displayBusinesses(allBusinesses); // Re-display all businesses (or current filtered set)
+            // Re-display all businesses. Filtering can be re-applied after this if needed.
+            displayBusinesses(allBusinesses);
         });
 
         listViewButton.addEventListener('click', () => {
@@ -75,7 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
             businessListingsContainer.classList.remove('grid-view');
             listViewButton.classList.add('active');
             gridViewButton.classList.remove('active');
-            displayBusinesses(allBusinesses); // Re-display all businesses (or current filtered set)
+            // Re-display all businesses. Filtering can be re-applied after this if needed.
+            displayBusinesses(allBusinesses);
         });
     }
 
@@ -85,5 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         searchBar.addEventListener('input', filterBusinesses);
     }
 
+    // Call the fetch function to load data when the page loads
     fetchBusinesses();
 });
