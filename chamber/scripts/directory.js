@@ -1,4 +1,6 @@
-// js/directory.js
+
+const url = 'https://github.com/thneri95/wdd231/blob/main/chamber/Json/members.json';
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const businessListingsContainer = document.getElementById('business-listings');
@@ -25,15 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to display businesses:
     function displayBusinesses(filteredBusinesses) {
-        businessListingsContainer.innerHTML = ''; // Clear previous listings
+        businessListingsContainer.innerHTML = '';
 
         filteredBusinesses.forEach(business => {
             const businessCard = document.createElement('div');
             businessCard.classList.add('business-card');
 
-            // The optional styling block below was removed as it was commented out and not functional.
-            // If you decide to add specific styling logic for list/grid in JS later,
-            // you can re-implement it here.
+
 
             businessCard.innerHTML = `
                 <img src="${business.image}" alt="${business.name} Logo" loading="lazy">
@@ -89,6 +89,5 @@ document.addEventListener('DOMContentLoaded', () => {
         searchBar.addEventListener('input', filterBusinesses);
     }
 
-    // Call the fetch function to load data when the page loads
     fetchBusinesses();
 });
