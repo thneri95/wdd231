@@ -134,7 +134,7 @@
     margin-bottom: 1rem;
 }
 
-/* Business Spotlights */
+/* Business Spotlights: */
 .business-spotlights {
     text-align: center;
     margin-bottom: 3rem;
@@ -177,7 +177,6 @@
     object-fit: contain;
     margin: 0 auto 1rem;
     border-radius: 50%;
-    /* Make logos round */
     border: 1px solid var(--border-color);
 }
 
@@ -204,17 +203,19 @@
     background-color: var(--primary-color);
     color: white;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.5s ease, transform 0.2s ease;
     font-weight: bold;
 }
 
 .view-all-link:hover {
-    background-color: var(--hover-color);
+    background-color: var(--primary-color);
     transform: translateY(-2px);
+    color: black;
+
 }
 
 
-/* Responsive adjustments for Home Page */
+/* Responsive adjustments for Home Page: */
 @media (max-width: 768px) {
     .hero-home {
         flex-direction: column;
@@ -228,7 +229,6 @@
 
     .hero-image-placeholder .call-to-action-button {
         position: static;
-        /* Remove absolute positioning */
         margin-top: 1rem;
         display: block;
         width: fit-content;
@@ -246,11 +246,9 @@
 
     .community-info-grid {
         grid-template-columns: 1fr;
-        /* Stack on small screens */
     }
 
     .spotlight-grid {
         grid-template-columns: 1fr;
-        /* Stack on small screens */
     }
 }

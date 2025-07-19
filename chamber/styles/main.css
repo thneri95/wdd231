@@ -177,16 +177,12 @@ header {
     border-radius: 5px;
 }
 
-/* Specific rule for the default link color in the main nav */
 .main-nav .nav-links a {
     color: var(--text-color);
-    /* Set default color here */
 }
 
-/* Dark mode specific override for default link color in main nav */
 body.dark-mode .main-nav .nav-links a {
     color: var(--text-color);
-    /* This ensures it adapts to dark mode's --text-color */
 }
 
 
@@ -200,7 +196,7 @@ body.dark-mode .main-nav .nav-links a {
     padding: 0.5rem;
     transition: transform 0.3s ease;
 
-    /* Fixed positioning for mobile menu button */
+    /* Fixed positioning for mobile menu button: */
     position: fixed;
     top: 1rem;
     right: 1rem;
@@ -422,7 +418,6 @@ footer {
 
     .menu-toggle {
         display: block;
-        /* The fixed position now controls its location directly */
     }
 
     .main-nav .nav-links {
@@ -453,7 +448,6 @@ footer {
         order: 2;
         margin: 0;
         position: fixed;
-        /* Fixed here for mobile */
         top: 1rem;
         right: 4.5rem;
         z-index: 1001;

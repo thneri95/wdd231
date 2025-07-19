@@ -13,11 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const isExpanded = navLinks.classList.contains('active');
             menuToggle.setAttribute('aria-expanded', isExpanded);
 
-            // Change button text based on active state for the 'X' effect:
+            // We need to Change button text based on active state for the 'X' effect:
             if (isExpanded) {
                 menuToggle.textContent = '✕'; // 'X' icon when menu is open
             } else {
-                menuToggle.textContent = '☰'; // Hamburger icon when menu is closed
+                menuToggle.textContent = '☰'; // Hamburger icon when menu is closed xD
             }
         });
     }
@@ -118,13 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Set current year in footer-->
+    // --- Set current year in footer:-->
     const currentYearSpan = document.getElementById('currentyear');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
-    // --- Set last modified date in footer-->
+    // --- Set last modified date in footer:-->
     const lastModifiedSpan = document.getElementById('lastmodified');
     if (lastModifiedSpan) {
         lastModifiedSpan.textContent = document.lastModified;
