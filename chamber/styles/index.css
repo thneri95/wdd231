@@ -80,8 +80,7 @@
 
 .hero-text p {
     font-size: 1.2rem;
-    color: black;
-
+    color: var(--primary-color);
 }
 
 
