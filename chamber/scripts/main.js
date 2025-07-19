@@ -8,31 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
 
-            // Set aria-expanded based on the navigation state:
-            const isExpanded = navLinks.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', isExpanded);
 
-            // We need to Change button text based on active state for the 'X' effect:
-            if (isExpanded) {
-                menuToggle.textContent = '✕'; // 'X' icon when menu is open
-            } else {
-                menuToggle.textContent = '☰'; // Hamburger icon when menu is closed xD
-            }
         });
     }
 
-    // Dark Mode Toggle :
+    // --- Dark Mode Toggle: ---
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
 
-    // Create a notification element:
-
+    // Notification element:
     let notification = document.getElementById('theme-notification');
     if (!notification) {
         notification = document.createElement('div');
         notification.id = 'theme-notification';
-
         notification.style.cssText = `
             position: fixed;
             bottom: 20px;
@@ -54,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(notification);
     }
 
-
     // Function to show the theme notification:
     function showThemeNotification(message) {
         notification.textContent = message;
@@ -68,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // Function to apply the theme:
+    // Function to apply the theme (dark or light):
     function applyTheme(theme) {
         if (theme === 'dark') {
             body.classList.add('dark-mode');
@@ -90,10 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
         // Apply theme on initial load:
-        // 1. If a theme is saved in localStorage, use it
-        // 2. If no theme is saved, use the system preference
-        // 3. Otherwise, default to light mode!
-
         if (savedTheme) {
             applyTheme(savedTheme);
         } else if (prefersDarkScheme.matches) {
@@ -105,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Listen for changes in system preference:
         prefersDarkScheme.addEventListener('change', (event) => {
             // Only change theme based on system preference if no user preference is set
+            // This prevents system preference from overriding a user's explicit choice!!!
             if (!localStorage.getItem('theme')) {
                 applyTheme(event.matches ? 'dark' : 'light');
             }
@@ -112,21 +98,82 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Event listener for button click:
         darkModeToggle.addEventListener('click', () => {
-            // Toggle between 'dark' and 'light' based on current state!
             const currentTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
             applyTheme(currentTheme);
         });
     }
 
-    // --- Set current year in footer:-->
+    // --- Business Spotlights ---
+    const spotlightGrid = document.getElementById('spotlight-businesses');
+    const membersJsonUrl = 'JSON/members.json'; // <-- Path to JSON members xD
+
+    async function loadSpotlightBusinesses() {
+        if (!spotlightGrid) return;
+
+        try {
+            const response = await fetch(membersJsonUrl);
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status} - ${response.statusText || 'Unknown error'} \nResponse: ${errorText}`);
+            }
+            const allMembers = await response.json();
+
+            // Filter for Gold and Silver members:
+            const eligibleMembers = allMembers.filter(member => member.membership_level === 3 || member.membership_level === 2);
+
+            // If no eligible members, use all members:
+            const membersToChooseFrom = eligibleMembers.length > 0 ? eligibleMembers : allMembers;
+
+            // Shuffle the list of members:
+            const shuffledMembers = membersToChooseFrom.sort(() => 0.5 - Math.random());
+
+            // Select the first 3:
+            const selectedSpotlights = shuffledMembers.slice(0, 3);
+
+            displaySpotlightBusinesses(selectedSpotlights);
+
+        } catch (error) {
+            console.error('Error loading featured businesses:', error);
+            spotlightGrid.innerHTML = '<p>Failed to load featured businesses. Please try again later.</p>';
+        }
+    }
+
+    // Function to display featured businesses:
+    function displaySpotlightBusinesses(businesses) {
+        if (!spotlightGrid) return;
+        spotlightGrid.innerHTML = ''; // Clear previous spots
+
+        if (businesses.length === 0) {
+            spotlightGrid.innerHTML = '<p>No featured businesses available at this time.</p>';
+            return;
+        }
+
+        businesses.forEach(business => {
+            const businessCard = document.createElement('div');
+            businessCard.classList.add('business-card-spotlight');
+
+            businessCard.innerHTML = `
+                <img src="${business.image}" alt="${business.name} Logo" loading="lazy">
+                <h3>${business.name}</h3>
+                <p>${business.tagline}</p>
+                <p><a href="${business.website}" target="_blank" rel="noopener noreferrer">${business.website.replace(/(^\w+:|^)\/\//, '')}</a></p>
+            `;
+            spotlightGrid.appendChild(businessCard);
+        });
+    }
+
+    // --- Set current year in footer: ---
     const currentYearSpan = document.getElementById('currentyear');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
-    // --- Set last modified date in footer:-->
+    // --- Set last modified date in footer: ---
     const lastModifiedSpan = document.getElementById('lastmodified');
     if (lastModifiedSpan) {
         lastModifiedSpan.textContent = document.lastModified;
     }
+
+    // --- For my Initial Calls: ---
+    loadSpotlightBusinesses();
 });
