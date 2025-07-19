@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Business Spotlights ---
     const spotlightGrid = document.getElementById('spotlight-businesses');
-    const membersJsonUrl = 'JSON/members.json'; // <-- Path to JSON members xD
+    const membersJsonUrl = 'https://thneri95.github.io/wdd231/chamber/Json/members.json';
 
     async function loadSpotlightBusinesses() {
         if (!spotlightGrid) return;
