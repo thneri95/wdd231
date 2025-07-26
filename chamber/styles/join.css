@@ -6,12 +6,6 @@
     padding: 0 1rem;
 }
 
-.join h2 {
-    color: white;
-    background: none;
-}
-
-/* Membership Benefits Section */
 .membership-benefits {
     margin-bottom: 3rem;
     text-align: center;
@@ -45,7 +39,7 @@
 .benefit-item h4 {
     color: var(--primary-color);
     font-size: 1.3rem;
-    magin-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
 }
 
 .benefit-item p {
@@ -53,7 +47,6 @@
     color: var(--secondary-color);
 }
 
-/* Membership Levels Section: */
 .membership-levels {
     margin-bottom: 3rem;
     text-align: center;
@@ -89,21 +82,16 @@
 }
 
 .level-card.non-profit {
-    border-top: 5px solid #28a745;
+    border-top: 5px solid var(--success-color);
 }
 
-/* Green for non-profit */
 .level-card.silver {
-    border-top: 5px solid #007bff;
+    border-top: 5px solid var(--primary-color);
 }
 
-/* Blue for silver */
 .level-card.gold {
     border-top: 5px solid #ffc107;
 }
-
-/* Gold for gold */
-
 
 .level-card h4 {
     color: var(--primary-color);
@@ -124,23 +112,20 @@
     text-align: left;
     margin-bottom: 1.5rem;
     flex-grow: 1;
-    /* Pushes description to bottom */
 }
 
 .level-card ul li {
     margin-bottom: 0.5rem;
-    color: var(--secondary-color);
+    color: var(--text-color);
     position: relative;
     padding-left: 1.5rem;
 }
 
 .level-card ul li::before {
     content: '✅';
-    /* Checkmark icon */
     position: absolute;
     left: 0;
-    color: #28a745;
-    /* Green checkmark */
+    color: var(--success-color);
 }
 
 .level-card .level-description {
@@ -150,7 +135,6 @@
     margin-top: 1rem;
 }
 
-/* Application Form Section */
 .application-form {
     background-color: var(--light-background);
     padding: 2rem;
@@ -198,30 +182,7 @@
 .application-form input[type="tel"],
 .application-form select,
 .application-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    font-size: 1rem;
-    background-color: var(--background-color);
-    /* Matches body background */
-    color: var(--text-color);
     margin-top: 0.3rem;
-    /* Space between label and input */
-}
-
-.application-form input[type="text"]:focus,
-.application-form input[type="email"]:focus,
-.application-form input[type="tel"]:focus,
-.application-form select:focus,
-.application-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
-}
-
-.application-form .hidden-field {
-    display: none;
 }
 
 .submit-button {
@@ -235,7 +196,6 @@
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
     align-self: center;
-    /* Center the button in the form */
     margin-top: 1rem;
 }
 
@@ -249,6 +209,5 @@
     .benefits-grid,
     .levels-grid {
         grid-template-columns: 1fr;
-        /* Stack on small screens */
     }
 }

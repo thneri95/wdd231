@@ -391,12 +391,27 @@ footer {
 
 /* --- Hamburger Menu Animation Styles --- */
 @media (max-width: 768px) {
-    .header-content {
+    .header-content,
+    .hero-directory h1,
+    .hero-directory h2,
+    .hero-discover h1,
+    .hero-discover h2,
+    .hero-join h1,
+    .hero-join h2,
+    .hero-home h1,
+    .hero-home h2
+
+    /* Adicionado h2 aqui também */
+        {
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
         padding-right: 5rem;
+        font-size: 2rem;
+
     }
+
+
 
     .site-logo {
         width: 100%;
@@ -501,7 +516,6 @@ footer {
         position: static;
         top: auto;
         right: auto;
-        /* Ensure it resets to 'auto' for flexbox behavior */
         z-index: auto;
         margin-left: 1rem;
     }
