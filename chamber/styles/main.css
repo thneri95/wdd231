@@ -233,7 +233,6 @@ main {
     padding: 0 1rem;
 }
 
-
 .hero-directory,
 .hero-discover,
 .hero-join,
@@ -247,21 +246,16 @@ main {
 }
 
 .hero-directory h1,
+.hero-directory h2,
 .hero-discover h1,
+.hero-discover h2,
 .hero-join h1,
+.hero-join h2,
 .hero-home h1,
-.hero-text h1 {
+.hero-home h2 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     color: #fff;
-}
-
-.hero-directory p,
-.hero-discover p,
-.hero-join p,
-.hero-home p {
-    font-size: 1.1rem;
-    opacity: 0.9;
 }
 
 .card {

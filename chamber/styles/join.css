@@ -6,6 +6,11 @@
     padding: 0 1rem;
 }
 
+.join h2 {
+    color: white;
+    background: none;
+}
+
 /* Membership Benefits Section */
 .membership-benefits {
     margin-bottom: 3rem;
@@ -40,7 +45,7 @@
 .benefit-item h4 {
     color: var(--primary-color);
     font-size: 1.3rem;
-    margin-bottom: 0.8rem;
+    magin-bottom: 0.8rem;
 }
 
 .benefit-item p {
@@ -48,7 +53,7 @@
     color: var(--secondary-color);
 }
 
-/* Membership Levels Section */
+/* Membership Levels Section: */
 .membership-levels {
     margin-bottom: 3rem;
     text-align: center;
@@ -65,7 +70,6 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     align-items: stretch;
-    /* Make cards same height */
 }
 
 .level-card {
@@ -240,7 +244,6 @@
     transform: translateY(-2px);
 }
 
-/* Responsive adjustments for Join Page */
 @media (max-width: 768px) {
 
     .benefits-grid,
