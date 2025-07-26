@@ -391,6 +391,7 @@ footer {
 
 /* --- Hamburger Menu Animation Styles --- */
 @media (max-width: 768px) {
+
     .header-content,
     .hero-directory h1,
     .hero-directory h2,
@@ -399,10 +400,7 @@ footer {
     .hero-join h1,
     .hero-join h2,
     .hero-home h1,
-    .hero-home h2
-
-    /* Adicionado h2 aqui também */
-        {
+    .hero-home h2 {
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
