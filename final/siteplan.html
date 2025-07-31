@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Plan | Spanish Learning Hub</title>
+    <meta name="description" content="The official site plan for the WDD 231 Spanish Learning Hub final project.">
+    <meta name="author" content="Tiago Borges">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="scripts/siteplan.css">
+</head>
+
+<body>
+    <header>
+        <h1>Site Plan: Spanish Learning Hub</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Site Name</h2>
+            <p>Spanish Learning Hub</p>
+            <h3>Reason</h3>
+            <p>
+                I chose this subject because I was a Spanish teacher at Wizard School ( a company of Elder Carlos
+                Martins in Brazil) and I am passionate about creating useful tools that make language learning more
+                accessible. This project is a perfect opportunity to combine my teaching background with the web
+                development skills we are learning.
+            </p>
+        </section>
+
+        <section>
+            <h2>Site Purpose</h2>
+            <p>
+                The Spanish Learning Hub will provide essential tools and resources for beginner to intermediate Spanish
+                learners. The site will offer a daily vocabulary word, an interactive verb conjugator tool, and a
+                resource page with a newsletter signup form. The overall goal is to provide a practical, high-quality
+                resource that makes learning Spanish more accessible and engaging.
+            </p>
+        </section>
+
+        <section>
+            <h2>Scenarios</h2>
+            <ul>
+                <li>"I'm learning Spanish verbs but always forget the conjugations. Where can I quickly look up how to
+                    conjugate a verb like 'hablar'?"</li>
+                <li>"How can I easily learn one new Spanish word every day?"</li>
+                <li>"I'm looking for some general tips to improve my Spanish learning. Is there a resources section?"
+                </li>
+            </ul>
+        </section>
+
+        <section class="color-schema">
+            <h2>Color Schema</h2>
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #223A59;"></div>
+                    <p><strong>Delft Blue</strong><br>#223A59</p>
+                    <p class="usage">Used for headings and footer.</p>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #F4B524;"></div>
+                    <p><strong>Saffron Yellow</strong><br>#F4B524</p>
+                    <p class="usage">Used for links and buttons.</p>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #5D6165;"></div>
+                    <p><strong>Gunmetal Gray</strong><br>#5D6165</p>
+                    <p class="usage">Used for body text.</p>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #FFFFFF; border: 1px solid #ccc;"></div>
+                    <p><strong>White</strong><br>#FFFFFF</p>
+                    <p class="usage">Used for page background.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Typography</h2>
+            <h3>Heading Font: Merriweather</h3>
+            <p style="font-family: 'Merriweather', serif; font-size: 1.5em;">This is an example heading.</p>
+
+            <h3>Body Font: Lato</h3>
+            <p style="font-family: 'Lato', sans-serif;">
+                This is a sample paragraph. This font is clean, friendly, and exceptionally easy to read, making it
+                ideal for all body text and descriptions.
+            </p>
+        </section>
+
+        <section>
+            <h2>Wireframes</h2>
+            <p>These wireframes outline the basic structure of the home page for both mobile and desktop views.</p>
+            <h3>Mobile View</h3>
+            <img src="https://placehold.co/320x550/e8e8e8/223a59?text=Mobile+Wireframe"
+                alt="Mobile view wireframe sketch">
+
+            <h3>Desktop View</h3>
+            <img src="https://placehold.co/800x500/e8e8e8/223a59?text=Desktop+Wireframe"
+                alt="Desktop view wireframe sketch">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Tiago Borges | WDD 231 Site Plan</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #FFFFFF;
+    color: #5D6165;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+header,
+footer {
+    background-color: #223A59;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+footer p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', serif;
+    color: #223A59;
+}
+
+a {
+    color: #F4B524;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.color-schema .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    text-align: center;
+}
+
+.color-schema .color-item p {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9em;
+}
+
+.color-schema .color-swatch {
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    margin-top: 1rem;
+    display: block;
+}
