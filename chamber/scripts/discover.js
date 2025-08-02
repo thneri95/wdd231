@@ -1,7 +1,8 @@
+// scripts/discover.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const imageMontageContainer = document.getElementById('image-montage-container');
-    const jsonUrl = 'https://thneri95.github.io/wdd231/chamber/Json/discover.json'; // Caminho para o  JSON de imagens
+    const jsonUrl = 'https://thneri95.github.io/wdd231/chamber/JSON/discover-images.json';
 
     async function loadImages() {
         try {
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error loading image montage:', error);
             if (imageMontageContainer) {
-                imageMontageContainer.innerHTML = '<p>Failed to load images. Please try again later.</p>';
+                imageMontageContainer.innerHTML = '<p>Failed to load images. Please try again later. Check console for details.</p>';
             }
         }
     }
@@ -39,6 +40,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Chamar a função para carregar as imagens quando a página carregar
     loadImages();
 });
