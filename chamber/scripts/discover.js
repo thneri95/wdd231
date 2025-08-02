@@ -1,11 +1,9 @@
 
-
-
-// scripts/discover.js
+// discover.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const imageMontageContainer = document.getElementById('image-montage-container');
-    const discoverImagesJsonUrl = 'https://thneri95.github.io/wdd231/chamber/Json/discover-images.json'; // Path to image JSON
+    const discoverImagesJsonUrl = 'https://thneri95.github.io/wdd231/chamber/Json/discover-images.json';
 
 
 
@@ -49,6 +47,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // Initial calls when DOM is loaded
     loadImagesMontage(); // Load existing image montage
 });
