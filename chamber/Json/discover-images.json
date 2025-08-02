@@ -4,55 +4,55 @@
         "image": "images/discover/ingapark.webp",
         "address": "Av. São Paulo, 1800 - Zona 01, Maringá - PR, 87013-040",
         "description": "Maringá's most famous urban park, featuring a beautiful lake, Japanese garden, and a small zoo. Perfect for leisure and outdoor activities.",
-        "learn_more_url": "https://example.com/parque-inga"
+        "learn_more_url": "http://www3.maringa.pr.gov.br/turismo/?cod=atrativos-turisticos/4"
     },
     {
         "name": "Catedral Basílica",
         "image": "images/discover/catedral.webp",
         "address": "Praça da Catedral, 1 - Zona 01, Maringá - PR, 87013-000",
         "description": "An iconic conical-shaped cathedral, a symbol of Maringá. Its unique architecture attracts visitors from all over the world.",
-        "learn_more_url": "https://example.com/catedral"
+        "learn_more_url": "https://catedraldemaringa.com.br/"
     },
     {
         "name": "Mercadão de Maringá",
         "image": "images/discover/market.webp",
         "address": "Av. Prudente de Morais, 601 - Zona 07, Maringá - PR, 87020-010",
         "description": "A vibrant public market offering fresh produce, local delicacies, artisanal products, and a variety of food stalls. A true gastronomic experience.",
-        "learn_more_url": "https://example.com/mercadao"
+        "learn_more_url": "https://mercadaomaringa.com.br/"
     },
     {
         "name": "Horto Florestal",
         "image": "images/discover/horto.webp",
         "address": "Av. Colombo, 5790 - Zona 07, Maringá - PR, 87020-010",
         "description": "A large botanical garden and forest reserve, ideal for walking, birdwatching, and connecting with nature within the city.",
-        "learn_more_url": "https://example.com/horto-florestal"
+        "learn_more_url": "http://www3.maringa.pr.gov.br/meioambiente/?cod=areas-verdes/18"
     },
     {
         "name": "Universidade Estadual (UEM)",
         "image": "images/discover/uem.webp",
         "address": "Av. Colombo, 5790 - Zona 07, Maringá - PR, 87020-900",
         "description": "One of the most important universities in Brazil, known for its beautiful campus and academic excellence. A hub of knowledge and culture.",
-        "learn_more_url": "https://example.com/uem"
+        "learn_more_url": "https://www.uem.br/"
     },
     {
         "name": "Teatro Calil Haddad",
         "image": "images/discover/art.webp",
         "address": "Av. Dr. Luiz Teixeira Mendes, 2500 - Zona 05, Maringá - PR, 87015-910",
         "description": "Maringá's main cultural venue, hosting plays, concerts, dance performances, and various artistic events throughout the year.",
-        "learn_more_url": "https://example.com/teatro-calil"
+        "learn_more_url": "https://maringacultura.maringa.pr.gov.br/espaco/1/"
     },
     {
         "name": "Parque do Japão",
         "image": "images/discover/japanpark.webp",
         "address": "R. Jorge Benedito Seraval, 1690 - Parque Industrial, Maringá - PR, 87065-000",
         "description": "A beautiful Japanese-themed park, celebrating the Japanese immigration to Brazil and Maringá. Features traditional gardens, a lake, and a torii gate.",
-        "learn_more_url": "https://example.com/parque-japao"
+        "learn_more_url": "http://www3.maringa.pr.gov.br/turismo/?cod=atrativos-turisticos/3"
     },
     {
         "name": "Parque de Exposições",
         "image": "images/discover/exposition.webp",
         "address": "Av. Colombo, 2186 - Zona 07, Maringá - PR, 87020-015",
         "description": "Maringá's main exhibition park, hosting major events like Expoingá, agricultural fairs, and concerts. A central point for regional business and entertainment.",
-        "learn_more_url": "https://example.com/parque-exposicoes"
+        "learn_more_url": "http://www3.maringa.pr.gov.br/turismo/?cod=curiosidades/33"
     }
 ]
