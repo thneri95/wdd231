@@ -187,7 +187,7 @@ body.dark-mode .main-nav .nav-links a {
 
 
 .menu-toggle {
-    display: flex;
+    display: none;
     background: none;
     border: none;
     font-size: 2rem;
