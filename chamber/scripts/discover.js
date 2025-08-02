@@ -1,4 +1,3 @@
-// scripts/discover.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const imageMontageContainer = document.getElementById('image-montage-container');
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayImages(images) {
         if (!imageMontageContainer) return;
-        imageMontageContainer.innerHTML = ''; // Limpar conteúdo existente
+        imageMontageContainer.innerHTML = '';
 
         if (images.length === 0) {
             imageMontageContainer.innerHTML = '<p>No images available at this time.</p>';
