@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const imageMontageContainer = document.getElementById('image-montage-container');
-    const jsonUrl = 'https://thneri95.github.io/wdd231/chamber/JSON/discover-images.json';
+    const jsonUrl = 'https://thneri95.github.io/wdd231/chamber/Json/discover-images.json';
 
     async function loadImages() {
         try {
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         images.forEach(imageData => {
             const figure = document.createElement('figure');
             figure.innerHTML = `
-                <img src="${imageData.src}" alt="${imageData.alt}" loading="lazy">
-                <figcaption>${imageData.caption}</figcaption>
+                <img src="${imageData.image}" alt="${imageData.name}" loading="lazy">
+                <figcaption>${imageData.description}</figcaption>
             `;
             imageMontageContainer.appendChild(figure);
         });
