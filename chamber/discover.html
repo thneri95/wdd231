@@ -38,15 +38,14 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/discover.css">
     <link rel="icon" href="images/favicon.ico">
-
 </head>
 
 <body>
     <header>
         <div class="header-content">
             <a href="index.html" class="site-logo">
-                <img src="images/marketplace.svg" alt="Chamber of Commerce Logo">
-                <h1>Maringá Chamber of Commerce</h1>
+                <img src="images/marketplace.svg" alt="Maringá Chamber of Commerce Logo">
+                <span class="site-name">Maringá Chamber of Commerce</span>
             </a>
             <nav class="main-nav">
                 <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
@@ -61,7 +60,7 @@
         </div>
     </header>
 
-    <main class="discover-main">
+    <main class="discover-main" role="main">
         <section class="hero-discover">
             <h1>Discover Maringá, Paraná</h1>
             <p>Explore the rich history, vibrant culture, and promising future of our community</p>
@@ -111,20 +110,20 @@
                 <a href="#" class="view-all-link">See All Community Calendar</a>
             </div>
         </section>
+
         <section class="image-montage">
             <h2>Experience Maringá Through Images</h2>
             <div class="montage-grid" id="image-montage-container">
             </div>
         </section>
-
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-contact">
                 <h3>Chamber of Commerce</h3>
-                <p> 948 International Avenue</p>
-                <p> Maringá, Paraná, Brazil </p>
+                <p>948 International Avenue</p>
+                <p>Maringá, Paraná, Brazil</p>
                 <p>Email: <a href="mailto:info@chamber.org">info@chamber.org</a></p>
                 <p>Phone: <a href="tel:+5544455552300">(44) 4555-2300</a></p>
             </div>
@@ -135,13 +134,12 @@
                         src="images/linkedin.svg" alt="LinkedIn"></a>
             </div>
             <div class="footer-project-info">
-                <p> WDD231 Class Project</p>
-                <p>© <span id="currentyear"> </span> Maringá Chamber of Commerce</p>
+                <p>WDD231 Class Project</p>
+                <p>© <span id="currentyear"></span> Maringá Chamber of Commerce</p>
                 <p>Tiago Neri | BYU - Idaho</p>
                 <p>Last Modification: <span id="lastmodified"></span></p>
             </div>
         </div>
-
     </footer>
 
     <script src="scripts/main.js" defer></script>
