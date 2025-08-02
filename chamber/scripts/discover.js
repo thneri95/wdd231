@@ -1,13 +1,10 @@
-
 // discover.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const imageMontageContainer = document.getElementById('image-montage-container');
     const discoverImagesJsonUrl = 'https://thneri95.github.io/wdd231/chamber/Json/discover-images.json';
 
-
-
-    // Function to load and display image montage
+    // Load and display image montage
     async function loadImagesMontage() {
         try {
             const response = await fetch(discoverImagesJsonUrl);
@@ -44,8 +41,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function displayVisitMessage() {
+        const visitMessageElement = document.getElementById('visit-message');
+        if (!visitMessageElement) return;
 
+        const lastVisit = localStorage.getItem('lastVisit');
+        const now = Date.now();
+        let message = '';
 
+        if (!lastVisit) {
+            message = "Welcome! Let us know if you have any questions.";
+        } else {
+            const lastTime = parseInt(lastVisit, 10);
+            const msInADay = 1000 * 60 * 60 * 24;
+            const daysPassed = Math.floor((now - lastTime) / msInADay);
 
-    loadImagesMontage(); // Load existing image montage
+            if (daysPassed < 1) {
+                message = "Back so soon! Awesome!";
+            } else if (daysPassed === 1) {
+                message = "You last visited 1 day ago.";
+            } else {
+                message = `You last visited ${daysPassed} days ago.`;
+            }
+        }
+
+        visitMessageElement.textContent = message;
+        localStorage.setItem('lastVisit', now.toString());
+    }
+
+    loadImagesMontage();         // Load the image gallery
+    displayVisitMessage();       // Show the visit message
 });

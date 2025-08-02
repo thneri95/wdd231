@@ -143,12 +143,24 @@
     /* Slightly different background for caption */
 }
 
+.visit-message {
+    background-color: #f0f8ff;
+    border-left: 5px solid #0077cc;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+
 /* Responsive adjustments for Discover Page */
 @media (max-width: 768px) {
     .discover-content-grid {
         grid-template-columns: 1fr;
         /* Stack on small screens */
     }
+
 
     .montage-grid {
         grid-template-columns: 1fr;
