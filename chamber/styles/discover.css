@@ -1,12 +1,9 @@
-/* styles/discover.css */
-
 .discover-main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* Discover Content Grid */
 .discover-content-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -17,7 +14,6 @@
 .card.history-section,
 .card.demographics-section,
 .card.events-section {
-    /* Inherits basic card styling from main.css */
     background-color: var(--light-background);
     padding: 1.8rem;
     border-radius: 8px;
@@ -48,7 +44,6 @@
 
 .card ul {
     list-style: none;
-    /* Remove default bullet points */
     padding-left: 0;
     margin-bottom: 1rem;
 }
@@ -61,13 +56,11 @@
 
 .card ul li::before {
     content: '•';
-    /* Custom bullet point */
     color: var(--primary-color);
     position: absolute;
     left: 0;
 }
 
-/* Specific Event Styling within Discover */
 .event-item {
     border-bottom: 1px dashed var(--border-color);
     padding-bottom: 1rem;
@@ -92,7 +85,7 @@
 }
 
 
-/* Image Montage Section */
+/* SEÇÃO DE ITENS DE INTERESSE: */
 .image-montage {
     text-align: center;
     margin-bottom: 3rem;
@@ -104,66 +97,192 @@
     margin-bottom: 1.5rem;
 }
 
+/* Grid para os cartões de itens de interesse */
 .montage-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
+    gap: 20px;
+    padding: 1rem;
+    background-color: var(--light-background);
+    /* Fundo do grid */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    align-items: stretch;
 }
 
-.montage-grid figure {
-    margin: 0;
-    /* Reset default figure margin */
-    background-color: var(--light-background);
+/* Estilo para cada cartão de item de interesse */
+.item-card {
+    background-color: var(--background-color);
+    /* Fundo do cartão, sensível ao tema */
+    border: 1px solid var(--border-color);
     border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     box-shadow: 0 2px 5px var(--shadow-color);
-    overflow: hidden;
-    /* For image border-radius */
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
 }
 
-.montage-grid figure:hover {
+.item-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px var(--shadow-color);
 }
 
-.montage-grid img {
-    width: 100%;
-    height: 200px;
-    /* Fixed height for consistency */
-    object-fit: cover;
-    /* Cover the area, crop if necessary */
-    border-bottom: 1px solid var(--border-color);
+.item-card h2 {
+    /* Título do cartão (h2 conforme requisito) */
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-.montage-grid figcaption {
-    padding: 0.8rem;
-    font-size: 0.9rem;
+.item-card figure {
+    margin: 0;
+    /* Reseta a margem padrão de figure */
+    margin-bottom: 1rem;
+}
+
+.item-card img {
+    width: 100%;
+    /* Imagem preenche seu contêiner */
+    height: 200px;
+    /* Altura fixa conforme requisito */
+    object-fit: cover;
+    /* Garante que a imagem cubra a área, pode cortar */
+    border-radius: 4px;
+    /* Cantos levemente arredondados para imagens */
+    border: 1px solid var(--border-color);
+}
+
+.item-card address {
+    font-style: normal;
+    /* Remove o itálico padrão */
+    font-size: 0.95rem;
     color: var(--secondary-color);
-    background-color: var(--background-color);
-    /* Slightly different background for caption */
+    margin-bottom: 0.8rem;
+}
+
+.item-card p.card-description {
+    /* Targeting the specific description paragraph */
+    font-size: 1rem;
+    color: var(--text-color);
+    flex-grow: 1;
+    /* Permite que a descrição ocupe o espaço disponível */
+    margin-bottom: 1rem;
+    /* Espaço antes do botão */
+}
+
+.item-card .learn-more-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: auto;
+    /* Empurra o botão para a parte inferior do cartão xD*/
+}
+
+.item-card .learn-more-button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    text-decoration: none;
 }
 
 .visit-message {
-    background-color: #f0f8ff;
-    border-left: 5px solid #0077cc;
+    background-color: var(--light-background);
+    border-left: 5px solid var(--primary-color);
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 1rem auto;
     font-size: 1rem;
     font-weight: bold;
-    color: #333;
+    color: var(--text-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    max-width: 600px;
+    text-align: center;
 }
 
 
-/* Responsive adjustments for Discover Page */
+
+@media (min-width: 320px) and (max-width: 640px) {
+    .montage-grid {
+        /* Aplicado ao container que agora exibe os itens */
+        grid-template-columns: 1fr;
+        /* Coluna única */
+        grid-template-areas:
+            "item1"
+            "item2"
+            "item3"
+            "item4"
+            "item5"
+            "item6"
+            "item7"
+            "item8";
+    }
+
+    /* Atribuir itens a áreas nomeadas (era opcional, mas bom para clareza se quisermos uma  ordem específica) */
+    .item-card:nth-child(1) {
+        grid-area: item1;
+    }
+
+    .item-card:nth-child(2) {
+        grid-area: item2;
+    }
+
+    .item-card:nth-child(3) {
+        grid-area: item3;
+    }
+
+    .item-card:nth-child(4) {
+        grid-area: item4;
+    }
+
+    .item-card:nth-child(5) {
+        grid-area: item5;
+    }
+
+    .item-card:nth-child(6) {
+        grid-area: item6;
+    }
+
+    .item-card:nth-child(7) {
+        grid-area: item7;
+    }
+
+    .item-card:nth-child(8) {
+        grid-area: item8;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    .montage-grid {
+        grid-template-columns: 1fr 1fr;
+        /* Duas colunas */
+        grid-template-areas:
+            "item1 item2"
+            "item3 item4"
+            "item5 item6"
+            "item7 item8";
+    }
+}
+
+@media (min-width: 1025px) {
+    .montage-grid {
+        grid-template-columns: repeat(4, 1fr);
+        /* Quatro colunas */
+        grid-template-areas:
+            "item1 item2 item3 item4"
+            "item5 item6 item7 item8";
+    }
+}
+
 @media (max-width: 768px) {
     .discover-content-grid {
         grid-template-columns: 1fr;
-        /* Stack on small screens */
     }
 
 
-    .montage-grid {
-        grid-template-columns: 1fr;
-        /* Stack on small screens */
-    }
 }

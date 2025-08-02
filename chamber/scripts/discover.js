@@ -1,43 +1,48 @@
-// discover.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    const imageMontageContainer = document.getElementById('image-montage-container');
-    const discoverImagesJsonUrl = 'https://thneri95.github.io/wdd231/chamber/Json/discover-images.json';
+    const itemsOfInterestContainer = document.getElementById('image-montage-container');
+    const jsonUrl = 'https://thneri95.github.io/wdd231/chamber/Json/discover-images.json';
 
-    // Load and display image montage
-    async function loadImagesMontage() {
+    async function loadItemsOfInterest() {
         try {
-            const response = await fetch(discoverImagesJsonUrl);
+            const response = await fetch(jsonUrl);
             if (!response.ok) {
                 const errorText = await response.text();
                 throw new Error(`HTTP error! status: ${response.status} - ${response.statusText || 'Unknown error'} \nResponse: ${errorText}`);
             }
-            const imagesData = await response.json();
-            displayImages(imagesData);
+            const itemsData = await response.json();
+            displayItems(itemsData);
         } catch (error) {
-            console.error('Error loading image montage:', error);
-            if (imageMontageContainer) {
-                imageMontageContainer.innerHTML = '<p>Failed to load images. Please try again later. Check console for details.</p>';
+            console.error('Error loading items of interest:', error);
+            if (itemsOfInterestContainer) {
+                itemsOfInterestContainer.innerHTML = '<p>Failed to load items of interest. Please try again later. Check console for details.</p>';
             }
         }
     }
 
-    function displayImages(images) {
-        if (!imageMontageContainer) return;
-        imageMontageContainer.innerHTML = '';
+    function displayItems(items) {
+        if (!itemsOfInterestContainer) return;
+        itemsOfInterestContainer.innerHTML = '';
 
-        if (images.length === 0) {
-            imageMontageContainer.innerHTML = '<p>No images available at this time.</p>';
+        if (items.length === 0) {
+            itemsOfInterestContainer.innerHTML = '<p>No items of interest available at this time.</p>';
             return;
         }
 
-        images.forEach(imageData => {
-            const figure = document.createElement('figure');
-            figure.innerHTML = `
-                <img src="${imageData.image}" alt="${imageData.name}" loading="lazy">
-                <figcaption>${imageData.description}</figcaption>
+        items.forEach(item => {
+            const card = document.createElement('div');
+            card.classList.add('item-card');
+
+            card.innerHTML = `
+                <h2>${item.name}</h2>
+                <figure>
+                    <img src="${item.image}" alt="${item.name}" loading="lazy">
+                </figure>
+                <address>${item.address}</address>
+                <p class="card-description">${item.description}</p>
+                <a href="${item.learn_more_url}" class="learn-more-button" target="_blank" rel="noopener noreferrer">Learn More</a>
             `;
-            imageMontageContainer.appendChild(figure);
+            itemsOfInterestContainer.appendChild(card);
         });
     }
 
@@ -69,6 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('lastVisit', now.toString());
     }
 
-    loadImagesMontage();         // Load the image gallery
-    displayVisitMessage();       // Show the visit message
+    loadItemsOfInterest();
+    displayVisitMessage();
 });
