@@ -1,31 +1,31 @@
 [
     {
-        "src": "images/discover/catedral.webp",
+        "image": "images/discover/catedral.webp",
         "alt": "Maringá Cathedral",
         "caption": "The iconic Maringá Cathedral, a city landmark"
     },
     {
-        "src": "images/discover/horto.webp",
+        "image": "images/discover/horto.webp",
         "alt": "Horto Florestal",
         "caption": "The lush greenery of Horto Florestal"
     },
     {
-        "src": "images/discover/uem.webp",
+        "image": "images/discover/uem.webp",
         "alt": "University Campus",
         "caption": "Modern campus of the State University of Maringá - UEM"
     },
     {
-        "src": "images/discover/ingapark.webp",
+        "image": "images/discover/ingapark.webp",
         "alt": "Maringá City Park",
         "caption": "Enjoy the spacious City Park"
     },
     {
-        "src": "images/discover/market.webp",
+        "image": "images/discover/market.webp",
         "alt": "Local Market",
         "caption": "Vibrant local market with fresh produce"
     },
     {
-        "src": "images/discover/art.webp",
+        "image": "images/discover/art.webp",
         "alt": "Maringá Street Art",
         "caption": "Colorful street art reflecting local culture"
     }

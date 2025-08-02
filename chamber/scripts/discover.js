@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const imageMontageContainer = document.getElementById('image-montage-container');
-    const jsonUrl = 'JSON/images/discover'; // Caminho para o seu JSON de imagens
+    const jsonUrl = 'https://thneri95.github.io/wdd231/chamber/discover.json'; // Caminho para o seu JSON de imagens
 
     async function loadImages() {
         try {
