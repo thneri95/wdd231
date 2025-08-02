@@ -1,4 +1,3 @@
-// scripts/discover.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const imageMontageContainer = document.getElementById('image-montage-container');

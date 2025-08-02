@@ -1,32 +1,58 @@
 [
     {
-        "name": "Maringá Cathedral",
-        "description": "The iconic Maringá Cathedral, a city landmark",
-        "image": "images/discover/catedral.webp"
+        "name": "Parque do Ingá",
+        "image": "images/discover-items/parque-inga.webp",
+        "address": "Av. São Paulo, 1800 - Zona 01, Maringá - PR, 87013-040",
+        "description": "Maringá's most famous urban park, featuring a beautiful lake, Japanese garden, and a small zoo. Perfect for leisure and outdoor activities.",
+        "learn_more_url": "https://example.com/parque-inga"
     },
     {
-        "name": "Horto Florestal",
-        "description": "The lush greenery of Horto Florestal",
-        "image": "images/discover/horto.webp"
+        "name": "Catedral Basílica Menor Nossa Senhora da Glória",
+        "image": "images/discover-items/catedral.webp",
+        "address": "Praça da Catedral, 1 - Zona 01, Maringá - PR, 87013-000",
+        "description": "An iconic conical-shaped cathedral, a symbol of Maringá. Its unique architecture attracts visitors from all over the world.",
+        "learn_more_url": "https://example.com/catedral"
     },
     {
-        "name": "University Campus",
-        "description": "Modern campus of the State University of Maringá - UEM",
-        "image": "images/discover/uem.webp"
+        "name": "Mercadão de Maringá",
+        "image": "images/discover-items/mercadao.webp",
+        "address": "Av. Prudente de Morais, 601 - Zona 07, Maringá - PR, 87020-010",
+        "description": "A vibrant public market offering fresh produce, local delicacies, artisanal products, and a variety of food stalls. A true gastronomic experience.",
+        "learn_more_url": "https://example.com/mercadao"
     },
     {
-        "name": "Maringá City Park",
-        "description": "Enjoy the spacious City Park",
-        "image": "images/discover/ingapark.webp"
+        "name": "Horto Florestal de Maringá",
+        "image": "images/discover-items/horto-florestal.webp",
+        "address": "Av. Colombo, 5790 - Zona 07, Maringá - PR, 87020-010",
+        "description": "A large botanical garden and forest reserve, ideal for walking, birdwatching, and connecting with nature within the city.",
+        "learn_more_url": "https://example.com/horto-florestal"
     },
     {
-        "name": "Local Market",
-        "description": "Vibrant local market with fresh produce",
-        "image": "images/discover/market.webp"
+        "name": "Universidade Estadual de Maringá (UEM)",
+        "image": "images/discover-items/uem.webp",
+        "address": "Av. Colombo, 5790 - Zona 07, Maringá - PR, 87020-900",
+        "description": "One of the most important universities in Paraná, known for its beautiful campus and academic excellence. A hub of knowledge and culture.",
+        "learn_more_url": "https://example.com/uem"
     },
     {
-        "name": "Maringá Street Art",
-        "description": "Colorful street art reflecting local culture",
-        "image": "images/discover/art.webp"
+        "name": "Teatro Calil Haddad",
+        "image": "images/discover-items/teatro-calil.webp",
+        "address": "Av. Dr. Luiz Teixeira Mendes, 2500 - Zona 05, Maringá - PR, 87015-910",
+        "description": "Maringá's main cultural venue, hosting plays, concerts, dance performances, and various artistic events throughout the year.",
+        "learn_more_url": "https://example.com/teatro-calil"
+    },
+    {
+        "name": "Bosque 2 (Bosque das Grevíleas)",
+        "image": "images/discover-items/bosque2.webp",
+        "address": "Av. Cerro Azul, 200 - Zona 02, Maringá - PR, 87010-000",
+        "description": "A popular urban forest offering walking trails, exercise equipment, and a peaceful environment for recreation and relaxation.",
+        "learn_more_url": "https://example.com/bosque2"
+    },
+    {
+        "name": "Museu da Bacia do Paraná",
+        "image": "images/discover-items/museu-parana.webp",
+        "address": "Av. Colombo, 5790 - Bloco G-90 - Zona 07, Maringá - PR, 87020-900",
+        "description": "Located within UEM, this museum showcases the natural and cultural history of the Paraná Basin, with collections on archaeology, ethnology, and natural sciences.",
+        "learn_more_url": "https://example.com/museu-parana"
     }
 ]
