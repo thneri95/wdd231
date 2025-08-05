@@ -1,7 +1,6 @@
 // This module handles all logic for the home page.
 
 // --- Data Fetching ---
-// This function fetches your 'data/vocabulary.json' file.
 async function fetchData(url) {
     try {
         const response = await fetch(url);
