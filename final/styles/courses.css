@@ -1,19 +1,18 @@
 /* --- Page Header --- */
-.courses-header {
+.contact-header {
     text-align: center;
     margin-bottom: var(--spacing-xl);
 }
 
-.courses-header h1 {
+.contact-header h1 {
     font-size: var(--fs-h1);
     margin-bottom: var(--spacing-xs);
 }
 
-.courses-header p {
+.contact-header p {
     font-size: var(--fs-lg);
     color: var(--text-dark);
     max-width: 65ch;
-    /* Improves readability */
     margin-inline: auto;
 }
 

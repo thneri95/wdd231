@@ -1,120 +1,169 @@
-// This script handles fetching and displaying course data dynamically on the courses.html page.
+// This script handles fetching, displaying, and filtering course data on the courses.html page.
 
-const coursesApiUrl = 'https://thneri95.github.io/wdd231/final/Json/courses.json';
-let allCourses = []; // To store all fetched courses
+// URL for the JSON data file.
+const coursesJsonUrl = 'https://thneri95.github.io/wdd231/final/Json/courses.json';
 
-/**
- * Fetches course data from the API and stores it globally.
- */
-async function fetchCourses() {
-    try {
-        const response = await fetch(coursesApiUrl);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        allCourses = data;
-        renderCourses(allCourses);
-    } catch (error) {
-        console.error("Error fetching courses:", error);
-        document.getElementById('course-container').innerHTML = '<p>Sorry, we could not load the courses at this time.</p>';
-    }
-}
+// Module-level variable to store all fetched courses, making it accessible to all functions.
+let allCourses = [];
 
 /**
- * Renders course cards to the DOM.
- * @param {Array} courses - The array of courses to render.
+ * Formats a number as USD currency.
+ * @param {number} price - The price to format.
+ * @returns {string} - The formatted price string (e.g., "$99.00").
  */
-function renderCourses(courses) {
+const formatPrice = (price) => {
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    }).format(price);
+};
+
+/**
+ * Renders an array of course objects into the DOM.
+ * @param {Array} coursesToRender - The array of courses to display.
+ */
+function renderCourses(coursesToRender) {
     const container = document.getElementById('course-container');
-    container.innerHTML = '';
+    if (!container) return; // Exit if the container element isn't on the page.
 
-    if (courses.length === 0) {
-        container.innerHTML = '<p>No courses found for the selected level.</p>';
+    container.innerHTML = ''; // Clear previous content.
+
+    if (!coursesToRender.length) {
+        container.innerHTML = '<p class="card">No courses found for the selected level. Please try another selection.</p>';
         return;
     }
 
-    courses.forEach(course => {
-        const card = document.createElement('div');
-        card.className = 'course-card';
+    coursesToRender.forEach(course => {
+        const card = document.createElement('article');
+        // Add both classes to inherit base styles and apply specific ones.
+        card.className = 'course-card card';
 
+        // This HTML structure now matches your improved courses.css file.
         card.innerHTML = `
-            <img src="images/courses/${course.id}.jpg" alt="${course.title}" loading="lazy">
-            <div class="card-content">
-                <h3>${course.title}</h3>
-                <p class="level">Level: ${course.level}</p>
-                <p>${course.description}</p>
-                <button class="details-btn">View Details</button>
+            <img src="images/courses/${course.id}.jpg" alt="${course.title}" class="course-image" loading="lazy" onerror="this.src='images/placeholder.jpg'; this.alt='Placeholder image for course';">
+            <div class="course-card-content">
+                <span class="course-level">${course.level}</span>
+                <h3 class="course-title">${course.title}</h3>
+                <p class="course-description">${course.description}</p>
+                <div class="course-details">
+                    <span>🕒 ${course.duration}</span>
+                </div>
+                <div class="course-footer">
+                    <span class="course-price">${formatPrice(course.price)}</span>
+                    <button class="course-button" data-course-id="${course.id}" aria-label="View details for ${course.title}">Learn More</button>
+                </div>
             </div>
         `;
 
-        card.querySelector('.details-btn').addEventListener('click', () => openModal(course));
+        // Add event listener to the "Learn More" button on this specific card.
+        card.querySelector('.course-button').addEventListener('click', () => openModal(course));
         container.appendChild(card);
     });
 }
 
 /**
- * Opens a modal showing the full course details.
+ * Opens and populates the course details modal.
  * @param {Object} course - The course object to display.
  */
 function openModal(course) {
     const modal = document.getElementById('modal');
     const modalBody = document.getElementById('modal-body');
+    if (!modal || !modalBody) return;
 
+    // Populate the modal with detailed course information.
     modalBody.innerHTML = `
         <h2 id="modal-title">${course.title}</h2>
         <p><strong>Level:</strong> ${course.level}</p>
         <p><strong>Duration:</strong> ${course.duration}</p>
-        <p><strong>Price:</strong> ${course.price}</p>
-        <h4>What you'll learn:</h4>
-        <ul>
-            ${course.syllabus.map(topic => `<li>${topic}</li>`).join('')}
-        </ul>
+        <p><strong>Price:</strong> ${formatPrice(course.price)}</p>
+        ${course.syllabus?.length ? `
+            <h4>What You'll Learn:</h4>
+            <ul>
+                ${course.syllabus.map(topic => `<li>${topic}</li>`).join('')}
+            </ul>
+        ` : ''}
     `;
 
+    // FIX: Use the .is-open class to trigger CSS animations, instead of inline styles.
+    modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
-    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent background scroll.
 }
 
 /**
- * Enables filtering courses by level.
+ * Closes the modal.
  */
-function handleFilter() {
+function closeModal() {
+    const modal = document.getElementById('modal');
+    if (!modal) return;
+
+    // FIX: Use the .is-open class to trigger CSS animations.
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore background scroll.
+}
+
+/**
+ * Sets up all event listeners for the page (filter and modal).
+ */
+function setupEventListeners() {
+    // --- Filter logic ---
     const filterSelect = document.getElementById('level-filter');
-    filterSelect.addEventListener('change', (event) => {
-        const selected = event.target.value.toLowerCase();
-        if (selected === 'all') {
-            renderCourses(allCourses);
-        } else {
-            const filtered = allCourses.filter(course => course.level.toLowerCase() === selected);
-            renderCourses(filtered);
-        }
-    });
-}
+    if (filterSelect) {
+        filterSelect.addEventListener('change', (event) => {
+            const selectedLevel = event.target.value;
+            const filteredCourses = selectedLevel === 'all'
+                ? allCourses
+                : allCourses.filter(course => course.level === selectedLevel);
+            renderCourses(filteredCourses);
+        });
+    }
 
-/**
- * Adds close functionality to the modal.
- */
-function handleModalClose() {
+    // --- Modal closing logic ---
     const modal = document.getElementById('modal');
     const closeButton = document.getElementById('modal-close');
-
-    closeButton.addEventListener('click', () => {
-        modal.setAttribute('aria-hidden', 'true');
-        modal.style.display = 'none';
-    });
-
-    modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.setAttribute('aria-hidden', 'true');
-            modal.style.display = 'none';
-        }
-    });
+    if (modal && closeButton) {
+        closeButton.addEventListener('click', closeModal);
+        // Close modal if user clicks on the dark overlay.
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+        // Close modal if user presses the Escape key.
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+                closeModal();
+            }
+        });
+    }
 }
 
-// Initialize when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    fetchCourses();
-    handleFilter();
-    handleModalClose();
-});
+/**
+ * Main initialization function for the courses page.
+ * Fetches data and sets up the page.
+ */
+async function init() {
+    try {
+        const response = await fetch(coursesJsonUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        // Store the fetched courses in the module-level variable.
+        allCourses = await response.json();
+
+        // Now that we have the data, render the courses and set up event listeners.
+        renderCourses(allCourses);
+        setupEventListeners();
+
+    } catch (error) {
+        console.error('Failed to fetch and initialize courses:', error);
+        const container = document.getElementById('course-container');
+        if (container) {
+            container.innerHTML = '<p class="card error">Sorry, we were unable to load the course list at this time. Please try again later.</p>';
+        }
+    }
+}
+
+// Export the init function so it can be called by main.js
+export { init };
