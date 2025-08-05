@@ -1,67 +1,154 @@
 [
     {
         "id": 1,
-        "title": "Español para Principiantes",
-        "level": "Principiante",
-        "duration": "8 semanas",
-        "description": "Comienza tu aprendizaje con vocabulario y frases básicas.",
-        "syllabus": [
-            "Alfabeto y pronunciación",
-            "Gramática básica",
-            "Frases cotidianas"
+        "course_code": "SPAN-101",
+        "title": "Spanish for Beginners",
+        "level": "Beginner",
+        "duration_weeks": 6,
+        "price": 29.00,
+        "image_url": "images/courses/1.jpg",
+        "description": "Start your learning journey with essential vocabulary, basic grammar, and everyday phrases. No prior experience needed!",
+        "tags": [
+            "Grammar",
+            "Vocabulary",
+            "Essentials"
         ],
-        "price": "$29"
+        "learning_outcomes": [
+            "Greet people and introduce yourself.",
+            "Form basic sentences and questions.",
+            "Understand and use common daily expressions."
+        ],
+        "syllabus": [
+            "Alphabet and Pronunciation",
+            "Basic Grammar Structures (Ser vs. Estar)",
+            "Essential Vocabulary for Daily Life"
+        ]
     },
     {
         "id": 2,
-        "title": "Conversación Intermedia",
-        "level": "Intermedio",
-        "duration": "6 semanas",
-        "description": "Mejora tu fluidez con prácticas y juegos de rol.",
-        "syllabus": [
-            "Conversaciones de viaje",
-            "Español para el trabajo",
-            "Comprensión auditiva"
+        "course_code": "SPAN-150",
+        "title": "Spanish for Travel",
+        "level": "Beginner",
+        "duration_weeks": 7,
+        "price": 59.00,
+        "image_url": "images/courses/6.jpg",
+        "description": "Prepare for your next adventure! This course covers essential phrases, cultural tips, and scenarios for navigating Spanish-speaking countries with ease.",
+        "tags": [
+            "Travel",
+            "Conversation",
+            "Culture",
+            "Practical"
         ],
-        "price": "$49"
+        "learning_outcomes": [
+            "Book hotels and order food confidently.",
+            "Ask for directions and use public transportation.",
+            "Understand key cultural dos and don'ts."
+        ],
+        "syllabus": [
+            "At the Airport and Hotel",
+            "Dining Out and Shopping",
+            "Navigating and Transportation"
+        ]
     },
     {
         "id": 3,
-        "title": "Gramática Avanzada",
-        "level": "Avanzado",
-        "duration": "10 semanas",
-        "description": "Domina estructuras complejas y escritura avanzada.",
-        "syllabus": [
-            "Modo subjuntivo",
-            "Sintaxis avanzada",
-            "Talleres de escritura"
+        "course_code": "SPAN-201",
+        "title": "Intermediate Conversation",
+        "level": "Intermediate",
+        "duration_weeks": 10,
+        "price": 79.00,
+        "image_url": "images/courses/2.jpg",
+        "description": "Improve your fluency and confidence with practical conversation drills, role-playing, and interactive sessions.",
+        "tags": [
+            "Conversation",
+            "Fluency",
+            "Practical"
         ],
-        "price": "$89"
+        "learning_outcomes": [
+            "Engage in conversations on familiar topics.",
+            "Describe experiences, events, dreams, and ambitions.",
+            "Handle most situations likely to arise while traveling."
+        ],
+        "syllabus": [
+            "Travel and Accommodations",
+            "Discussing Hobbies and Interests",
+            "Advanced Listening Comprehension"
+        ]
     },
     {
         "id": 4,
-        "title": "Español para Negocios",
-        "level": "Intermedio-Avanzado",
-        "duration": "6 semanas",
-        "description": "Aprende a comunicarte eficazmente en un entorno profesional hispano.",
-        "syllabus": [
-            "Reuniones y presentaciones",
-            "Vocabulario comercial",
-            "Correo electrónico profesional"
+        "course_code": "SPAN-301",
+        "title": "Advanced Grammar Mastery",
+        "level": "Advanced",
+        "duration_weeks": 12,
+        "price": 99.00,
+        "image_url": "images/courses/3.jpg",
+        "description": "Master complex grammatical structures, refine your writing, and understand the nuances of the Spanish language.",
+        "tags": [
+            "Grammar",
+            "Writing",
+            "Advanced"
         ],
-        "price": "$99"
+        "learning_outcomes": [
+            "Correctly use all subjunctive moods.",
+            "Analyze and construct complex sentences.",
+            "Write clear, well-structured essays and reports."
+        ],
+        "syllabus": [
+            "The Subjunctive Mood (All Tenses)",
+            "Advanced Syntactic Structures",
+            "Creative and Formal Writing Workshops"
+        ]
     },
     {
         "id": 5,
-        "title": "Conversación Avanzada",
-        "level": "Avanzado",
-        "duration": "5 semanas",
-        "description": "Perfecciona tu expresión oral en debates, entrevistas y situaciones reales.",
-        "syllabus": [
-            "Conversaciones temáticas",
-            "Entrevistas simuladas",
-            "Fluidez y corrección"
+        "course_code": "SPAN-250",
+        "title": "Spanish for Business",
+        "level": "Intermediate",
+        "duration_weeks": 14,
+        "price": 129.00,
+        "image_url": "images/courses/4.jpg",
+        "description": "Learn to communicate effectively and professionally in a Spanish-speaking business environment.",
+        "tags": [
+            "Business",
+            "Professional",
+            "Career"
         ],
-        "price": "$149"
+        "learning_outcomes": [
+            "Lead and participate in business meetings.",
+            "Write professional emails and reports.",
+            "Negotiate and present with confidence."
+        ],
+        "syllabus": [
+            "Meetings and Presentations",
+            "Business and Commerce Vocabulary",
+            "Professional Email Etiquette"
+        ]
+    },
+    {
+        "id": 6,
+        "course_code": "SPAN-320",
+        "title": "Advanced Conversation & Debate",
+        "level": "Advanced",
+        "duration_weeks": 16,
+        "price": 159.00,
+        "image_url": "images/courses/5.jpg",
+        "description": "Perfect your oral expression by engaging in debates, simulated interviews, and discussions on current events.",
+        "tags": [
+            "Conversation",
+            "Debate",
+            "Fluency",
+            "Advanced"
+        ],
+        "learning_outcomes": [
+            "Articulate and defend opinions on complex topics.",
+            "Understand and use idiomatic expressions correctly.",
+            "Achieve near-native fluency and pronunciation."
+        ],
+        "syllabus": [
+            "Thematic Debates and Discussions",
+            "Simulated Job Interviews",
+            "Nuances of Regional Accents"
+        ]
     }
 ]
