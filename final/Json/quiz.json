@@ -1,0 +1,52 @@
+[
+    {
+        "question": "Which of these means 'cat' in Spanish?",
+        "options": [
+            "Perro",
+            "Gato",
+            "Pájaro",
+            "Pez"
+        ],
+        "correctAnswer": "Gato"
+    },
+    {
+        "question": "How do you say 'hello'?",
+        "options": [
+            "Adiós",
+            "Gracias",
+            "Hola",
+            "Por favor"
+        ],
+        "correctAnswer": "Hola"
+    },
+    {
+        "question": "What is the correct 'yo' (I) form of the verb 'comer' (to eat)?",
+        "options": [
+            "Como",
+            "Comes",
+            "Come",
+            "Comemos"
+        ],
+        "correctAnswer": "Como"
+    },
+    {
+        "question": "Which word means 'water'?",
+        "options": [
+            "Fuego",
+            "Tierra",
+            "Aire",
+            "Agua"
+        ],
+        "correctAnswer": "Agua"
+    },
+    {
+        "question": "How do you say 'thank you'?",
+        "options": [
+            "Lo siento",
+            "De nada",
+            "Gracias",
+            "Sí"
+        ],
+        "correctAnswer": "Gracias"
+    }
+]

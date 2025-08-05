@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verb Conjugator | Spanish Learning Hub</title>
+    <meta name="description"
+        content="Practice and learn Spanish verb conjugations with our interactive tool. Filter verbs and view full conjugation tables.">
+    <meta name="author" content="Tiago Borges">
+    <link rel="icon" href="favicon.ico">
+    <!-- Link to the single stylesheet -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/main.js" type="module" defer></script>
+    <script src="scripts/verbs.js" type="module" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">Spanish Hub</a>
+        <button id="menu-button" aria-label="Open Navigation Menu" aria-expanded="false">☰</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="verbs.html" class="active">Verbs</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Spanish Verb Conjugator</h1>
+
+            <!-- NEW: How to Use Section -->
+            <section class="card intro-card">
+                <h2>How to Use This Tool</h2>
+                <p>Mastering verbs is crucial for fluency. Use this tool to explore and practice the most common Spanish
+                    verbs. Simply use the filter to narrow your search by verb ending (<strong>-ar, -er, -ir</strong>),
+                    or browse the full list. Click on any verb to see its complete present-tense conjugation table.</p>
+            </section>
+
+            <!-- Main Verb Tool -->
+            <section class="card">
+                <h2>Interactive Conjugator</h2>
+                <div class="controls">
+                    <label for="verb-filter">Filter by ending:</label>
+                    <select id="verb-filter">
+                        <option value="all">All Verbs</option>
+                        <option value="ar">-ar</option>
+                        <option value="er">-er</option>
+                        <option value="ir">-ir</option>
+                    </select>
+                </div>
+                <div id="verb-grid" class="verb-grid">
+                    <div class="spinner"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal Dialog for Conjugation -->
+    <dialog id="conjugation-modal">
+        <div id="modal-content"></div>
+        <button id="close-modal-button">Close</button>
+    </dialog>
+
+    <!-- Professional multi-column footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Spanish Learning Hub</h3>
+                <p>Providing quality tools to help you on your journey to Spanish fluency.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="verbs.html">Verb Conjugator</a></p>
+                <p><a href="resources.html">Dictionary & Resources</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>Tiago Borges</p>
+                <p><a href="mailto:project@email.com">project@email.com</a></p>
+                <p><a href="https://github.com/thneri95/wdd231" target="_blank">Project GitHub</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> | Tiago Borges | WDD 231 Final Project</p>
+        </div>
+    </footer>
+</body>
+
+</html>

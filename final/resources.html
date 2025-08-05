@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Spanish Learning Hub</title>
+    <meta name="description"
+        content="Use our Spanish dictionary, sign up for our newsletter, and find helpful resources for your learning journey.">
+    <meta name="author" content="Tiago Borges">
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- JS Module (centralizado) -->
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">Spanish Hub</a>
+        <button id="menu-button" aria-label="Open Navigation Menu" aria-expanded="false">☰</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="verbs.html">Verbs</a>
+            <a href="resources.html" class="active">Resources</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Learning Resources</h1>
+
+            <!-- Dictionary Section -->
+            <section class="card">
+                <h2>Dictionary Español to English</h2>
+                <p>Look up any Spanish word to see its definition, part of speech, and phonetic spelling. Click the 🔊
+                    icon to hear the pronunciation.</p>
+                <div id="dictionary-form">
+                    <input type="text" id="word-input" placeholder="Enter a Spanish word...">
+                    <button id="search-button">Search</button>
+                </div>
+                <div id="dictionary-results"></div>
+                <div id="recent-searches-container" style="display: none;">
+                    <h3>Recent Searches</h3>
+                    <ul id="recent-searches-list"></ul>
+                </div>
+            </section>
+
+            <!-- Study Tip Section -->
+            <section class="card study-tip-card">
+                <h2>💡 Study Tip of the Week</h2>
+                <p><strong>Active Recall for Verbs:</strong> Instead of just reading conjugation tables, actively test
+                    yourself. Cover up the conjugations and try to write them from memory. This technique, called active
+                    recall, builds much stronger memory pathways than passive reading.</p>
+            </section>
+
+            <!-- Newsletter Section -->
+            <section class="card">
+                <h2>Weekly Learning Tips</h2>
+                <p>Sign up for our newsletter to get a new learning tip delivered to your inbox every week!</p>
+                <form id="newsletter-form" action="thanks.html" method="get">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </section>
+
+            <!-- Helpful Links Section -->
+            <section class="card">
+                <h2>Helpful Links</h2>
+                <p>Here are some external resources we recommend to supplement your learning:</p>
+                <ul class="resource-list">
+                    <li><a href="https://www.spanishdict.com/" target="_blank" rel="noopener">SpanishDict</a> - An
+                        excellent comprehensive dictionary and translator.</li>
+                    <li><a href="https://www.duolingo.com/course/es/en/Learn-Spanish" target="_blank"
+                            rel="noopener">Duolingo</a> -
+                        Great for daily vocabulary practice.</li>
+                    <li><a href="https://www.thoughtco.com/spanish-4133085" target="_blank" rel="noopener">ThoughtCo
+                            Spanish</a> -
+                        In-depth articles on grammar and culture.</li>
+                    <li><a href="https://www.reddit.com/r/learnspanish/" target="_blank"
+                            rel="noopener">r/learnspanish</a> -
+                        A community of learners to ask questions and practice.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Spanish Learning Hub</h3>
+                <p>Providing quality tools to help you on your journey to Spanish fluency.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="verbs.html">Verb Conjugator</a></p>
+                <p><a href="resources.html">Dictionary & Resources</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>Tiago Borges</p>
+                <p><a href="mailto:project@email.com">project@email.com</a></p>
+                <p><a href="https://github.com/thneri95/wdd231" target="_blank" rel="noopener">Project GitHub</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> | Tiago Borges | WDD 231 Final Project</p>
+        </div>
+    </footer>
+</body>
+
+</html>
