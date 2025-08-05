@@ -1,0 +1,188 @@
+[
+    {
+        "word": "Amigo",
+        "translation": "Friend",
+        "example": "Mi amigo vive en la casa azul.",
+        "image": "https://placehold.co/600x400/223a59/ffffff?text=Amigo"
+    },
+    {
+        "word": "Sol",
+        "translation": "Sun",
+        "example": "El sol brilla mucho hoy.",
+        "image": "https://placehold.co/600x400/f4b524/ffffff?text=Sol"
+    },
+    {
+        "word": "Libro",
+        "translation": "Book",
+        "example": "Estoy leyendo un libro muy interesante.",
+        "image": "https://placehold.co/600x400/e81123/ffffff?text=Libro"
+    },
+    {
+        "word": "Agua",
+        "translation": "Water",
+        "example": "Por favor, necesito un vaso de agua.",
+        "image": "https://placehold.co/600x400/007bff/ffffff?text=Agua"
+    },
+    {
+        "word": "Casa",
+        "translation": "House",
+        "example": "Mi casa tiene un jardín grande.",
+        "image": "https://placehold.co/600x400/28a745/ffffff?text=Casa"
+    },
+    {
+        "word": "Comida",
+        "translation": "Food",
+        "example": "La comida española es deliciosa.",
+        "image": "https://placehold.co/600x400/dc3545/ffffff?text=Comida"
+    },
+    {
+        "word": "Tiempo",
+        "translation": "Time/Weather",
+        "example": "No tengo tiempo para ir al cine.",
+        "image": "https://placehold.co/600x400/6c757d/ffffff?text=Tiempo"
+    },
+    {
+        "word": "Feliz",
+        "translation": "Happy",
+        "example": "Estoy muy feliz con mi nuevo trabajo.",
+        "image": "https://placehold.co/600x400/ffc107/ffffff?text=Feliz"
+    },
+    {
+        "word": "Gato",
+        "translation": "Cat",
+        "example": "El gato está durmiendo en el sofá.",
+        "image": "https://placehold.co/600x400/343a40/ffffff?text=Gato"
+    },
+    {
+        "word": "Perro",
+        "translation": "Dog",
+        "example": "Mi perro le gusta jugar en el parque.",
+        "image": "https://placehold.co/600x400/6f42c1/ffffff?text=Perro"
+    },
+    {
+        "word": "Escuela",
+        "translation": "School",
+        "example": "Los niños van a la escuela por la mañana.",
+        "image": "https://placehold.co/600x400/17a2b8/ffffff?text=Escuela"
+    },
+    {
+        "word": "Música",
+        "translation": "Music",
+        "example": "Me encanta escuchar música clásica.",
+        "image": "https://placehold.co/600x400/fd7e14/ffffff?text=Música"
+    },
+    {
+        "word": "Familia",
+        "translation": "Family",
+        "example": "Mi familia es muy grande y unida.",
+        "image": "https://placehold.co/600x400/20c997/ffffff?text=Familia"
+    },
+    {
+        "word": "Ciudad",
+        "translation": "City",
+        "example": "Madrid es una ciudad muy bonita.",
+        "image": "https://placehold.co/600x400/e83e8c/ffffff?text=Ciudad"
+    },
+    {
+        "word": "País",
+        "translation": "Country",
+        "example": "Brasil es un país tropical.",
+        "image": "https://placehold.co/600x400/6610f2/ffffff?text=País"
+    },
+    {
+        "word": "Trabajo",
+        "translation": "Work/Job",
+        "example": "Tengo mucho trabajo esta semana.",
+        "image": "https://placehold.co/600x400/223a59/ffffff?text=Trabajo"
+    },
+    {
+        "word": "Rojo",
+        "translation": "Red",
+        "example": "El coche es de color rojo.",
+        "image": "https://placehold.co/600x400/dc3545/ffffff?text=Rojo"
+    },
+    {
+        "word": "Azul",
+        "translation": "Blue",
+        "example": "El cielo está muy azul hoy.",
+        "image": "https://placehold.co/600x400/007bff/ffffff?text=Azul"
+    },
+    {
+        "word": "Verde",
+        "translation": "Green",
+        "example": "La hierba es verde en primavera.",
+        "image": "https://placehold.co/600x400/28a745/ffffff?text=Verde"
+    },
+    {
+        "word": "Amarillo",
+        "translation": "Yellow",
+        "example": "El sol es amarillo.",
+        "image": "https://placehold.co/600x400/ffc107/ffffff?text=Amarillo"
+    },
+    {
+        "word": "Grande",
+        "translation": "Big",
+        "example": "El elefante es un animal muy grande.",
+        "image": "https://placehold.co/600x400/343a40/ffffff?text=Grande"
+    },
+    {
+        "word": "Pequeño",
+        "translation": "Small",
+        "example": "El ratón es un animal pequeño.",
+        "image": "https://placehold.co/600x400/6c757d/ffffff?text=Pequeño"
+    },
+    {
+        "word": "Mañana",
+        "translation": "Morning/Tomorrow",
+        "example": "Nos vemos mañana por la mañana.",
+        "image": "https://placehold.co/600x400/17a2b8/ffffff?text=Mañana"
+    },
+    {
+        "word": "Noche",
+        "translation": "Night",
+        "example": "Me gusta mirar las estrellas por la noche.",
+        "image": "https://placehold.co/600x400/223a59/ffffff?text=Noche"
+    },
+    {
+        "word": "Viaje",
+        "translation": "Trip/Journey",
+        "example": "El viaje a la playa fue muy divertido.",
+        "image": "https://placehold.co/600x400/fd7e14/ffffff?text=Viaje"
+    },
+    {
+        "word": "Playa",
+        "translation": "Beach",
+        "example": "Vamos a la playa este fin de semana.",
+        "image": "https://placehold.co/600x400/f4b524/ffffff?text=Playa"
+    },
+    {
+        "word": "Montaña",
+        "translation": "Mountain",
+        "example": "Me gusta hacer senderismo en la montaña.",
+        "image": "https://placehold.co/600x400/20c997/ffffff?text=Montaña"
+    },
+    {
+        "word": "Flor",
+        "translation": "Flower",
+        "example": "Esa flor huele muy bien.",
+        "image": "https://placehold.co/600x400/e83e8c/ffffff?text=Flor"
+    },
+    {
+        "word": "Árbol",
+        "translation": "Tree",
+        "example": "Hay un árbol grande en mi jardín.",
+        "image": "https://placehold.co/600x400/28a745/ffffff?text=Árbol"
+    },
+    {
+        "word": "Cielo",
+        "translation": "Sky",
+        "example": "El cielo está lleno de nubes.",
+        "image": "https://placehold.co/600x400/007bff/ffffff?text=Cielo"
+    },
+    {
+        "word": "Mundo",
+        "translation": "World",
+        "example": "Quiero viajar por todo el mundo.",
+        "image": "https://placehold.co/600x400/6610f2/ffffff?text=Mundo"
+    }
+]

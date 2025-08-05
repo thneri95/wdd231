@@ -1,57 +1,46 @@
-// This module handles the logic for the home page.
+// This module handles all logic for the home page.
 
-/**
- * Fetches vocabulary data from a JSON file.
- * @returns {Promise<Array>} Array of vocabulary objects or empty array on error.
- */
-async function fetchVocabulary() {
+// --- Data Fetching ---
+// This function fetches your 'data/vocabulary.json' file.
+async function fetchData(url) {
     try {
-        const response = await fetch('data/vocabulary.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        return data;
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        return await response.json();
     } catch (error) {
-        console.error('Error fetching vocabulary:', error);
+        console.error(`Error fetching data from ${url}:`, error);
         return [];
     }
 }
 
-/**
- * Displays a random "Word of the Day" from the fetched vocabulary.
- * @param {Array} vocabulary - Array of vocabulary objects.
- */
+// --- Word of the Day ---
+// This function takes the list of words and displays one.
 function displayWordOfTheDay(vocabulary) {
-    const wordContainer = document.getElementById('word-container');
-
-    if (!wordContainer) {
-        console.warn('word-container not found in DOM.');
+    const container = document.getElementById('word-container');
+    if (!container || vocabulary.length === 0) {
+        if (container) container.innerHTML = '<p>Could not load the word of the day.</p>';
         return;
     }
-
-    if (!Array.isArray(vocabulary) || vocabulary.length === 0) {
-        wordContainer.innerHTML = '<p class="error">Could not load the word of the day.</p>';
-        return;
-    }
-
+    // It picks a random word from the list.
     const todayWord = vocabulary[Math.floor(Math.random() * vocabulary.length)];
 
-    wordContainer.innerHTML = `
+    // It uses the properties from the JSON to build the HTML.
+    container.innerHTML = `
         <h3>${todayWord.word}</h3>
         <p class="translation">${todayWord.translation}</p>
         <p class="example">"${todayWord.example}"</p>
-        <img src="${todayWord.image}" 
-             alt="Image related to ${todayWord.word}" 
-             loading="lazy" 
-             style="max-width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">
+        <img src="${todayWord.image}" alt="Image related to ${todayWord.word}" loading="lazy" style="max-width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">
     `;
 }
 
-/**
- * Initializes the home page module.
- */
+// --- Initialization ---
+// This is the main function that runs when the page loads.
 export async function init() {
-    const vocabulary = await fetchVocabulary();
+    // It calls fetchData to get the vocabulary list.
+    const vocabulary = await fetchData('data/vocabulary.json');
+
+    // It then calls displayWordOfTheDay to show a random word.
     displayWordOfTheDay(vocabulary);
+
+    // Note: I've simplified this from your full file to only show the relevant parts.
 }

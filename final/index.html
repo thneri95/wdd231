@@ -11,7 +11,6 @@
     <meta property="og:title" content="Spanish Learning Hub">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/styles.css">
-
     <script src="scripts/main.js" type="module" defer></script>
 </head>
 
@@ -30,37 +29,43 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Master the Spanish Language</h1>
-                <p>Your journey to fluency starts here!</p>
+                <p>Your journey to fluency starts here.</p>
             </div>
         </section>
 
         <div class="container">
+            <!-- Start Here Section -->
+            <section class="start-here">
+                <h2>Start Here</h2>
+                <div class="feature-grid">
+                    <a href="resources.html" class="feature-card">
+                        <h3>Learn Vocabulary</h3>
+                        <p>Explore our interactive dictionary and discover new words every day.</p>
+                    </a>
+                    <a href="verbs.html" class="feature-card">
+                        <h3>Practice Verbs</h3>
+                        <p>Use our conjugator to master the most important verb tenses.</p>
+                    </a>
+                </div>
+            </section>
+
             <!-- Word of the Day -->
             <section id="word-of-the-day" class="card">
-                <h2>Vocabulary Word of the Day</h2>
+                <h2>Word of the Day</h2>
                 <div id="word-container">
                     <div class="spinner"></div>
                 </div>
             </section>
 
-            <!-- NEW: Featured Verbs Section -->
-            <section class="card">
-                <h2>Featured Verbs</h2>
-                <div id="featured-verbs-grid" class="featured-verbs-grid">
-                    <div class="spinner"></div>
-                </div>
-                <a href="verbs.html" class="cta-button">Explore All Verbs</a>
+            <!-- Quick Grammar Tip Section -->
+            <section class="card grammar-tip-card">
+                <h2>💡 Quick Grammar Tip</h2>
+                <p><strong>Ser vs. Estar:</strong> Remember that "ser" is used for permanent or essential
+                    characteristics (<em>Yo soy de Brasil</em>), while "estar" is for temporary states or locations
+                    (<em>Yo estoy en casa</em>).</p>
             </section>
 
-            <!-- NEW: Testimonial Section -->
-            <section class="testimonial-card">
-                <blockquote>
-                    "The verb conjugator is a lifesaver! This site has made my study sessions so much more effective"
-                </blockquote>
-                <cite>- Alex, Spanish Student</cite>
-            </section>
-
-            <!-- NEW: Visually Upgraded "Why Choose Us" Section -->
+            <!-- Why Choose Us Section -->
             <section class="why-us-card card">
                 <h2>Why Choose the Spanish Hub?</h2>
                 <div class="why-us-grid">
@@ -71,7 +76,7 @@
                             <path d="M6.5 2H20v15H6.5A2.5 2.5 0 0 1 4 17V4.5A2.5 2.5 0 0 1 6.5 2z"></path>
                         </svg>
                         <h4>Free & Accessible</h4>
-                        <p>All our tools are completely free to use</p>
+                        <p>All our tools are free to use, forever.</p>
                     </div>
                     <div class="why-us-item">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
@@ -82,7 +87,7 @@
                             <path d="M22 8a10 10 0 0 0-2-6"></path>
                         </svg>
                         <h4>Interactive Learning</h4>
-                        <p>Engage with dynamic tools, not just static lists</p>
+                        <p>Engage with dynamic tools, not just static lists.</p>
                     </div>
                     <div class="why-us-item">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
@@ -93,7 +98,7 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                         </svg>
                         <h4>Built by a Teacher</h4>
-                        <p>Content designed with a real understanding of student needs!</p>
+                        <p>Content designed with the real needs of students in mind.</p>
                     </div>
                 </div>
             </section>
@@ -101,24 +106,6 @@
     </main>
 
     <footer>
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h3>Spanish Learning Hub</h3>
-                <p>Providing quality tools to help you on your journey to Spanish fluency!</p>
-            </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <p><a href="index.html">Home</a></p>
-                <p><a href="verbs.html">Verb Conjugator</a></p>
-                <p><a href="resources.html">Dictionary & Resources</a></p>
-            </div>
-            <div class="footer-column">
-                <h3>Contact</h3>
-                <p>Tiago Borges</p>
-                <p><a href="mailto:spanishub@email.com">spanishub@email.com</a></p>
-                <p><a href="https://github.com/thneri95/wdd231" target="_blank">Project GitHub</a></p>
-            </div>
-        </div>
         <div class="footer-bottom">
             <p>&copy; <span id="currentYear"></span> | Tiago Borges | WDD 231 Final Project</p>
         </div>

@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "title": "Español para Principiantes",
+        "level": "Principiante",
+        "duration": "8 semanas",
+        "description": "Comienza tu aprendizaje con vocabulario y frases básicas.",
+        "syllabus": [
+            "Alfabeto y pronunciación",
+            "Gramática básica",
+            "Frases cotidianas"
+        ],
+        "price": "$29"
+    },
+    {
+        "id": 2,
+        "title": "Conversación Intermedia",
+        "level": "Intermedio",
+        "duration": "6 semanas",
+        "description": "Mejora tu fluidez con prácticas y juegos de rol.",
+        "syllabus": [
+            "Conversaciones de viaje",
+            "Español para el trabajo",
+            "Comprensión auditiva"
+        ],
+        "price": "$59"
+    },
+    {
+        "id": 3,
+        "title": "Gramática Avanzada",
+        "level": "Avanzado",
+        "duration": "10 semanas",
+        "description": "Domina estructuras complejas y escritura avanzada.",
+        "syllabus": [
+            "Modo subjuntivo",
+            "Sintaxis avanzada",
+            "Talleres de escritura"
+        ],
+        "price": "$99"
+    }
+]
