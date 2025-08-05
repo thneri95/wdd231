@@ -40,28 +40,28 @@
     },
     {
         "id": 4,
-        "title": "Conversación Profesional",
+        "title": "Español para Negocios",
         "level": "Intermedio-Avanzado",
-        "duration": "5 semanas",
-        "description": "Desarrolla habilidades para comunicarte con fluidez en contextos formales y laborales.",
+        "duration": "6 semanas",
+        "description": "Aprende a comunicarte eficazmente en un entorno profesional hispano.",
         "syllabus": [
-            "Presentaciones orales",
-            "Vocabulario técnico",
-            "Reuniones y networking"
+            "Reuniones y presentaciones",
+            "Vocabulario comercial",
+            "Correo electrónico profesional"
         ],
-        "price": "$129"
+        "price": "$79"
     },
     {
         "id": 5,
-        "title": "Español para Negocios",
+        "title": "Conversación Avanzada",
         "level": "Avanzado",
-        "duration": "7 semanas",
-        "description": "Aprende a negociar, escribir correos profesionales y liderar equipos en español.",
+        "duration": "5 semanas",
+        "description": "Perfecciona tu expresión oral en debates, entrevistas y situaciones reales.",
         "syllabus": [
-            "Negociación y persuasión",
-            "Comunicación empresarial escrita",
-            "Cultura corporativa en países hispanohablantes"
+            "Conversaciones temáticas",
+            "Entrevistas simuladas",
+            "Fluidez y corrección"
         ],
-        "price": "$149"
+        "price": "$69"
     }
 ]
