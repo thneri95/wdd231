@@ -1,11 +1,10 @@
-// This script handles fetching and displaying course data.
+// This script handles fetching and displaying course data dynamically on the courses.html page.
 
-// URL for your JSON data
 const coursesApiUrl = 'https://thneri95.github.io/wdd231/final/Json/courses.json';
 let allCourses = []; // To store all fetched courses
 
 /**
- * Fetches course data from the API.
+ * Fetches course data from the API and stores it globally.
  */
 async function fetchCourses() {
     try {
@@ -14,8 +13,8 @@ async function fetchCourses() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        allCourses = data; // Store the fetched data
-        renderCourses(allCourses); // Display all courses initially
+        allCourses = data;
+        renderCourses(allCourses);
     } catch (error) {
         console.error("Error fetching courses:", error);
         document.getElementById('course-container').innerHTML = '<p>Sorry, we could not load the courses at this time.</p>';
@@ -23,38 +22,39 @@ async function fetchCourses() {
 }
 
 /**
- * Renders an array of course objects into the DOM.
- * @param {Array} courses - The array of courses to display.
+ * Renders course cards to the DOM.
+ * @param {Array} courses - The array of courses to render.
  */
 function renderCourses(courses) {
     const container = document.getElementById('course-container');
-    container.innerHTML = ''; // Clear previous content
+    container.innerHTML = '';
 
     if (courses.length === 0) {
-        container.innerHTML = '<p>No courses match the selected filter.</p>';
+        container.innerHTML = '<p>No courses found for the selected level.</p>';
         return;
     }
 
     courses.forEach(course => {
         const card = document.createElement('div');
         card.className = 'course-card';
+
         card.innerHTML = `
-            <img src="${course.image}" alt="${course.title}" loading="lazy">
+            <img src="images/courses/${course.id}.jpg" alt="${course.title}" loading="lazy">
             <div class="card-content">
                 <h3>${course.title}</h3>
-                <p class="level">${course.level}</p>
+                <p class="level">Level: ${course.level}</p>
                 <p>${course.description}</p>
                 <button class="details-btn">View Details</button>
             </div>
         `;
-        // Add event listener to the button to open the modal
+
         card.querySelector('.details-btn').addEventListener('click', () => openModal(course));
         container.appendChild(card);
     });
 }
 
 /**
- * Opens the modal with details for a specific course.
+ * Opens a modal showing the full course details.
  * @param {Object} course - The course object to display.
  */
 function openModal(course) {
@@ -65,35 +65,35 @@ function openModal(course) {
         <h2 id="modal-title">${course.title}</h2>
         <p><strong>Level:</strong> ${course.level}</p>
         <p><strong>Duration:</strong> ${course.duration}</p>
-        <p><strong>Price:</strong> $${course.price}</p>
+        <p><strong>Price:</strong> ${course.price}</p>
         <h4>What you'll learn:</h4>
         <ul>
-            ${course.learnings.map(item => `<li>${item}</li>`).join('')}
+            ${course.syllabus.map(topic => `<li>${topic}</li>`).join('')}
         </ul>
     `;
 
     modal.setAttribute('aria-hidden', 'false');
-    modal.style.display = 'flex'; // Show the modal
+    modal.style.display = 'flex';
 }
 
 /**
- * Sets up the event listener for the course filter dropdown.
+ * Enables filtering courses by level.
  */
 function handleFilter() {
     const filterSelect = document.getElementById('level-filter');
     filterSelect.addEventListener('change', (event) => {
-        const selectedLevel = event.target.value;
-        if (selectedLevel === 'all') {
+        const selected = event.target.value.toLowerCase();
+        if (selected === 'all') {
             renderCourses(allCourses);
         } else {
-            const filteredCourses = allCourses.filter(course => course.level.toLowerCase() === selectedLevel);
-            renderCourses(filteredCourses);
+            const filtered = allCourses.filter(course => course.level.toLowerCase() === selected);
+            renderCourses(filtered);
         }
     });
 }
 
 /**
- * Sets up the event listener for closing the modal.
+ * Adds close functionality to the modal.
  */
 function handleModalClose() {
     const modal = document.getElementById('modal');
@@ -101,10 +101,9 @@ function handleModalClose() {
 
     closeButton.addEventListener('click', () => {
         modal.setAttribute('aria-hidden', 'true');
-        modal.style.display = 'none'; // Hide the modal
+        modal.style.display = 'none';
     });
 
-    // Close modal if clicking outside the content
     modal.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.setAttribute('aria-hidden', 'true');
@@ -113,7 +112,7 @@ function handleModalClose() {
     });
 }
 
-// Initialize all functionality when the page loads
+// Initialize when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     fetchCourses();
     handleFilter();

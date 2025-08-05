@@ -3,35 +3,34 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spanish Portal | Our Courses</title>
     <meta name="description"
-        content="Explore Spanish courses for all levels, from beginner to advanced. Find the perfect course to start your fluency journey." />
+        content="Explore paid Spanish courses for all levels, from beginner to advanced. Find the perfect course to start your fluency journey." />
     <meta name="author" content="Tiago Neri" />
     <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" href="styles/courses.css" />
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/courses.css" />
 </head>
 
 <body>
     <header>
         <a href="index.html" class="logo">Spanish Portal</a>
-        <nav>
+        <nav aria-label="Main Navigation">
             <a href="index.html">Home</a>
-            <a href="courses.html">Courses</a>
+            <a href="courses.html" class="active">Courses</a>
             <a href="resources.html">Resources</a>
-            <a href="contact.html" class="active">Contact</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <main class="container">
-        <section class="courses-header">
-            <h1>Our Spanish Courses</h1>
+        <section class="courses-header" aria-labelledby="courses-main-heading">
+            <h1 id="courses-main-heading">Our Spanish Courses</h1>
             <p>Whether you're just starting or looking to perfect your fluency, we have a course for you.</p>
         </section>
 
-        <!-- Course Filtering Section -->
-        <section class="filter-container">
+        <section class="filter-container" aria-label="Course Filters">
             <label for="level-filter">Filter by Level:</label>
             <select id="level-filter">
                 <option value="all">All Levels</option>
@@ -41,24 +40,63 @@
             </select>
         </section>
 
-        <!-- Container where courses will be dynamically loaded -->
         <section id="course-container" class="course-grid">
-            <!-- JavaScript will populate this section with course cards -->
+            <!-- Course cards will be injected here by courses.js -->
         </section>
 
-        <!-- Call to Action Section -->
+        <section class="why-us-card card" aria-labelledby="why-us-heading">
+            <h2 id="why-us-heading">Why Choose Spanish Portal?</h2>
+            <div class="why-us-grid">
+                <div class="why-us-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <h4>Affordable Pricing</h4>
+                    <p>High-quality courses at competitive prices to fit your budget.</p>
+                </div>
+                <div class="why-us-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        <path d="M2 8c0-2.2.7-4.3 2-6"></path>
+                        <path d="M22 8a10 10 0 0 0-2-6"></path>
+                    </svg>
+                    <h4>Interactive Learning</h4>
+                    <p>Engage with dynamic lessons, quizzes, and real-world scenarios.</p>
+                </div>
+                <div class="why-us-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <h4>Expert Instructors</h4>
+                    <p>Content designed by certified teachers with real-world experience.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="cta-section">
             <h2>Have Questions?</h2>
             <p>If you're not sure which course is right for you, get in touch with our team!</p>
             <a href="contact.html" class="cta-button">Contact Us</a>
         </section>
 
-        <!-- Modal for course details -->
         <div id="modal" class="modal" aria-hidden="true">
-            <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-                <button id="modal-close" aria-label="Close">&times;</button>
-                <div id="modal-body">
-                    <!-- Course details will be loaded here by JavaScript -->
+            <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+                <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+                    aria-describedby="modal-description">
+                    <button id="modal-close" aria-label="Close modal" data-micromodal-close>×</button>
+                    <div id="modal-body">
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,30 +105,28 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-column">
-                <h3>Spanish Portal</h3>
-                <p>Your gateway to Spanish fluency.</p>
+                <h3>Spanish Learning Hub</h3>
+                <p>Providing quality tools to help you on your journey to Spanish fluency.</p>
             </div>
             <div class="footer-column">
                 <h3>Quick Links</h3>
-                <a href="index.html">Home</a>
-                <a href="courses.html">Courses</a>
-                <a href="resources.html">Resources</a>
-                <a href="contact.html" class="active">Contact</a>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="resources.html">Dictionary & Resources</a></p>
             </div>
             <div class="footer-column">
-                <h3>Follow Us</h3>
-                <p><a href="#">Facebook</a></p>
-                <p><a href="#">Instagram</a></p>
+                <h3>Contact</h3>
+                <p>Tiago Borges</p>
+                <p><a href="mailto:project@email.com">project@email.com</a></p>
+                <p><a href="https://github.com/thneri95/wdd231" target="_blank" rel="noopener">Project GitHub</a></p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="current-year"></span> Spanish Portal. All rights reserved.</p>
-            <p><a href="https://youtube.com/your-video-link" target="_blank" rel="noopener">Demo Video</a></p>
+            <p>&copy; <span id="currentYear"></span> | Tiago Borges | WDD 231 Final Project</p>
         </div>
     </footer>
-
-    <script src="scripts/courses,js"></script>
-    <script src="scripts/main.js" type="module"></script>
 </body>
+
+<script src="scripts/courses.js"></script>
+<script src="scripts/main.js" type="module"></script>
 
 </html>

@@ -21,11 +21,10 @@
         <a href="index.html" class="logo">Spanish Hub</a>
         <button id="menu-button" aria-label="Open Navigation Menu" aria-expanded="false">☰</button>
         <nav>
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="courses.html">Courses</a>
             <a href="resources.html">Resources</a>
-            <a href="contact.html" class="active">Contact</a>
-
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
@@ -63,57 +62,79 @@
 
             <!-- Quick Grammar Tip Section -->
             <section class="card grammar-tip-card">
-                <h2>💡 Quick Grammar Tip</h2>
+                <h2> Quick Grammar Tip</h2>
                 <p><strong>Ser vs. Estar:</strong> Remember that "ser" is used for permanent or essential
                     characteristics (<em>Yo soy de Brasil</em>), while "estar" is for temporary states or locations
                     (<em>Yo estoy en casa</em>).</p>
             </section>
 
-            <!-- Why Choose Us Section -->
-            <section class="why-us-card card">
-                <h2>Why Choose the Spanish Hub?</h2>
-                <div class="why-us-grid">
-                    <div class="why-us-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+            <!-- NEW: Why Learn Spanish? Section -->
+            <section class="card">
+                <h2>Why Learn Spanish?</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <!-- Globe Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                            <path d="M6.5 2H20v15H6.5A2.5 2.5 0 0 1 4 17V4.5A2.5 2.5 0 0 1 6.5 2z"></path>
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                            </path>
                         </svg>
-                        <h4>Free & Accessible</h4>
-                        <p>All our tools are free to use, forever.</p>
+                        <h3>580+ Million Speakers</h3>
+                        <p>Connect with people from over 20 countries where Spanish is the official language.</p>
                     </div>
-                    <div class="why-us-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                    <div class="stat-item">
+                        <!-- Briefcase Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                            <path d="M2 8c0-2.2.7-4.3 2-6"></path>
-                            <path d="M22 8a10 10 0 0 0-2-6"></path>
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                         </svg>
-                        <h4>Interactive Learning</h4>
-                        <p>Engage with dynamic tools, not just static lists.</p>
+                        <h3>Boost Your Career</h3>
+                        <p>Open doors to new job opportunities in global markets and international business.</p>
                     </div>
-                    <div class="why-us-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                    <div class="stat-item">
+                        <!-- Checkmark/Airplane Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
                         </svg>
-                        <h4>Built by a Teacher</h4>
-                        <p>Content designed with the real needs of students in mind.</p>
+                        <h3>Travel with Confidence</h3>
+                        <p>Immerse yourself in new cultures and navigate Spanish-speaking countries like a local.</p>
                     </div>
                 </div>
             </section>
+
+
         </div>
     </main>
 
     <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Spanish Learning Hub</h3>
+                <p>Providing quality tools to help you on your journey to Spanish fluency.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="resources.html">Dictionary & Resources</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>Tiago Borges</p>
+                <p><a href="mailto:project@email.com">project@email.com</a></p>
+                <p><a href="https://github.com/thneri95/wdd231" target="_blank" rel="noopener">Project GitHub</a></p>
+            </div>
+        </div>
         <div class="footer-bottom">
             <p>&copy; <span id="currentYear"></span> | Tiago Borges | WDD 231 Final Project</p>
         </div>
     </footer>
+</body>
 </body>
 
 </html>

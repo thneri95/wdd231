@@ -37,5 +37,31 @@
             "Talleres de escritura"
         ],
         "price": "$99"
+    },
+    {
+        "id": 4,
+        "title": "Conversación Profesional",
+        "level": "Intermedio-Avanzado",
+        "duration": "5 semanas",
+        "description": "Desarrolla habilidades para comunicarte con fluidez en contextos formales y laborales.",
+        "syllabus": [
+            "Presentaciones orales",
+            "Vocabulario técnico",
+            "Reuniones y networking"
+        ],
+        "price": "$129"
+    },
+    {
+        "id": 5,
+        "title": "Español para Negocios",
+        "level": "Avanzado",
+        "duration": "7 semanas",
+        "description": "Aprende a negociar, escribir correos profesionales y liderar equipos en español.",
+        "syllabus": [
+            "Negociación y persuasión",
+            "Comunicación empresarial escrita",
+            "Cultura corporativa en países hispanohablantes"
+        ],
+        "price": "$149"
     }
 ]
