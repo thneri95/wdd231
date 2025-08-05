@@ -1,0 +1,170 @@
+/* --- Courses Page Specific Styles --- */
+
+/* Header for the courses section */
+.courses-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.courses-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5rem;
+}
+
+.courses-header p {
+    font-size: 1.1em;
+    color: #6c757d;
+}
+
+/* Filter container */
+.filter-container {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.filter-container label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.filter-container select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+/* Course grid layout */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Individual course card */
+.course-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    margin-top: 0;
+}
+
+.card-content .level {
+    font-weight: bold;
+    color: var(--secondary-color);
+    /* Uses color from main.css */
+    margin-top: -0.5rem;
+}
+
+.card-content .details-btn {
+    margin-top: auto;
+    /* Pushes the button to the bottom */
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 700;
+    align-self: flex-start;
+    /* Aligns button to the left */
+}
+
+/* Call to Action Section */
+.cta-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    margin-top: 3rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+#modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#modal-close:hover {
+    color: black;
+}
+
+#modal-body ul {
+    padding-left: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

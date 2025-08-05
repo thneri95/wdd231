@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spanish Portal | Our Courses</title>
+    <meta name="description"
+        content="Explore Spanish courses for all levels, from beginner to advanced. Find the perfect course to start your fluency journey." />
+    <meta name="author" content="Tiago Neri" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles/courses.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">Spanish Portal</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="courses-header">
+            <h1>Our Spanish Courses</h1>
+            <p>Whether you're just starting or looking to perfect your fluency, we have a course for you.</p>
+        </section>
+
+        <!-- Course Filtering Section -->
+        <section class="filter-container">
+            <label for="level-filter">Filter by Level:</label>
+            <select id="level-filter">
+                <option value="all">All Levels</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+            </select>
+        </section>
+
+        <!-- Container where courses will be dynamically loaded -->
+        <section id="course-container" class="course-grid">
+            <!-- JavaScript will populate this section with course cards -->
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <h2>Have Questions?</h2>
+            <p>If you're not sure which course is right for you, get in touch with our team!</p>
+            <a href="contact.html" class="cta-button">Contact Us</a>
+        </section>
+
+        <!-- Modal for course details -->
+        <div id="modal" class="modal" aria-hidden="true">
+            <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+                <button id="modal-close" aria-label="Close">&times;</button>
+                <div id="modal-body">
+                    <!-- Course details will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Spanish Portal</h3>
+                <p>Your gateway to Spanish fluency.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Spanish Portal. All rights reserved.</p>
+            <p><a href="https://youtube.com/your-video-link" target="_blank" rel="noopener">Demo Video</a></p>
+        </div>
+    </footer>
+
+    <script src="scripts/courses,js"></script>
+    <script src="scripts/main.js" type="module"></script>
+</body>
+
+</html>

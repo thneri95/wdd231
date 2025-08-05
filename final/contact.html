@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spanish Hub | Contact Us</title>
+    <meta name="description"
+        content="Get in touch with the Spanish Portal. Find our contact details, send us a message, or check our FAQs." />
+    <meta name="author" content="Tiago Neri" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/contact.css" />
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">Spanish Hub</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="contact-header">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you! Please fill out the form below or use one of the alternative contact methods.
+            </p>
+        </section>
+
+        <div class="contact-grid">
+            <!-- Left Column: Contact Form -->
+            <div class="contact-form-container">
+                <h2>Send Us a Message</h2>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required />
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+                <div id="response"></div>
+            </div>
+
+            <!-- Right Column: Contact Info -->
+            <div class="contact-info-container">
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> <a href="mailto:contact@spanishportal.com">contact@spanishportal.com</a></p>
+                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <p><strong>Address:</strong> 123 Language Lane, Fluency City, USA</p>
+
+                <h3>Office Hours</h3>
+                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What are the course prices?</h3>
+                <p>Our course prices vary depending on the level and duration. Please visit our <a
+                        href="courses.html">Courses</a> page for detailed information.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you offer a free trial?</h3>
+                <p>Yes, we offer a 7-day free trial for all our beginner courses so you can experience our teaching
+                    method firsthand.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Spanish Portal</h3>
+                <p>Your gateway to Spanish fluency.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="courses.html">Courses</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Spanish Portal. All rights reserved.</p>
+            <p><a href="https://youtube.com/your-video-link" target="_blank" rel="noopener">Demo Video</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>
