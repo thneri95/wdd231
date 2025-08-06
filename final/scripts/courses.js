@@ -43,7 +43,7 @@ function renderCourses(coursesToRender) {
                 <h3 class="course-title">${course.title}</h3>
                 <p class="course-description">${course.description}</p>
                 <div class="course-details">
-                    <span>🕒 ${course.duration}</span>
+        <span>🕒 ${course.duration_weeks} weeks</span>
                 </div>
                 <div class="course-footer">
                     <span class="course-price">${formatPrice(course.price)}</span>
@@ -71,7 +71,7 @@ function openModal(course) {
     modalBody.innerHTML = `
         <h2 id="modal-title">${course.title}</h2>
         <p><strong>Level:</strong> ${course.level}</p>
-        <p><strong>Duration:</strong> ${course.duration}</p>
+    <p><strong>Duration:</strong> ${course.duration_weeks} weeks</p>
         <p><strong>Price:</strong> ${formatPrice(course.price)}</p>
         ${course.syllabus?.length ? `
             <h4>What You'll Learn:</h4>
