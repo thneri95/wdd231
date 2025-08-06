@@ -157,10 +157,10 @@ a:hover {
    HEADER & NAVIGATION
    ======================================== */
 header {
-    background-color: var(--background-white);
+    background-color: var(--primary-color);
     padding: var(--spacing-sm) var(--spacing-lg);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     box-shadow: var(--shadow-sm);
     position: fixed;
@@ -172,7 +172,7 @@ header {
 header .logo {
     font-family: var(--font-secondary);
     font-size: var(--fs-h3);
-    color: var(--primary-color);
+    color: white;
     font-weight: 700;
 }
 
@@ -182,7 +182,7 @@ nav {
 }
 
 nav a {
-    color: var(--primary-color);
+    color: white;
     padding: var(--spacing-xs) var(--spacing-sm);
     font-size: var(--fs-lg);
     font-weight: 700;
