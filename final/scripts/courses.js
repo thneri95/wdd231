@@ -1,6 +1,5 @@
-// This script handles fetching, displaying, and filtering course data on the courses.html page.
 
-// URL for the JSON data file.
+// URL for the JSON data file:
 const coursesJsonUrl = 'https://thneri95.github.io/wdd231/final/Json/courses.json';
 
 // Module-level variable to store all fetched courses, making it accessible to all functions.
@@ -9,7 +8,7 @@ let allCourses = [];
 /**
  * Formats a number as USD currency.
  * @param {number} price - The price to format.
- * @returns {string} - The formatted price string (e.g., "$99.00").
+ * @returns {string} - The formatted price string ( "$99.00").
  */
 const formatPrice = (price) => {
     return new Intl.NumberFormat('en-US', {
@@ -35,10 +34,8 @@ function renderCourses(coursesToRender) {
 
     coursesToRender.forEach(course => {
         const card = document.createElement('article');
-        // Add both classes to inherit base styles and apply specific ones.
         card.className = 'course-card card';
 
-        // This HTML structure now matches your improved courses.css file.
         card.innerHTML = `
             <img src="images/courses/${course.id}.jpg" alt="${course.title}" class="course-image" loading="lazy" onerror="this.src='images/placeholder.jpg'; this.alt='Placeholder image for course';">
             <div class="course-card-content">
@@ -90,22 +87,16 @@ function openModal(course) {
     document.body.style.overflow = 'hidden'; // Prevent background scroll.
 }
 
-/**
- * Closes the modal.
- */
 function closeModal() {
     const modal = document.getElementById('modal');
     if (!modal) return;
 
-    // FIX: Use the .is-open class to trigger CSS animations.
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = ''; // Restore background scroll.
 }
 
-/**
- * Sets up all event listeners for the page (filter and modal).
- */
+
 function setupEventListeners() {
     // --- Filter logic ---
     const filterSelect = document.getElementById('level-filter');
@@ -139,10 +130,7 @@ function setupEventListeners() {
     }
 }
 
-/**
- * Main initialization function for the courses page.
- * Fetches data and sets up the page.
- */
+
 async function init() {
     try {
         const response = await fetch(coursesJsonUrl);
@@ -165,5 +153,4 @@ async function init() {
     }
 }
 
-// Export the init function so it can be called by main.js
 export { init };

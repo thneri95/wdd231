@@ -212,6 +212,7 @@ nav a:focus-visible::after {
     display: none;
 }
 
+
 /* ========================================
    COMPONENTS
    ======================================== */
@@ -235,6 +236,9 @@ button:hover,
     background-color: var(--cta-hover-bg);
     color: var(--cta-hover-text);
 }
+
+
+
 
 form {
     display: flex;
@@ -302,6 +306,107 @@ textarea:focus {
 .hero p {
     font-size: clamp(1.2rem, 3vw, 1.5rem);
     margin-top: var(--spacing-xs);
+}
+
+/* Hero Button Container */
+.hero-cta-container {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.cta-button-secondary {
+    background-color: transparent;
+    border: 2px solid var(--background-white);
+    color: var(--text-light);
+    /* ... other button styles ... */
+}
+
+.cta-button-secondary:hover {
+    background-color: var(--background-white);
+    color: var(--primary-color);
+}
+
+/* Featured Courses & Other Sections */
+.featured-courses,
+.how-it-works,
+.testimonials,
+.free-tools-section {
+    padding-block: var(--spacing-xl);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: var(--fs-lg);
+    color: var(--text-dark);
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
+.text-center-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* How It Works Section */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    text-align: center;
+}
+
+.step-item svg {
+    color: var(--secondary-color);
+}
+
+/* Testimonial Section */
+.testimonial-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.testimonial-card blockquote {
+    font-family: var(--font-secondary);
+    font-style: italic;
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 1rem;
+}
+
+.testimonial-card cite {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Tools Section */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* Final CTA Section */
+.final-cta {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.final-cta h2,
+.final-cta p {
+    color: var(--text-light);
+    max-width: 60ch;
+    margin-inline: auto;
+}
+
+.final-cta .cta-button {
+    margin-top: 1.5rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .stats-grid,
