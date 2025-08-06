@@ -488,7 +488,7 @@ footer {
         display: block;
         background: none;
         border: none;
-        color: var(--primary-color);
+        color: white;
         font-size: 2rem;
         cursor: pointer;
         z-index: 1001;
@@ -513,6 +513,7 @@ footer {
         padding: var(--spacing-md);
         text-align: center;
         border-bottom: 1px solid var(--border-color);
+        color: #223A59;
     }
 
     nav a::after {
