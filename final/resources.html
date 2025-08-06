@@ -10,11 +10,13 @@
     <meta name="author" content="Tiago Borges">
     <link rel="icon" href="favicon.ico">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles/styles.css">
 
-    <!-- JS Module (centralizado) -->
-    <script src="scripts/main.js" type="module" defer></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/dictionary.css">
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/dictionary.js" defer></script>
+
 </head>
 
 <body>
@@ -22,9 +24,9 @@
         <a href="index.html" class="logo">Spanish Learning Hub </a>
         <button id="menu-button" aria-label="Open Navigation Menu" aria-expanded="false">☰</button>
         <nav>
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Home</a>
             <a href="courses.html">Courses</a>
-            <a href="resources.html">Resources</a>
+            <a href="resources.html" class="active">Resources</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>

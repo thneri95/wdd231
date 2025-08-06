@@ -95,7 +95,7 @@ function displayFeaturedCourses(allCourses) {
     const featuredCourseIds = [1, 4, 6]; // Beginner, Business, Travel
     const featuredCourses = allCourses.filter(course => featuredCourseIds.includes(course.id));
 
-    container.innerHTML = ''; // Clear the spinner
+    container.innerHTML = '';
 
     featuredCourses.forEach(course => {
         const card = document.createElement('article');
@@ -103,10 +103,8 @@ function displayFeaturedCourses(allCourses) {
         card.innerHTML = `
             <img src="${course.image_url}" alt="${course.title}" class="course-image" loading="lazy" onerror="this.src='images/placeholder.jpg';">
             <div class="course-card-content">
-                <span class="course-level">${course.level}</span>
                 <h3 class="course-title">${course.title}</h3>
                 <div class="course-footer">
-                    <span class="course-price">${formatPrice(course.price)}</span>
                     <a href="courses.html" class="course-button">Learn More</a>
                 </div>
             </div>

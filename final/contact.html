@@ -11,6 +11,9 @@
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/contact.css" />
+    <script src="scripts/main.js" type="module" defer></script>
+    <script src="scripts/contact.js" type="module" defer></script>
+
 </head>
 
 <body>
@@ -21,7 +24,6 @@
             <a href="index.html">Home</a>
             <a href="courses.html">Courses</a>
             <a href="resources.html">Resources</a>
-            <!-- FIX: The 'active' class is now correctly on the Contact link -->
             <a href="contact.html" class="active">Contact</a>
         </nav>
     </header>
@@ -34,7 +36,6 @@
         </section>
 
         <div class="contact-grid">
-            <!-- Left Column: Contact Form -->
             <div class="contact-form-container">
                 <h2>Send Us a Message</h2>
                 <form id="contact-form">
@@ -82,7 +83,6 @@
                     </svg>
                     <div><strong>Address:</strong> 123 Language Ln, Fluency City</div>
                 </div>
-                <!-- ADDED SECTION -->
                 <div class="contact-info-item">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -186,7 +186,6 @@
         </div>
     </footer>
 
-    <script src="scripts/main.js" type="module"></script>
 </body>
 
 </html>

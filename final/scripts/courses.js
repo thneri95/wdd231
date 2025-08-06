@@ -1,12 +1,10 @@
 
-// URL for the JSON data file:
+// my JSON data file:
 const coursesJsonUrl = 'https://thneri95.github.io/wdd231/final/Json/courses.json';
 
-// Module-level variable to store all fetched courses, making it accessible to all functions.
 let allCourses = [];
 
 /**
- * Formats a number as USD currency.
  * @param {number} price - The price to format.
  * @returns {string} - The formatted price string ( "$99.00").
  */

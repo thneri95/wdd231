@@ -1,150 +1,168 @@
 // dictionary.js — Handles dictionary page logic using DictionaryAPI
 
-// --- API Configuration ---
-const apiUrl = "https://api.dictionaryapi.dev/api/v2/entries/es/";
-
-// --- Helper Functions ---
-const getElement = (id) => document.getElementById(id);
-const resultsContainer = getElement('dictionary-results');
-const wordInput = getElement('word-input');
-
-// --- Local Storage: Recent Searches ---
-const getRecentSearches = () => JSON.parse(localStorage.getItem('recentSearches')) || [];
-
-const saveRecentSearch = (word) => {
-    let searches = getRecentSearches();
-    searches = searches.filter(w => w.toLowerCase() !== word.toLowerCase());
-    searches.unshift(word);
-    if (searches.length > 5) searches.pop();
-    localStorage.setItem('recentSearches', JSON.stringify(searches));
-    displayRecentSearches();
-};
-
-const displayRecentSearches = () => {
-    const searches = getRecentSearches();
-    const container = getElement('recent-searches-container');
-    const list = getElement('recent-searches-list');
-
-    if (searches.length === 0) {
-        container.style.display = 'none';
-        return;
+class DictionaryApp {
+    constructor() {
+        this.apiUrl = "https://api.dictionaryapi.dev/api/v2/entries/es/";
+        this.elements = {
+            wordInput: document.getElementById('word-input'),
+            searchButton: document.getElementById('search-button'),
+            resultsContainer: document.getElementById('dictionary-results'),
+            recentSearchesContainer: document.getElementById('recent-searches-container'),
+            recentSearchesList: document.getElementById('recent-searches-list')
+        };
+        this.recentSearches = this.getRecentSearches();
     }
 
-    container.style.display = 'block';
-    list.innerHTML = searches.map(word => `
-        <li>
-            <span class="recent-word" tabindex="0" role="button">${word}</span>
-            <button class="remove-word" data-word="${word}" aria-label="Remove ${word}">❌</button>
-        </li>
-    `).join('');
+    // --- Initialization ---
+    init() {
+        if (!this.elements.wordInput) return; // Don't run if on the wrong page
+        this.setupEventListeners();
+        this.displayInitialState();
+        this.displayRecentSearches();
+    }
 
-    // Rebind events for search and removal
-    list.querySelectorAll('.recent-word').forEach(item => {
-        item.addEventListener('click', () => {
-            wordInput.value = item.textContent;
-            fetchDefinition(item.textContent);
+    setupEventListeners() {
+        // Form submission
+        this.elements.searchButton.addEventListener('click', () => this.handleSearch());
+        this.elements.wordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') this.handleSearch();
         });
-        item.addEventListener('keyup', (e) => {
-            if (e.key === 'Enter') {
-                wordInput.value = item.textContent;
-                fetchDefinition(item.textContent);
+
+        // Event delegation for recent searches
+        this.elements.recentSearchesList.addEventListener('click', (e) => {
+            const target = e.target;
+            if (target.matches('.recent-word')) {
+                this.performSearch(target.textContent);
+            }
+            if (target.closest('.remove-word')) {
+                const wordToRemove = target.closest('.remove-word').dataset.word;
+                this.removeRecentSearch(wordToRemove);
             }
         });
-    });
 
-    list.querySelectorAll('.remove-word').forEach(button => {
-        button.addEventListener('click', () => {
-            const wordToRemove = button.dataset.word;
-            const updated = getRecentSearches().filter(w => w !== wordToRemove);
-            localStorage.setItem('recentSearches', JSON.stringify(updated));
-            displayRecentSearches();
+        // Event delegation for audio buttons
+        this.elements.resultsContainer.addEventListener('click', (e) => {
+            const audioButton = e.target.closest('.audio-button');
+            if (audioButton) {
+                this.playAudio(audioButton.dataset.audio);
+            }
         });
-    });
-};
-
-// --- Audio Playback ---
-const playAudio = (audioUrl) => {
-    if (audioUrl) new Audio(audioUrl).play();
-};
-
-// --- Fetch and Display Definitions ---
-async function fetchDefinition(word) {
-    resultsContainer.innerHTML = '<div class="spinner"></div>';
-
-    try {
-        const response = await fetch(`${apiUrl}${word}`);
-        if (!response.ok) throw new Error('Word not found');
-
-        const data = await response.json();
-        if (!Array.isArray(data) || data.length === 0) {
-            throw new Error('No definition data available');
-        }
-
-        displayDefinition(data);
-        saveRecentSearch(word);
-    } catch (error) {
-        console.error("Error fetching definition:", error);
-        resultsContainer.innerHTML = `<p>Sorry, we could not find a definition for "<strong>${word}</strong>". Please check the spelling and try again.</p>`;
     }
-}
 
-function displayDefinition(data) {
-    resultsContainer.innerHTML = '';
+    // --- Search & Data Fetching ---
+    handleSearch() {
+        const word = this.elements.wordInput.value.trim();
+        if (word) {
+            this.performSearch(word);
+        }
+    }
 
-    data.forEach(entry => {
-        const word = entry.word;
-        const phoneticText = entry.phonetic || '';
-        const audioUrl = entry.phonetics?.find(p => p.audio)?.audio || '';
-        const audioButton = audioUrl
-            ? `<button class="audio-button" data-audio="${audioUrl}" aria-label="Listen to pronunciation" tabindex="0">🔊</button>`
-            : '';
+    async performSearch(word) {
+        this.elements.wordInput.value = word;
+        this.elements.resultsContainer.innerHTML = '<div class="spinner"></div>';
+        try {
+            const response = await fetch(`${this.apiUrl}${word}`);
+            if (!response.ok) {
+                // The API returns a 404 with a JSON body for not found words
+                throw new Error('Word not found');
+            }
+            const data = await response.json();
+            this.displayDefinition(data);
+            this.saveRecentSearch(word);
+        } catch (error) {
+            this.displayError(`Sorry, we could not find a definition for "<strong>${word}</strong>". Please check the spelling and try again.`);
+        }
+    }
 
-        let html = `
-            <div class="entry">
-                <h3>${word} ${audioButton}</h3>
-                <p>${phoneticText}</p>
-            </div>
-        `;
+    // --- Display Logic ---
+    displayInitialState() {
+        this.elements.resultsContainer.innerHTML = `<p>Welcome to the dictionary! Enter a word above to get started.</p>`;
+    }
 
-        if (Array.isArray(entry.meanings)) {
-            entry.meanings.forEach(meaning => {
-                const definitions = meaning.definitions?.map(def => `<li>${def.definition}</li>`).join('') || '';
-                html += `
-                    <div class="entry">
+    displayError(message) {
+        this.elements.resultsContainer.innerHTML = `<p class="card error">${message}</p>`;
+    }
+
+    displayDefinition(data) {
+        const entriesHtml = data.map(entry => {
+            const phoneticText = entry.phonetic || '';
+            const audioUrl = entry.phonetics?.find(p => p.audio)?.audio || '';
+            const audioButton = audioUrl ?
+                `<button class="audio-button" data-audio="${audioUrl}" aria-label="Listen to pronunciation">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path></svg>
+                </button>` : '';
+
+            const meaningsHtml = entry.meanings.map(meaning => {
+                const definitionsHtml = meaning.definitions.map(def => `<li>${def.definition}</li>`).join('');
+                return `
+                    <div class="meaning-entry">
                         <h4><em>(${meaning.partOfSpeech})</em></h4>
-                        <ul>${definitions}</ul>
+                        <ul>${definitionsHtml}</ul>
                     </div>
                 `;
-            });
+            }).join('');
+
+            return `
+                <div class="entry card">
+                    <div class="entry-header">
+                        <h3>${entry.word}</h3>
+                        ${audioButton}
+                    </div>
+                    <p class="phonetic">${phoneticText}</p>
+                    ${meaningsHtml}
+                </div>
+            `;
+        }).join('');
+
+        this.elements.resultsContainer.innerHTML = entriesHtml;
+    }
+
+    // --- Audio Playback ---
+    playAudio(audioUrl) {
+        if (audioUrl) {
+            new Audio(audioUrl).play().catch(e => console.error("Error playing audio:", e));
+        }
+    }
+
+    // --- Local Storage: Recent Searches ---
+    getRecentSearches() {
+        return JSON.parse(localStorage.getItem('recentSearches')) || [];
+    }
+
+    saveRecentSearch(word) {
+        this.recentSearches = this.recentSearches.filter(w => w.toLowerCase() !== word.toLowerCase());
+        this.recentSearches.unshift(word);
+        if (this.recentSearches.length > 5) this.recentSearches.pop();
+        localStorage.setItem('recentSearches', JSON.stringify(this.recentSearches));
+        this.displayRecentSearches();
+    }
+
+    removeRecentSearch(wordToRemove) {
+        this.recentSearches = this.getRecentSearches().filter(w => w.toLowerCase() !== wordToRemove.toLowerCase());
+        localStorage.setItem('recentSearches', JSON.stringify(this.recentSearches));
+        this.displayRecentSearches();
+    }
+
+    displayRecentSearches() {
+        if (this.recentSearches.length === 0) {
+            this.elements.recentSearchesContainer.style.display = 'none';
+            return;
         }
 
-        resultsContainer.innerHTML += html;
-    });
-
-    // Bind audio play events
-    resultsContainer.querySelectorAll('.audio-button').forEach(button => {
-        button.addEventListener('click', () => playAudio(button.dataset.audio));
-        button.addEventListener('keyup', (e) => {
-            if (e.key === 'Enter') playAudio(button.dataset.audio);
-        });
-    });
+        this.elements.recentSearchesContainer.style.display = 'block';
+        this.elements.recentSearchesList.innerHTML = this.recentSearches.map(word => `
+            <li>
+                <span class="recent-word" role="button" tabindex="0">${word}</span>
+                <button class="remove-word" data-word="${word}" aria-label="Remove ${word}">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+                </button>
+            </li>
+        `).join('');
+    }
 }
 
-// --- Initialization ---
+// --- Module Export ---
 export function init() {
-    const searchButton = getElement('search-button');
-
-    if (searchButton && wordInput) {
-        const performSearch = () => {
-            const word = wordInput.value.trim();
-            if (word) fetchDefinition(word);
-        };
-
-        searchButton.addEventListener('click', performSearch);
-        wordInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') performSearch();
-        });
-
-        displayRecentSearches();
-    }
+    const app = new DictionaryApp();
+    app.init();
 }
