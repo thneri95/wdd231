@@ -268,7 +268,6 @@ button,
     position: relative;
     height: 60vh;
     min-height: 450px;
-    /* Slightly taller for better text placement */
     background-image: url('https://images.unsplash.com/photo-1534430480872-740484a7ae53?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
@@ -277,7 +276,6 @@ button,
     justify-content: center;
     text-align: center;
     color: var(--text-light);
-    /* Remove the body top padding for the hero section */
     margin-top: calc(-1 * var(--header-height));
 }
 
@@ -303,6 +301,7 @@ button,
     font-size: clamp(1.2rem, 3vw, 1.5rem);
     margin-top: var(--spacing-xs);
     color: var(--text-light);
+    font-family: bold;
 }
 
 .hero-cta-container {

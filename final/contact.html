@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spanish Hub | Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spanish Portal | Contact Us</title>
     <meta name="description"
         content="Get in touch with the Spanish Portal. Find our contact details, send us a message, or check our FAQs." />
     <meta name="author" content="Tiago Neri" />
@@ -15,13 +15,14 @@
 
 <body>
     <header>
-        <a href="index.html" class="logo">Spanish Learning Hub </a>
+        <a href="index.html" class="logo">Spanish Portal</a>
         <button id="menu-button" aria-label="Open Navigation Menu" aria-expanded="false">☰</button>
         <nav>
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Home</a>
             <a href="courses.html">Courses</a>
             <a href="resources.html">Resources</a>
-            <a href="contact.html">Contact</a>
+            <!-- FIX: The 'active' class is now correctly on the Contact link -->
+            <a href="contact.html" class="active">Contact</a>
         </nav>
     </header>
 
@@ -37,48 +38,97 @@
             <div class="contact-form-container">
                 <h2>Send Us a Message</h2>
                 <form id="contact-form">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required />
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required />
-
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-
-                    <button type="submit">Send Message</button>
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
                 </form>
-                <div id="response"></div>
+                <div id="form-response"></div>
             </div>
-
-            <!-- Right Column: Contact Info -->
             <div class="contact-info-container">
-                <h2>Contact Information</h2>
-                <p><strong>Email:</strong> <a href="mailto:contact@spanishportal.com">contact@spanishportal.com</a></p>
-                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-                <p><strong>Address:</strong> 123 Language Lane, Fluency City, USA</p>
-
-                <h3>Office Hours</h3>
-                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                <h3>Contact Information</h3>
+                <div class="contact-info-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <div><strong>Email:</strong> <a
+                            href="mailto:contact@spanishportal.com">contact@spanishportal.com</a></div>
+                </div>
+                <div class="contact-info-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    <div><strong>Phone:</strong> +1 (555) 123-4567</div>
+                </div>
+                <div class="contact-info-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <div><strong>Address:</strong> 123 Language Ln, Fluency City</div>
+                </div>
+                <!-- ADDED SECTION -->
+                <div class="contact-info-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <div><strong>Office Hours:</strong> Monday - Friday, 9am - 5pm</div>
+                </div>
             </div>
         </div>
 
-        <!-- FAQ Section -->
         <section class="faq-section">
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>What are the course prices?</h3>
-                <p>Our course prices vary depending on the level and duration. Please visit our <a
-                        href="courses.html">Courses</a> page for detailed information.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Do you offer a free trial?</h3>
-                <p>Yes, we offer a 7-day free trial for all our beginner courses so you can experience our teaching
-                    method firsthand.</p>
-            </div>
+
+            <details class="faq-item">
+                <summary>What are the course prices?</summary>
+                <div class="faq-answer">
+                    <div>
+                        <p>Our course prices vary depending on the level and duration. Please visit our <a
+                                href="courses.html">Courses</a> page for detailed information on each program.</p>
+                    </div>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Do you offer a free trial?</summary>
+                <div class="faq-answer">
+                    <div>
+                        <p>Yes, we offer a 7-day free trial for all our beginner courses so you can experience our
+                            teaching method firsthand before committing.</p>
+                    </div>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Are the courses self-paced?</summary>
+                <div class="faq-answer">
+                    <div>
+                        <p>Absolutely! All of our courses are designed to be self-paced. You can learn on your own
+                            schedule and revisit lessons as many times as you need to master the material.</p>
+                    </div>
+                </div>
+            </details>
+
         </section>
     </main>
-
     <footer>
         <div class="footer-main">
             <div class="footer-grid container">
@@ -135,9 +185,8 @@
             </div>
         </div>
     </footer>
-</body>
 
-<script src="scripts/main.js"></script>
+    <script src="scripts/main.js" type="module"></script>
 </body>
 
 </html>

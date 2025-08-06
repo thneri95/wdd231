@@ -1,4 +1,4 @@
-//  Main script for all pages
+// Main script for all pages
 
 
 const pageModules = {
@@ -8,11 +8,8 @@ const pageModules = {
     'contact.html': () => import('./contact.js'),
 };
 
-/**
- * Dynamically updates the year in the footer
- */
+
 const setFooterYear = () => {
-    // Corrected ID to match the HTML: 'current-year'
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear().toString();
@@ -20,12 +17,33 @@ const setFooterYear = () => {
 };
 
 
+const setLastModified = () => {
+    const modifiedSpan = document.getElementById('last-modified');
+    if (modifiedSpan) {
+        const lastModifiedDate = new Date(document.lastModified);
+
+        const options = {
+            month: '2-digit',
+            day: '2-digit',
+            year: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        };
+
+
+        modifiedSpan.textContent = new Intl.DateTimeFormat('en-US', options).format(lastModifiedDate);
+    }
+};
+
+
 const handleMobileNav = () => {
     const menuButton = document.getElementById('menu-button');
-    const nav = document.querySelector('header nav'); // More specific selector
+    const nav = document.querySelector('header nav');
 
     if (!menuButton || !nav) {
-        return; // Exit if elements aren't on the page
+        return;
     }
 
     menuButton.addEventListener('click', () => {
@@ -34,7 +52,6 @@ const handleMobileNav = () => {
         menuButton.setAttribute('aria-expanded', !isExpanded);
     });
 };
-
 
 const setActiveNavLink = () => {
     const navLinks = document.querySelectorAll('header nav a');
@@ -71,6 +88,7 @@ const loadPageModule = () => {
 
 const main = () => {
     setFooterYear();
+    setLastModified();
     handleMobileNav();
     setActiveNavLink();
     loadPageModule();
