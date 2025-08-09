@@ -196,10 +196,13 @@
     margin-top: var(--spacing-xl);
 }
 
-.cta-section h2 {
+.cta-section h2,
+.cta-section p {
     color: var(--text-light);
     margin-bottom: var(--spacing-md);
 }
+
+
 
 .cta-section .cta-button {
     background-color: var(--secondary-color);
