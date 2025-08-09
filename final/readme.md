@@ -35,5 +35,5 @@ This website will serve as a showcase for those courses. Additionally, I plan to
   - **ES Modules** – Code organized in modules (`main.js`, `courses.js`, `resources.js`)  
   - **Async/Await + Fetch API** – Dynamic loading of JSON data and API consumption  
   - **DOM Manipulation** – Dynamic content updates and interactivity  
-- **Local JSON** – Stores course and phrase data  
+- **JSON** – Stores courses and phrase datas  
 - **External APIs** – Potential for dictionaries, motivational phrases, and translations
