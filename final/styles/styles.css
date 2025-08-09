@@ -40,11 +40,11 @@
     --transition-fast: 0.2s ease;
     --transition-med: 0.3s ease;
     --max-width: 1100px;
-    --header-height: 80px;
+    --header-height: 85px;
 }
 
 /* 
-   GLOBAL STYLES & ACCESSIBILITY
+   GLOBAL STYLES + ACCESSIBILITY
    */
 *,
 *::before,
@@ -691,6 +691,13 @@ footer {
         clip: rect(0, 0, 0, 0) !important;
         white-space: nowrap !important;
         border: 0 !important;
+    }
+
+    @media (max-width: 600px) {
+        .hero {
+            margin-top: 0;
+            padding-top: calc(var(--header-height) + 1px);
+        }
     }
 
 }
