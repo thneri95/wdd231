@@ -5,7 +5,7 @@
         "title": "Spanish for Beginners",
         "level": "Beginner",
         "duration_weeks": 6,
-        "price": 29.00,
+        "price": 79.00,
         "image_url": "images/beginners.webp",
         "description": "Start your learning journey with essential vocabulary, basic grammar, and everyday phrases. No prior experience needed!",
         "tags": [
@@ -30,7 +30,7 @@
         "title": "Spanish for Travel",
         "level": "Beginner",
         "duration_weeks": 7,
-        "price": 59.00,
+        "price": 99.00,
         "image_url": "images/travel.webp",
         "description": "Prepare for your next adventure! This course covers essential phrases, cultural tips, and scenarios for navigating Spanish-speaking countries with ease.",
         "tags": [
@@ -56,7 +56,7 @@
         "title": "Intermediate Conversation",
         "level": "Intermediate",
         "duration_weeks": 10,
-        "price": 79.00,
+        "price": 159.00,
         "image_url": "images/intermediate.webp",
         "description": "Improve your fluency and confidence with practical conversation drills, role-playing, and interactive sessions.",
         "tags": [
@@ -81,7 +81,7 @@
         "title": "Advanced Grammar Mastery",
         "level": "Advanced",
         "duration_weeks": 12,
-        "price": 99.00,
+        "price": 189.00,
         "image_url": "images/adv-grammar.webp",
         "description": "Master complex grammatical structures, refine your writing, and understand the nuances of the Spanish language.",
         "tags": [
@@ -106,7 +106,7 @@
         "title": "Spanish for Business",
         "level": "Intermediate",
         "duration_weeks": 14,
-        "price": 129.00,
+        "price": 209.00,
         "image_url": "images/business/webp",
         "description": "Learn to communicate effectively and professionally in a Spanish-speaking business environment.",
         "tags": [
@@ -131,7 +131,7 @@
         "title": "Advanced Conversation & Debate",
         "level": "Advanced",
         "duration_weeks": 16,
-        "price": 159.00,
+        "price": 279.00,
         "image_url": "images/debate.webp",
         "description": "Perfect your oral expression by engaging in debates, simulated interviews, and discussions on current events.",
         "tags": [

@@ -2,18 +2,21 @@
 .contact-header {
     text-align: center;
     margin-bottom: var(--spacing-xl);
+    padding: 0 var(--spacing-md);
 }
 
 .contact-header h1 {
     font-size: var(--fs-h1);
     margin-bottom: var(--spacing-xs);
+    line-height: 1.2;
 }
 
 .contact-header p {
     font-size: var(--fs-lg);
     color: var(--text-dark);
     max-width: 65ch;
-    margin-inline: auto;
+    margin: 0 auto;
+    line-height: 1.5;
 }
 
 /* --- Course Filtering --- */
@@ -23,11 +26,13 @@
     justify-content: center;
     align-items: center;
     gap: var(--spacing-sm);
+    flex-wrap: wrap;
 }
 
 .filter-container label {
     font-weight: 700;
     font-size: var(--fs-md);
+    white-space: nowrap;
 }
 
 .filter-container select {
@@ -37,6 +42,7 @@
     font-size: var(--fs-md);
     background-color: var(--background-white);
     min-width: 200px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .filter-container select:focus {
@@ -45,22 +51,32 @@
     outline: none;
 }
 
-/* --- Course Grid Layout --- */
+/* --- Course Grid --- */
 .course-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
 }
 
-/*
-  ========================================
-  COURSE CARD STYLES
-  ========================================
-*/
+/* ========================================
+   COURSE CARD STYLES
+   ======================================== */
 .course-card {
     display: flex;
     flex-direction: column;
+    background-color: var(--background-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.course-card:hover,
+.course-card:focus-within {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
 }
 
 .course-image {
@@ -68,6 +84,14 @@
     height: 200px;
     object-fit: cover;
     display: block;
+    border-top-left-radius: var(--border-radius-lg);
+    border-top-right-radius: var(--border-radius-lg);
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-image,
+.course-card:focus-within .course-image {
+    transform: scale(1.05);
 }
 
 .course-card-content {
@@ -87,17 +111,24 @@
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
     align-self: flex-start;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .course-title {
     font-size: var(--fs-xl);
     margin-bottom: var(--spacing-xs);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
 }
 
 .course-description {
     font-size: var(--fs-md);
     margin-bottom: var(--spacing-md);
     flex-grow: 1;
+    color: var(--text-muted);
+    line-height: 1.4;
 }
 
 .course-details {
@@ -107,12 +138,20 @@
     color: var(--text-dark);
     margin-bottom: var(--spacing-md);
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .course-details span {
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
+}
+
+/* Example: Add icons color accent */
+.course-details span svg {
+    fill: var(--primary-color);
+    width: 1em;
+    height: 1em;
 }
 
 .course-footer {
@@ -133,6 +172,18 @@
 .course-button {
     padding: 0.6rem 1.2rem;
     font-size: var(--fs-md);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.course-button:hover,
+.course-button:focus {
+    background-color: #F4B524;
+    outline: none;
 }
 
 /* --- Call to Action Section --- */
@@ -147,22 +198,29 @@
 
 .cta-section h2 {
     color: var(--text-light);
+    margin-bottom: var(--spacing-md);
 }
 
 .cta-section .cta-button {
     background-color: var(--secondary-color);
     color: var(--primary-color);
+    border-radius: var(--border-radius-sm);
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.cta-section .cta-button:hover {
+.cta-section .cta-button:hover,
+.cta-section .cta-button:focus {
     background-color: var(--background-white);
+    outline: none;
 }
 
-/*
-  ========================================
-  MODAL STYLES (FIXED)
-  ========================================
-*/
+/* ========================================
+   MODAL STYLES (FIXED)
+   ======================================== */
 .modal {
     position: fixed;
     z-index: 1001;
@@ -172,15 +230,12 @@
     align-items: center;
     justify-content: center;
     padding: var(--spacing-sm);
-
-    /* FIX: Use visibility and opacity for transitions instead of display */
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s var(--transition-med), opacity var(--transition-med);
 }
 
 .modal.is-open {
-    /* FIX: Make visible and allow transition to run */
     visibility: visible;
     opacity: 1;
     transition: visibility 0s, opacity var(--transition-med);
@@ -195,6 +250,7 @@
     position: relative;
     transform: scale(0.95);
     transition: transform var(--transition-med);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .modal.is-open .modal-content {
@@ -205,7 +261,6 @@
     position: absolute;
     top: var(--spacing-sm);
     right: var(--spacing-sm);
-    /* FIX: Use a variable for the color for consistency */
     color: var(--text-dark);
     opacity: 0.6;
     font-size: 2rem;
@@ -218,9 +273,11 @@
     transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
-#modal-close:hover {
+#modal-close:hover,
+#modal-close:focus {
     opacity: 1;
     transform: scale(1.1);
+    outline: none;
 }
 
 #modal-body ul {
@@ -230,4 +287,25 @@
 
 #modal-body li {
     margin-bottom: var(--spacing-xs);
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+    .filter-container {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .filter-container select {
+        min-width: 100%;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .course-image {
+        height: 160px;
+    }
 }

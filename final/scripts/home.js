@@ -2,7 +2,6 @@
 
 // --- Configuration ---
 const coursesJsonUrl = 'https://thneri95.github.io/wdd231/final/Json/courses.json';
-// Assuming your vocabulary JSON is in a similar location. Adjust the path if needed.
 const vocabularyJsonUrl = 'https://thneri95.github.io/wdd231/final/Json/vocabulary.json';
 
 // --- Helper Functions ---
@@ -19,13 +18,12 @@ async function fetchData(url) {
         return await response.json();
     } catch (error) {
         console.error(`Error fetching data from ${url}:`, error);
-        // Return an empty array on failure so the rest of the script doesn't break.
-        return [];
+        return []; // Return an empty array on failure so the rest of the script doesn't break.
     }
 }
 
 /**
- * Formats a number as USD currency.
+ * Formats a number as USD currency. (Not used on the homepage but available for other pages)
  * @param {number} price - The price to format.
  * @returns {string} The formatted price string (e.g., "$99.00").
  */
@@ -61,7 +59,6 @@ function displayWordOfTheDay(vocabulary) {
         return;
     }
 
-    // FIX: Use the day of the year to pick the same word for everyone all day.
     const dayIndex = getDayOfYear();
     const todayWord = vocabulary[dayIndex % vocabulary.length];
 
@@ -70,12 +67,12 @@ function displayWordOfTheDay(vocabulary) {
         return;
     }
 
-    // This HTML structure assumes your vocabulary.json has 'word', 'translation', 'example', and 'image' keys.
+    // --- MODIFIED: Removed inline styles from the image and replaced with a class for better practice.
     container.innerHTML = `
-        <h3>${todayWord.word}</h3>
+        <h3 class="word-title">${todayWord.word}</h3>
         <p class="translation">${todayWord.translation}</p>
         <p class="example"><em>"${todayWord.example}"</em></p>
-        ${todayWord.image ? `<img src="${todayWord.image}" alt="Image related to ${todayWord.word}" loading="lazy" style="max-width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">` : ''}
+        ${todayWord.image ? `<img class="word-day-image" src="${todayWord.image}" alt="Image related to ${todayWord.word}" loading="lazy">` : ''}
     `;
 }
 
@@ -88,24 +85,27 @@ function displayFeaturedCourses(allCourses) {
     if (!container) return;
 
     if (allCourses.length === 0) {
-        container.innerHTML = '<p class="card error">Could not load featured courses.</p>';
+        container.innerHTML = '<p class="card error-message">Could not load featured courses.</p>';
         return;
     }
 
     const featuredCourseIds = [1, 4, 6]; // Beginner, Business, Travel
     const featuredCourses = allCourses.filter(course => featuredCourseIds.includes(course.id));
 
-    container.innerHTML = '';
+    container.innerHTML = ''; // Clear the spinner
 
     featuredCourses.forEach(course => {
         const card = document.createElement('article');
         card.className = 'course-card card';
+
+        // --- MODIFIED: Added course description and the .mt-auto class to the footer for alignment.
         card.innerHTML = `
-            <img src="${course.image_url}" alt="${course.title}" class="course-image" loading="lazy" onerror="this.src='images/placeholder.jpg';">
+            <img src="${course.image_url}" alt="${course.title}" loading="lazy" onerror="this.src='images/placeholder.jpg';">
             <div class="course-card-content">
                 <h3 class="course-title">${course.title}</h3>
-                <div class="course-footer">
-                    <a href="courses.html" class="course-button">Learn More</a>
+                <p>${course.description}</p>
+                <div class="course-footer mt-auto">
+                    <a href="courses.html?course=${course.id}" class="cta-button">View Details</a>
                 </div>
             </div>
         `;
@@ -115,8 +115,10 @@ function displayFeaturedCourses(allCourses) {
 
 // --- Initialization ---
 
-
-async function init() {
+/**
+ * Initializes the homepage by fetching all necessary data and displaying it.
+ */
+async function main() {
     // Fetch all data concurrently for better performance.
     const [coursesData, vocabularyData] = await Promise.all([
         fetchData(coursesJsonUrl),
@@ -128,4 +130,5 @@ async function init() {
     displayWordOfTheDay(vocabularyData);
 }
 
-export { init };
+// Run the main function when the script loads.
+main();
