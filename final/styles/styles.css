@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
 
-/* ========================================
-   DESIGN SYSTEM (ROOT VARIABLES)
-   ======================================== */
+
 :root {
     --primary-color: #223A59;
     --secondary-color: #F4B524;
@@ -42,7 +40,7 @@
     --transition-fast: 0.2s ease;
     --transition-med: 0.3s ease;
     --max-width: 1100px;
-    --header-height: 70px;
+    --header-height: 80px;
 }
 
 /* 
@@ -293,11 +291,12 @@ nav a:focus-visible::after {
 
 #menu-button {
     display: none;
+    background-color: var(--background-color);
+    color: white;
+    font-size: 1.5rem;
 }
 
-/* 
-   BUTTONS
-    */
+
 button,
 .cta-button,
 .cta-button-secondary {
@@ -619,8 +618,8 @@ footer {
 }
 
 /* ========================================
-   RESPONSIVE STYLES
-   ======================================== */
+    RESPONSIVE STYLES
+    ======================================== */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
@@ -631,38 +630,54 @@ footer {
     }
 
     #menu-button {
-        display: block;
-        background: none;
-        border: none;
-        color: var(--primary-color);
-        font-size: 2rem;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    header nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--background-white);
-        box-shadow: var(--shadow-sm);
-    }
-
-    nav.open {
         display: flex;
     }
 
-    header nav a {
+    nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--background-white);
+        box-shadow: var(--background-color);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
+    }
+
+    nav.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav a {
         padding: var(--spacing-md);
         text-align: center;
         border-bottom: 1px solid var(--border-color);
         color: var(--primary-color);
     }
 
+    nav a:last-child {
+        border-bottom: none;
+    }
+
     nav a::after {
         display: none;
+    }
+
+    #menu-button.open span:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+
+    #menu-button.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-button.open span:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
     }
 }
