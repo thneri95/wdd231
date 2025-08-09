@@ -98,10 +98,13 @@ h6 {
 
 h1 {
     font-size: var(--fs-h1);
+    padding-top: 2rem;
 }
 
 h2 {
     font-size: var(--fs-h2);
+    padding-top: 1rem;
+
 }
 
 h3 {
@@ -187,6 +190,8 @@ header .logo {
     font-weight: 700;
 }
 
+
+
 .logo img {
     height: 50px;
     width: auto;
@@ -228,7 +233,6 @@ nav a:focus-visible::after {
 
 #menu-button {
     display: none;
-
 }
 
 
