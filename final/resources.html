@@ -12,8 +12,8 @@
 
 
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/dictionary.css">
-
+    <link rel="stylesheet" href="styles/resources.css">
+    <link rel="icon" href="images/spanish.ico">
     <script src="scripts/main.js" defer></script>
     <script src="scripts/dictionary.js" defer></script>
 
@@ -35,6 +35,15 @@
         <div class="container">
             <h1>Learning Resources</h1>
 
+
+            <!-- Study Tip Section -->
+            <section class="card study-tip-card">
+                <h2>Study Tip of the Week</h2>
+                <p><strong>Active Recall for Verbs:</strong> Instead of just reading conjugation tables, actively test
+                    yourself. Cover up the conjugations and try to write them from memory. This technique, called active
+                    recall, builds much stronger memory pathways than passive reading.</p>
+            </section>
+
             <!-- Dictionary Section -->
             <section class="card">
                 <h2>Dictionary Español to English</h2>
@@ -49,14 +58,6 @@
                     <h3>Recent Searches</h3>
                     <ul id="recent-searches-list"></ul>
                 </div>
-            </section>
-
-            <!-- Study Tip Section -->
-            <section class="card study-tip-card">
-                <h2>💡 Study Tip of the Week</h2>
-                <p><strong>Active Recall for Verbs:</strong> Instead of just reading conjugation tables, actively test
-                    yourself. Cover up the conjugations and try to write them from memory. This technique, called active
-                    recall, builds much stronger memory pathways than passive reading.</p>
             </section>
 
             <!-- Helpful Links Section -->
@@ -78,18 +79,7 @@
                 </ul>
             </section>
 
-            <!-- Newsletter Section -->
-            <section class="card">
-                <h2>Weekly Learning Tips</h2>
-                <p>Sign up for our newsletter to get a new learning tip delivered to your inbox every week!</p>
-                <form id="newsletter-form" action="thanks.html" method="get">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </section>
+
         </div>
     </main>
 

@@ -1,9 +1,29 @@
 /*
   ========================================
-  DICTIONARY COMPONENT STYLES
+  RESOURCES PAGE STYLES
   ========================================
-  - This file styles the interactive dictionary on the resources page.
+  - This file styles the resources page, including the dictionary.
   - It inherits variables and base styles from styles.css.
+*/
+
+/* --- Page Header --- */
+.page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* --- Main Layout Grid for Resource Cards --- */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+/*
+  ========================================
+  DICTIONARY COMPONENT
+  ========================================
 */
 
 /* --- Dictionary Search Form --- */
@@ -28,12 +48,14 @@
     margin-top: var(--spacing-lg);
     border-top: 1px solid var(--border-color);
     padding-top: var(--spacing-lg);
+    min-height: 100px;
+    /* Prevents layout shift when loading */
 }
 
 /* Individual definition entry card */
 .entry.card {
     margin-bottom: var(--spacing-md);
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
 }
 
 .entry-header {
@@ -41,28 +63,30 @@
     justify-content: space-between;
     align-items: center;
     gap: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
 }
 
 .entry-header h3 {
     margin-bottom: 0;
-    /* Remove default heading margin */
 }
 
 .phonetic {
     font-style: italic;
     color: #666;
-    margin-top: -0.5rem;
     margin-bottom: var(--spacing-md);
 }
 
 .meaning-entry {
-    margin-top: var(--spacing-sm);
+    margin-top: var(--spacing-md);
 }
 
 .meaning-entry h4 {
     font-size: var(--fs-lg);
     color: var(--text-dark);
     margin-bottom: var(--spacing-xs);
+    font-weight: 700;
 }
 
 .meaning-entry ul {
@@ -73,7 +97,7 @@
 
 .meaning-entry li {
     margin-bottom: var(--spacing-xs);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* --- Audio Button --- */
@@ -123,6 +147,11 @@
     overflow: hidden;
     font-size: var(--fs-sm);
     box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-fast);
+}
+
+#recent-searches-list li:hover {
+    box-shadow: var(--shadow-md);
 }
 
 .recent-word {
@@ -158,7 +187,40 @@
     fill: #555;
 }
 
-/* --- Utility Styles --- */
+/*
+  ========================================
+  OTHER RESOURCE CARDS
+  ========================================
+*/
+.study-tip-card h2 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.resource-list {
+    list-style: none;
+    padding: 0;
+}
+
+.resource-list li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.resource-list li:last-child {
+    border-bottom: none;
+}
+
+.resource-list a {
+    font-weight: 700;
+}
+
+/*
+  ========================================
+  UTILITIES
+  ========================================
+*/
 .spinner {
     border: 4px solid rgba(0, 0, 0, 0.1);
     width: 36px;
@@ -179,4 +241,9 @@
     background-color: #ffebee;
     color: #c62828;
     border-left: 5px solid #f44336;
+}
+
+.card.error ul {
+    list-style-type: disc;
+    padding-left: var(--spacing-lg);
 }
