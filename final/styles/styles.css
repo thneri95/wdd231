@@ -73,6 +73,9 @@ main {
     flex: 1;
 }
 
+article h1,
+aside h1,
+nav h1,
 section h1 {
     font-size: var(--fs-h1);
 }
