@@ -41,7 +41,29 @@
                 <button id="new-phrase-button" aria-label="Get a new phrase">Show Another Phrase</button>
             </section>
 
+            <section id="quiz-section" class="interactive-quiz card" aria-live="polite" aria-atomic="true">
+                <h2>Quick Quiz</h2>
+                <p>Test your Spanish knowledge with this fun multiple choice quiz:</p>
+                <form id="quiz-form" aria-describedby="quiz-feedback">
+                    <h3 id="quiz-question"></h3>
+                    <div id="quiz-options"></div>
+                    <button type="submit" id="submit-quiz">Submit</button>
+                </form>
+                <p id="quiz-feedback" role="alert" aria-live="assertive" tabindex="-1"></p>
+            </section>
 
+            <section class="cultural-tips card">
+                <h2>Cultural Tips</h2>
+                <p>Understanding culture is key to mastering any language. Here are some quick tips:</p>
+                <ul>
+                    <li><strong>Formal vs Informal:</strong> Use <em>usted</em> for formal situations and <em>tú</em>
+                        for friends and family.</li>
+                    <li><strong>Gestures:</strong> The “OK” sign can have different meanings — always pay attention to
+                        context.</li>
+                    <li><strong>Regional Differences:</strong> Vocabulary varies between Spain, Mexico, and Latin
+                        America — embrace the diversity!</li>
+                </ul>
+            </section>
 
 
             <section class="multimedia-resources card">
@@ -68,30 +90,6 @@
                         </ul>
                     </article>
                 </div>
-            </section>
-
-            <section class="cultural-tips card">
-                <h2>Cultural Tips</h2>
-                <p>Understanding culture is key to mastering any language. Here are some quick tips:</p>
-                <ul>
-                    <li><strong>Formal vs Informal:</strong> Use <em>usted</em> for formal situations and <em>tú</em>
-                        for friends and family.</li>
-                    <li><strong>Gestures:</strong> The “OK” sign can have different meanings — always pay attention to
-                        context.</li>
-                    <li><strong>Regional Differences:</strong> Vocabulary varies between Spain, Mexico, and Latin
-                        America — embrace the diversity!</li>
-                </ul>
-            </section>
-
-            <section id="quiz-section" class="interactive-quiz card" aria-live="polite" aria-atomic="true">
-                <h2>Quick Quiz</h2>
-                <p>Test your Spanish knowledge with this fun multiple choice quiz:</p>
-                <form id="quiz-form" aria-describedby="quiz-feedback">
-                    <h3 id="quiz-question"></h3>
-                    <div id="quiz-options"></div>
-                    <button type="submit" id="submit-quiz">Submit</button>
-                </form>
-                <p id="quiz-feedback" role="alert" aria-live="assertive" tabindex="-1"></p>
             </section>
 
         </div>
