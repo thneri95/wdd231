@@ -82,7 +82,7 @@ function initializeQuiz() {
         { question: 'What does <em>“preguntar”</em> mean?', options: [{ value: "ask", label: "To ask" }, { value: "say", label: "To say" }, { value: "tell", label: "To tell" }], correctAnswer: "ask", successMessage: "'Preguntar' means 'to ask'. ❓", errorMessage: "'Preguntar' means 'to ask'." }
     ];
 
-    // Seleciona 5 perguntas aleatórias sem repetição
+    // Selecionas 5 perguntas aleatórias sem repetição
     const quizData = shuffleArray(quizDataFull).slice(0, 5);
 
     let currentQuestionIndex = 0;
