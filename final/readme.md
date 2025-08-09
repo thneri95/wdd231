@@ -5,8 +5,8 @@ It features courses organized by levels, practical tools, quizzes, and resources
 
 > Developed as the final project for the **WDD 231 – BYU-Idaho** course, applying **semantic HTML**, **modern CSS**, and **modular JavaScript**.
 
-"I chose this theme because I was a Spanish teacher in the past and I intend to use this project in the real world soon.
- I also plan to offer free courses to help children and teenagers improve their Spanish skills."
+"I chose this theme because I was a Spanish teacher in the past and I intend to use this project in the real world. I am currently working on creating courses within the Hotmart platform, which will include a members-only area and more features. 
+This website will serve as a showcase for those courses. Additionally, I plan to offer free courses to help children and teenagers improve their Spanish skills."
 
 
 ---
