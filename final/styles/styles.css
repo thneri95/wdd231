@@ -78,7 +78,6 @@ main {
 
 section h1 {
     font-size: var(--fs-h1);
-    /* Garante que o H1 mantém o seu tamanho grande dentro de uma section */
 }
 
 /* 
