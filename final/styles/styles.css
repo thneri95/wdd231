@@ -187,6 +187,12 @@ header .logo {
     font-weight: 700;
 }
 
+.logo img {
+    height: 50px;
+    width: auto;
+    vertical-align: middle;
+}
+
 nav {
     display: flex;
     gap: var(--spacing-xs);
@@ -194,7 +200,6 @@ nav {
 
 nav a {
     color: white;
-    /* Text should be dark */
     padding: var(--spacing-xs) var(--spacing-sm);
     font-size: var(--fs-lg);
     font-weight: 700;
@@ -212,6 +217,7 @@ nav a::after {
     transform: scaleX(0);
     transform-origin: center;
     transition: transform var(--transition-med);
+
 }
 
 nav a:hover::after,
@@ -222,6 +228,7 @@ nav a:focus-visible::after {
 
 #menu-button {
     display: none;
+
 }
 
 
