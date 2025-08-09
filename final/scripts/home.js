@@ -1,4 +1,3 @@
-// This module handles all logic for the home page, including "Word of the Day" and "Featured Courses".
 
 // --- Configuration ---
 const coursesJsonUrl = 'https://thneri95.github.io/wdd231/final/Json/courses.json';
@@ -7,9 +6,9 @@ const vocabularyJsonUrl = 'https://thneri95.github.io/wdd231/final/Json/vocabula
 // --- Helper Functions ---
 
 /**
- * A reusable function to fetch JSON data from a URL.
- * @param {string} url - The URL to fetch data from.
- * @returns {Promise<Array>} A promise that resolves to the JSON data array.
+ * A reusable function to fetch JSON data from a URL:
+ * @param {string} url - The URL to fetch data from!
+ * @returns {Promise<Array>} A promise that resolves to the JSON data array!
  */
 async function fetchData(url) {
     try {
@@ -18,14 +17,13 @@ async function fetchData(url) {
         return await response.json();
     } catch (error) {
         console.error(`Error fetching data from ${url}:`, error);
-        return []; // Return an empty array on failure so the rest of the script doesn't break.
+        return []; // Return an empty array on failure so the rest of the script doesn't break
     }
 }
 
 /**
- * Formats a number as USD currency. (Not used on the homepage but available for other pages)
- * @param {number} price - The price to format.
- * @returns {string} The formatted price string (e.g., "$99.00").
+ * Formats a number as USD currency
+ * @returns {string} The formatted price string ( "$99.00")
  */
 const formatPrice = (price) => {
     return new Intl.NumberFormat('en-US', {
@@ -35,8 +33,8 @@ const formatPrice = (price) => {
 };
 
 /**
- * Calculates the current day of the year (1-366).
- * @returns {number} The current day of the year.
+ * Calculates the current day of the year (1-366):
+ * @returns {number} The current day of the year
  */
 function getDayOfYear() {
     const now = new Date();
@@ -49,8 +47,8 @@ function getDayOfYear() {
 // --- Display Functions ---
 
 /**
- * Displays the deterministic Word of the Day.
- * @param {Array} vocabulary - The array of vocabulary words.
+ * Displays the  Word of the Day.
+ * @param {Array} vocabulary - The array of vocabulary words
  */
 function displayWordOfTheDay(vocabulary) {
     const container = document.getElementById('word-container');
@@ -67,7 +65,6 @@ function displayWordOfTheDay(vocabulary) {
         return;
     }
 
-    // --- MODIFIED: Removed inline styles from the image and replaced with a class for better practice.
     container.innerHTML = `
         <h3 class="word-title">${todayWord.word}</h3>
         <p class="translation">${todayWord.translation}</p>
@@ -77,8 +74,8 @@ function displayWordOfTheDay(vocabulary) {
 }
 
 /**
- * Fetches and displays featured courses on the homepage.
- * @param {Array} allCourses - The array of all course objects.
+ * Fetches and displays featured courses on my HP
+ * @param {Array} allCourses - The array of all course objects
  */
 function displayFeaturedCourses(allCourses) {
     const container = document.getElementById('featured-courses-grid');
@@ -89,7 +86,7 @@ function displayFeaturedCourses(allCourses) {
         return;
     }
 
-    const featuredCourseIds = [1, 4, 6]; // Beginner, Business, Travel
+    const featuredCourseIds = [1, 4, 6]; // Beginner, Business, Travel etc
     const featuredCourses = allCourses.filter(course => featuredCourseIds.includes(course.id));
 
     container.innerHTML = ''; // Clear the spinner
@@ -98,7 +95,7 @@ function displayFeaturedCourses(allCourses) {
         const card = document.createElement('article');
         card.className = 'course-card card';
 
-        // --- MODIFIED: Added course description and the .mt-auto class to the footer for alignment.
+        // --- MODIFIED: Added course description and the .mt-auto class to the footer for alignment
         card.innerHTML = `
             <img src="${course.image_url}" alt="${course.title}" loading="lazy" onerror="this.src='images/placeholder.jpg';">
             <div class="course-card-content">
@@ -173,20 +170,14 @@ function displayFeaturedCourses(allCourses) {
 
 
 async function main() {
-    // Fetch all data concurrently for better performance.
     const [coursesData, vocabularyData] = await Promise.all([
         fetchData(coursesJsonUrl),
         fetchData(vocabularyJsonUrl)
     ]);
 
-    // Now that all data is loaded, display the sections.
     displayFeaturedCourses(coursesData);
     displayWordOfTheDay(vocabularyData);
 }
-
-
-
-
 
 
 main();

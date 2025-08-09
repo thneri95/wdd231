@@ -1,19 +1,40 @@
-/* --- Page-Specific Headlines --- */
-.page-title {
+/* --- PHRASE OF THE DAY SECTION --- */
+#phrase-text {
+    font-size: clamp(1.4rem, 3vw, 1.6rem);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-.section-title {
-    border-bottom: 3px solid var(--secondary-color);
-    padding-bottom: var(--spacing-xs);
-    margin-top: var(--spacing-xl);
-    margin-bottom: var(--spacing-lg);
-    text-align: left;
+#phrase-text::before {
+    content: '“';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-family: var(--font-secondary);
+    color: var(--border-color);
+    opacity: 0.5;
+    z-index: -1;
 }
 
-/* --- REUSABLE BUTTON COMPONENT --- */
-.btn {
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- BUTTONS --- */
+#new-phrase-button, #submit-quiz {
     display: inline-block;
     border: none;
     padding: 0.8rem 1.6rem;
@@ -25,83 +46,59 @@
     transition: all 0.2s ease-in-out;
 }
 
-.btn:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.btn:focus-visible {
-    outline: 3px solid var(--focus-ring-color);
-    outline-offset: 2px;
-}
-
-.btn.--secondary {
+#new-phrase-button {
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 
-.btn.--secondary:hover:not(:disabled) {
+#new-phrase-button:hover:not(:disabled) {
     background-color: var(--cta-hover-bg);
 }
 
-.btn.--primary {
+#submit-quiz {
     background-color: var(--primary-color);
     color: var(--text-light);
+    align-self: flex-start;
 }
 
-.btn.--primary:hover:not(:disabled) {
+#submit-quiz:hover:not(:disabled) {
     background-color: var(--cta-hover-bg);
     color: var(--primary-color);
 }
 
-/* --- PHRASE OF THE DAY SECTION --- */
-#phrase-of-the-day {
-    text-align: center;
-    padding: var(--spacing-md);
-}
-
-#phrase-text {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-md);
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    line-height: 1.4;
-}
-
-
-
 /* --- QUIZ SECTION --- */
-#quiz-form {
-    display: flex;
-    flex-direction: column;
+#quiz-question {
+    font-size: var(--fs-h4, 1.25rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-lg, 1rem);
 }
 
 #quiz-options {
     list-style: none;
     padding: 0;
-    margin: 0 0 var(--spacing-lg) 0;
+    margin: 0 0 var(--spacing-lg, 1rem) 0;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-sm, 0.5rem);
 }
 
 .quiz-option-label {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 0.5rem);
     cursor: pointer;
     padding: 0.8rem 1.5rem;
-    border: 2px solid var(--border-color);
-    border-radius: var(--border-radius-md);
+    border: 2px solid var(--border-color, #ccc);
+    border-radius: var(--border-radius-md, 8px);
     font-weight: 600;
     user-select: none;
     transition: all 0.2s ease-in-out;
+    position: relative;
 }
 
 .quiz-option-label:hover:not(.disabled) {
-    border-color: var(--secondary-color);
+    border-color: var(--secondary-color, #f4b524);
     background-color: #fef8e8;
     transform: translateX(5px);
 }
@@ -110,41 +107,52 @@
     display: none;
 }
 
-#quiz-section input[type="radio"]:checked+.quiz-option-label {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    border-color: var(--primary-color);
+#quiz-section input[type="radio"]:checked + .quiz-option-label {
+    background-color: var(--primary-color, #223A59);
+    color: var(--text-light, #fff);
+    border-color: var(--primary-color, #223A59);
     transform: scale(1.02);
 }
 
-#quiz-section input[type="radio"]:focus-visible+.quiz-option-label {
-    box-shadow: 0 0 0 3px var(--focus-ring-color);
+/* Símbolos de certo e errado */
+.quiz-option-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 1.2rem;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 10px;
 }
 
-
-#submit-quiz {
-    align-self: flex-start;
+/* Correto */
+.correct-answer::before {
+    content: '✓';
+    color: #2e7d32;
 }
 
+/* Incorreto */
+.incorrect-answer::before {
+    content: '✗';
+    color: #b71c1c;
+}
 
-/* --- QUIZ FEEDBACK & STATES --- */
+/* Desabilita opções após resposta */
 #quiz-section .disabled {
     cursor: not-allowed;
     background-color: #f8f9fa;
     opacity: 0.7;
 }
 
-#quiz-options .correct-answer {
-    background-color: #2e7d32;
-    color: white;
-    border-color: #2e7d32;
-    transform: scale(1.02);
-}
-
+/* Feedback */
 #quiz-feedback {
-    margin-top: var(--spacing-md);
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius-sm);
+    margin-top: var(--spacing-md, 1rem);
+    padding: var(--spacing-sm, 0.5rem);
+    border-radius: var(--border-radius-sm, 6px);
     font-weight: 700;
     font-size: 1.1rem;
     min-height: 2.5rem;
@@ -154,39 +162,15 @@
 #quiz-feedback.success {
     color: #155724;
     background-color: #d4edda;
-    animation: pulseGlow 1s ease-in-out 2;
 }
 
 #quiz-feedback.error {
     color: #721c24;
     background-color: #f8d7da;
-    animation: pulseError 1s ease-in-out 2;
 }
 
-@keyframes pulseGlow {
-    50% {
-        text-shadow: 0 0 8px rgba(21, 87, 36, 0.5);
-    }
-}
-
-@keyframes pulseError {
-    50% {
-        text-shadow: 0 0 8px rgba(114, 28, 36, 0.5);
-    }
-}
-
-/* ========================================
-   RESPONSIVE STYLES
-   ======================================== */
+/* RESPONSIVO */
 @media (max-width: 768px) {
-    .page-title {
-        font-size: var(--fs-h2);
-    }
-
-    .section-title {
-        font-size: var(--fs-h3);
-    }
-
     #quiz-options {
         width: 100%;
     }

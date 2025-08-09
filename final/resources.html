@@ -1,18 +1,34 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Spanish Hub | Learning Resources & Tools</title>
     <meta name="description"
-        content="Explore diverse Spanish learning resources including videos, podcasts, cultural tips, and interactive tools." />
+        content="Explore diverse Spanish learning resources including videos, podcasts, cultural tips, and interactive tools like our phrase of the day and quick quiz." />
     <meta name="author" content="Tiago Neri" />
-    <link rel="icon" href="favicon.ico" />
+    <link rel="canonical" href="https://thneri95.github.io/wdd231/final/resources.html">
+    <meta name="keywords"
+        content="spanish resources, spanish learning tools, spanish quiz, spanish phrases, free spanish practice">
+    <meta property="og:title" content="Spanish Hub | Learning Resources & Tools">
+    <meta property="og:description"
+        content="Boost your learning with our free tools, including an interactive quiz, phrase of the day, cultural tips, and links to helpful podcasts and videos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thneri95.github.io/wdd231/final/resources.html">
+    <meta property="og:image" content="https://thneri95.github.io/wdd231/final/images/og-image-resources.jpg">
+    <meta property="og:site_name" content="Spanish Hub">
+
+    <link rel="icon" href="images/spanish.ico" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/resources.css" />
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/resources.js" defer></script>
+
+    <script src="scripts/main.js" type="module" defer></script>
+    <script src="scripts/resources.js" type="module" defer></script>
+
+
+
 </head>
 
 <body>
@@ -33,27 +49,29 @@
     <main>
         <div class="container">
 
-            <h1>Resources & Tools for Spanish Learners</h1>
+            <h1 class="page-title">Resources & Tools for Spanish Learners</h1>
 
-            <section class="phrase-of-the-day card" aria-live="polite" aria-atomic="true">
-                <h2>Phrase of the Day</h2>
-                <p id="phrase-text" class="phrase-text">Loading today's phrase...</p>
-                <button id="new-phrase-button" aria-label="Get a new phrase">Show Another Phrase</button>
+            <section id="phrase-of-the-day-card" class="card" aria-live="polite" aria-atomic="true">
+                <h2 class="section-title">Phrase of the Day</h2>
+                <div id="phrase-of-the-day">
+                    <p id="phrase-text">Loading today's phrase...</p>
+                    <button id="new-phrase-button" class="btn --secondary">Show Another Phrase</button>
+                </div>
             </section>
 
-            <section id="quiz-section" class="interactive-quiz card" aria-live="polite" aria-atomic="true">
-                <h2>Quick Quiz</h2>
+            <section id="quiz-section" class="card" aria-live="polite" aria-atomic="true">
+                <h2 class="section-title">Quick Quiz</h2>
                 <p>Test your Spanish knowledge with this fun multiple choice quiz:</p>
                 <form id="quiz-form" aria-describedby="quiz-feedback">
                     <h3 id="quiz-question"></h3>
-                    <div id="quiz-options"></div>
-                    <button type="submit" id="submit-quiz">Submit</button>
+                    <ul id="quiz-options"></ul>
+                    <button type="submit" id="submit-quiz" class="btn --primary">Submit Answer</button>
                 </form>
-                <p id="quiz-feedback" role="alert" aria-live="assertive" tabindex="-1"></p>
+                <p id="quiz-feedback" role="alert" aria-live="assertive"></p>
             </section>
 
             <section class="cultural-tips card">
-                <h2>Cultural Tips</h2>
+                <h2 class="section-title">Cultural Tips</h2>
                 <p>Understanding culture is key to mastering any language. Here are some quick tips:</p>
                 <ul>
                     <li><strong>Formal vs Informal:</strong> Use <em>usted</em> for formal situations and <em>tú</em>
@@ -65,9 +83,8 @@
                 </ul>
             </section>
 
-
             <section class="multimedia-resources card">
-                <h2>Multimedia Resources</h2>
+                <h2 class="section-title">Multimedia Resources</h2>
                 <div class="resource-group">
                     <article>
                         <h3>Spanish Learning Videos</h3>
@@ -98,21 +115,20 @@
     <footer>
         <div class="footer-main">
             <div class="footer-grid container">
-
                 <div class="footer-column">
-                    <h3 class="logo-font">Spanish Portal</h3>
-                    <p>Your gateway to Spanish fluency. We provide the tools and courses to help you succeed.</p>
+                    <h3 class="logo-font">Spanish Hub</h3>
+                    <p>Empowering learners with comprehensive courses and innovative tools to achieve true Spanish
+                        fluency. Your journey starts here! </p>
                 </div>
-
                 <div class="footer-column">
                     <h3>Stay Connected</h3>
-                    <p>Get learning tips and course updates delivered to your inbox.</p>
+                    <p>Join our community! Receive exclusive learning tips, cultural insights, and course news directly
+                        in your inbox.</p>
                     <form class="newsletter-form">
                         <input type="email" placeholder="your.email@example.com" required />
                         <button type="submit">Subscribe</button>
                     </form>
                     <div class="footer-social">
-                        <!-- Social icons here -->
                         <a href="#" aria-label="Facebook">
                             <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -136,13 +152,11 @@
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
-
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; <span id="current-year">2025</span> Spanish Portal. All rights reserved.</p>
+                <p>&copy; <span id="current-year">2025</span> Spanish Learning Hub | All rights reserved </p>
                 <p>WDD 231 Final Project by Tiago Neri</p>
                 <p>Last Modification: <span id="last-modified"></span></p>
             </div>
