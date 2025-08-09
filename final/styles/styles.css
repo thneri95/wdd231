@@ -140,6 +140,18 @@ a:focus-visible {
     margin-inline: auto;
 }
 
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
 .card {
     background-color: var(--background-white);
     padding: var(--spacing-lg);
@@ -685,17 +697,7 @@ footer {
         transform: translateY(-11px) rotate(-45deg);
     }
 
-    .visually-hidden {
-        position: absolute !important;
-        width: 1px !important;
-        height: 1px !important;
-        padding: 0 !important;
-        margin: -1px !important;
-        overflow: hidden !important;
-        clip: rect(0, 0, 0, 0) !important;
-        white-space: nowrap !important;
-        border: 0 !important;
-    }
+
 
     @media (max-width: 600px) {
         .hero {
