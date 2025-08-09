@@ -149,7 +149,6 @@
 
 /* Example: Add icons color accent */
 .course-details span svg {
-    fill: var(--primary-color);
     width: 1em;
     height: 1em;
 }
@@ -185,6 +184,7 @@
     background-color: #F4B524;
     outline: none;
 }
+
 
 /* --- Call to Action Section --- */
 .cta-section {

@@ -20,15 +20,11 @@
     <meta property="og:image" content="https://thneri95.github.io/wdd231/final/images/og-image-courses.jpg">
     <meta property="og:site_name" content="Spanish Hub">
 
-
     <link rel="icon" href="images/spanish.ico">
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/courses.css" />
 
-
-    <script src="scripts/main.js" type="module" defer></script>
-    <script src="scripts/courses.js" type="module" defer></script>
-
+    <script src="scripts/main.js" defer></script>
 
 </head>
 
@@ -63,7 +59,8 @@
             </select>
         </section>
 
-        <section id="course-container" class="course-grid">
+        <section id="course-container" class="course-grid" aria-labelledby="courses-list-heading">
+            <h2 id="courses-list-heading" class="visually-hidden">Courses List</h2>
         </section>
 
         <section class="why-us-card card" aria-labelledby="why-us-heading">
@@ -118,6 +115,9 @@
                     aria-describedby="modal-description">
                     <button id="modal-close" aria-label="Close modal" data-micromodal-close>×</button>
                     <div id="modal-body">
+                        <h2 id="modal-title">Modal Title</h2>
+                        <div id="modal-description">
+                        </div>
                     </div>
                 </div>
             </div>
