@@ -2,31 +2,26 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spanish Hub | Spanish Learning Hub</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spanish Hub | Learning Resources & Tools</title>
     <meta name="description"
-        content="Use our Spanish dictionary, sign up for our newsletter, and find helpful resources for your learning journey.">
-    <meta name="author" content="Tiago Borges">
-    <link rel="icon" href="favicon.ico">
-
-
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/resources.css">
-    <link rel="icon" href="images/spanish.ico">
+        content="Explore diverse Spanish learning resources including videos, podcasts, cultural tips, and interactive tools." />
+    <meta name="author" content="Tiago Neri" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/resources.css" />
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/dictionary.js" defer></script>
-
+    <script src="scripts/resources.js" defer></script>
 </head>
 
 <body>
     <header>
-        <a href="index.html" class="logo">
-            <img src="images/spanish-logo.svg" alt="Spanish Learning Hub">
+        <a href="index.html" class="logo" aria-label="Spanish Learning Hub Home">
+            <img src="images/spanish-logo.svg" alt="Spanish Learning Hub Logo" />
             <span>Spanish Learning Hub</span>
         </a>
-
-        <button id="menu-button" aria-label="Open Navigation Menu" aria-expanded="false">☰</button>
+        <button id="menu-button" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
         <nav>
             <a href="index.html">Home</a>
             <a href="courses.html">Courses</a>
@@ -37,52 +32,67 @@
 
     <main>
         <div class="container">
-            <h1>Learning Resources</h1>
 
+            <h1>Resources & Tools for Spanish Learners</h1>
 
-            <!-- Study Tip Section -->
-            <section class="card study-tip-card">
-                <h2>Study Tip of the Week</h2>
-                <p><strong>Active Recall for Verbs:</strong> Instead of just reading conjugation tables, actively test
-                    yourself. Cover up the conjugations and try to write them from memory. This technique, called active
-                    recall, builds much stronger memory pathways than passive reading.</p>
+            <section class="phrase-of-the-day card" aria-live="polite" aria-atomic="true">
+                <h2>Phrase of the Day</h2>
+                <p id="phrase-text" class="phrase-text">Loading today's phrase...</p>
+                <button id="new-phrase-button" aria-label="Get a new phrase">Show Another Phrase</button>
             </section>
 
-            <!-- Dictionary Section -->
-            <section class="card">
-                <h2>Dictionary Español to English</h2>
-                <p>Look up any Spanish word to see its definition, part of speech, and phonetic spelling. Click the 🔊
-                    icon to hear the pronunciation.</p>
-                <div id="dictionary-form">
-                    <input type="text" id="word-input" placeholder="Enter a Spanish word...">
-                    <button id="search-button">Search</button>
-                </div>
-                <div id="dictionary-results"></div>
-                <div id="recent-searches-container" style="display: none;">
-                    <h3>Recent Searches</h3>
-                    <ul id="recent-searches-list"></ul>
+
+
+
+            <section class="multimedia-resources card">
+                <h2>Multimedia Resources</h2>
+                <div class="resource-group">
+                    <article>
+                        <h3>Spanish Learning Videos</h3>
+                        <p>Watch curated videos that explain grammar, vocabulary, and culture in an engaging way.</p>
+                        <ul>
+                            <li><a href="https://www.youtube.com/user/ButterflySpanishDotCom" target="_blank"
+                                    rel="noopener">Butterfly Spanish</a></li>
+                            <li><a href="https://www.youtube.com/c/SpanishDict" target="_blank"
+                                    rel="noopener">SpanishDict Channel</a></li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>Podcasts for Listening Practice</h3>
+                        <p>Improve your comprehension and pronunciation with these popular podcasts.</p>
+                        <ul>
+                            <li><a href="https://coffee-break-spanish.com" target="_blank" rel="noopener">Coffee Break
+                                    Spanish</a></li>
+                            <li><a href="https://www.notesinspanish.com" target="_blank" rel="noopener">Notes in
+                                    Spanish</a></li>
+                        </ul>
+                    </article>
                 </div>
             </section>
 
-            <!-- Helpful Links Section -->
-            <section class="card">
-                <h2>Helpful Links</h2>
-                <p>Here are some external resources we recommend to supplement your learning:</p>
-                <ul class="resource-list">
-                    <li><a href="https://www.spanishdict.com/" target="_blank" rel="noopener">SpanishDict</a> - An
-                        excellent comprehensive dictionary and translator.</li>
-                    <li><a href="https://www.duolingo.com/course/es/en/Learn-Spanish" target="_blank"
-                            rel="noopener">Duolingo</a> -
-                        Great for daily vocabulary practice.</li>
-                    <li><a href="https://www.thoughtco.com/spanish-4133085" target="_blank" rel="noopener">ThoughtCo
-                            Spanish</a> -
-                        In-depth articles on grammar and culture.</li>
-                    <li><a href="https://www.reddit.com/r/learnspanish/" target="_blank"
-                            rel="noopener">r/learnspanish</a> -
-                        A community of learners to ask questions and practice.</li>
+            <section class="cultural-tips card">
+                <h2>Cultural Tips</h2>
+                <p>Understanding culture is key to mastering any language. Here are some quick tips:</p>
+                <ul>
+                    <li><strong>Formal vs Informal:</strong> Use <em>usted</em> for formal situations and <em>tú</em>
+                        for friends and family.</li>
+                    <li><strong>Gestures:</strong> The “OK” sign can have different meanings — always pay attention to
+                        context.</li>
+                    <li><strong>Regional Differences:</strong> Vocabulary varies between Spain, Mexico, and Latin
+                        America — embrace the diversity!</li>
                 </ul>
             </section>
 
+            <section id="quiz-section" class="interactive-quiz card" aria-live="polite" aria-atomic="true">
+                <h2>Quick Quiz</h2>
+                <p>Test your Spanish knowledge with this fun multiple choice quiz:</p>
+                <form id="quiz-form" aria-describedby="quiz-feedback">
+                    <h3 id="quiz-question"></h3>
+                    <div id="quiz-options"></div>
+                    <button type="submit" id="submit-quiz">Submit</button>
+                </form>
+                <p id="quiz-feedback" role="alert" aria-live="assertive" tabindex="-1"></p>
+            </section>
 
         </div>
     </main>
@@ -100,33 +110,30 @@
                     <h3>Stay Connected</h3>
                     <p>Get learning tips and course updates delivered to your inbox.</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="your.email@example.com" required>
+                        <input type="email" placeholder="your.email@example.com" required />
                         <button type="submit">Subscribe</button>
                     </form>
                     <div class="footer-social">
+                        <!-- Social icons here -->
                         <a href="#" aria-label="Facebook">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <path
-                                    d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.14H6v4.44h3.5v12h5.01v-12h3.81l.77-4.44z">
-                                </path>
+                                    d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.14H6v4.44h3.5v12h5.01v-12h3.81l.77-4.44z" />
                             </svg>
                         </a>
                         <a href="#" aria-label="Instagram">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <path
-                                    d="M11.999 7.377a4.623 4.623 0 100 9.248 4.623 4.623 0 000-9.248zm0 7.627a3.004 3.004 0 110-6.008 3.004 3.004 0 010 6.008z">
-                                </path>
-                                <path d="M16.949 6.884a1.152 1.152 0 100 2.304 1.152 1.152 0 000-2.304z"></path>
+                                    d="M11.999 7.377a4.623 4.623 0 100 9.248 4.623 4.623 0 000-9.248zm0 7.627a3.004 3.004 0 110-6.008 3.004 3.004 0 010 6.008z" />
+                                <path d="M16.949 6.884a1.152 1.152 0 100 2.304 1.152 1.152 0 000-2.304z" />
                                 <path
-                                    d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 21.627A9.627 9.627 0 1112 2.373a9.627 9.627 0 010 19.254z">
-                                </path>
+                                    d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 21.627A9.627 9.627 0 1112 2.373a9.627 9.627 0 010 19.254z" />
                             </svg>
                         </a>
                         <a href="#" aria-label="Twitter">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <path
-                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.223.085a4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
-                                </path>
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.223.085a4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
                             </svg>
                         </a>
                     </div>

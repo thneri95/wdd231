@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('lastVisit', now.toString());
     }
 
-    loadItemsOfInterest();
     displayVisitMessage();
+        loadItemsOfInterest();
+
 });

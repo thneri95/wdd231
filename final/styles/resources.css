@@ -1,249 +1,193 @@
-/*
-  ========================================
-  RESOURCES PAGE STYLES
-  ========================================
-  - This file styles the resources page, including the dictionary.
-  - It inherits variables and base styles from styles.css.
-*/
-
-/* --- Page Header --- */
-.page-header {
+/* --- Page-Specific Headlines --- */
+.page-title {
     text-align: center;
     margin-bottom: var(--spacing-xl);
 }
 
-/* --- Main Layout Grid for Resource Cards --- */
-.resources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-lg);
+.section-title {
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: var(--spacing-xs);
     margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    text-align: left;
 }
 
-/*
-  ========================================
-  DICTIONARY COMPONENT
-  ========================================
-*/
-
-/* --- Dictionary Search Form --- */
-#dictionary-form {
-    display: flex;
-    gap: var(--spacing-sm);
-    margin-block: var(--spacing-md) var(--spacing-lg);
-}
-
-#dictionary-form input[type="text"] {
-    flex-grow: 1;
-    /* Allows the input to take up available space */
-}
-
-#dictionary-form #search-button {
-    flex-shrink: 0;
-    /* Prevents the button from shrinking */
-}
-
-/* --- Dictionary Results Area --- */
-#dictionary-results {
-    margin-top: var(--spacing-lg);
-    border-top: 1px solid var(--border-color);
-    padding-top: var(--spacing-lg);
-    min-height: 100px;
-    /* Prevents layout shift when loading */
-}
-
-/* Individual definition entry card */
-.entry.card {
-    margin-bottom: var(--spacing-md);
-    padding: var(--spacing-lg);
-}
-
-.entry-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--spacing-sm);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: var(--spacing-sm);
-    margin-bottom: var(--spacing-sm);
-}
-
-.entry-header h3 {
-    margin-bottom: 0;
-}
-
-.phonetic {
-    font-style: italic;
-    color: #666;
-    margin-bottom: var(--spacing-md);
-}
-
-.meaning-entry {
-    margin-top: var(--spacing-md);
-}
-
-.meaning-entry h4 {
-    font-size: var(--fs-lg);
-    color: var(--text-dark);
-    margin-bottom: var(--spacing-xs);
-    font-weight: 700;
-}
-
-.meaning-entry ul {
-    list-style-type: disc;
-    padding-left: var(--spacing-lg);
-    margin: 0;
-}
-
-.meaning-entry li {
-    margin-bottom: var(--spacing-xs);
-    line-height: 1.7;
-}
-
-/* --- Audio Button --- */
-.audio-button {
-    background: none;
+/* --- REUSABLE BUTTON COMPONENT --- */
+.btn {
+    display: inline-block;
     border: none;
-    cursor: pointer;
-    padding: var(--spacing-xs);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color var(--transition-fast);
-}
-
-.audio-button svg {
-    width: 24px;
-    height: 24px;
-    color: var(--primary-color);
-}
-
-.audio-button:hover {
-    background-color: var(--background-light);
-}
-
-/* --- Recent Searches --- */
-#recent-searches-container {
-    margin-top: var(--spacing-lg);
-    padding-top: var(--spacing-md);
-    border-top: 1px solid var(--border-color);
-}
-
-#recent-searches-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-}
-
-#recent-searches-list li {
-    display: flex;
-    align-items: center;
-    background-color: var(--background-light);
+    padding: 0.8rem 1.6rem;
     border-radius: 50px;
-    /* Pill shape */
-    overflow: hidden;
-    font-size: var(--fs-sm);
-    box-shadow: var(--shadow-sm);
-    transition: box-shadow var(--transition-fast);
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
 }
 
-#recent-searches-list li:hover {
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
-.recent-word {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-weight: 700;
-    transition: background-color var(--transition-fast);
+.btn:focus-visible {
+    outline: 3px solid var(--focus-ring-color);
+    outline-offset: 2px;
 }
 
-.recent-word:hover {
-    background-color: #e0e0e0;
+.btn.--secondary {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
-.remove-word {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
+.btn.--secondary:hover:not(:disabled) {
+    background-color: var(--cta-hover-bg);
+}
+
+.btn.--primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn.--primary:hover:not(:disabled) {
+    background-color: var(--cta-hover-bg);
+    color: var(--primary-color);
+}
+
+/* --- PHRASE OF THE DAY SECTION --- */
+#phrase-of-the-day {
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+#phrase-text {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    min-height: 60px;
     display: flex;
-    align-items: center;
-    border-left: 1px solid var(--border-color);
-    transition: background-color var(--transition-fast);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 1.4;
 }
 
-.remove-word:hover {
-    background-color: #f8d7da;
-    /* Light red for delete */
-}
 
-.remove-word svg {
-    width: 16px;
-    height: 16px;
-    fill: #555;
-}
 
-/*
-  ========================================
-  OTHER RESOURCE CARDS
-  ========================================
-*/
-.study-tip-card h2 {
+/* --- QUIZ SECTION --- */
+#quiz-form {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+}
+
+#quiz-options {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg) 0;
+    display: flex;
+    flex-direction: column;
     gap: var(--spacing-sm);
 }
 
-.resource-list {
-    list-style: none;
-    padding: 0;
+.quiz-option-label {
+    display: block;
+    cursor: pointer;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
 }
 
-.resource-list li {
-    padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--border-color);
+.quiz-option-label:hover:not(.disabled) {
+    border-color: var(--secondary-color);
+    background-color: #fef8e8;
+    transform: translateX(5px);
 }
 
-.resource-list li:last-child {
-    border-bottom: none;
+#quiz-section input[type="radio"] {
+    display: none;
 }
 
-.resource-list a {
+#quiz-section input[type="radio"]:checked+.quiz-option-label {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+}
+
+#quiz-section input[type="radio"]:focus-visible+.quiz-option-label {
+    box-shadow: 0 0 0 3px var(--focus-ring-color);
+}
+
+
+#submit-quiz {
+    align-self: flex-start;
+}
+
+
+/* --- QUIZ FEEDBACK & STATES --- */
+#quiz-section .disabled {
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+    opacity: 0.7;
+}
+
+#quiz-options .correct-answer {
+    background-color: #2e7d32;
+    color: white;
+    border-color: #2e7d32;
+    transform: scale(1.02);
+}
+
+#quiz-feedback {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
     font-weight: 700;
+    font-size: 1.1rem;
+    min-height: 2.5rem;
+    text-align: center;
 }
 
-/*
-  ========================================
-  UTILITIES
-  ========================================
-*/
-.spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border-left-color: var(--primary-color);
-    animation: spin 1s linear infinite;
-    margin: 2rem auto;
+#quiz-feedback.success {
+    color: #155724;
+    background-color: #d4edda;
+    animation: pulseGlow 1s ease-in-out 2;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
+#quiz-feedback.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    animation: pulseError 1s ease-in-out 2;
+}
+
+@keyframes pulseGlow {
+    50% {
+        text-shadow: 0 0 8px rgba(21, 87, 36, 0.5);
     }
 }
 
-.card.error {
-    background-color: #ffebee;
-    color: #c62828;
-    border-left: 5px solid #f44336;
+@keyframes pulseError {
+    50% {
+        text-shadow: 0 0 8px rgba(114, 28, 36, 0.5);
+    }
 }
 
-.card.error ul {
-    list-style-type: disc;
-    padding-left: var(--spacing-lg);
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: var(--fs-h2);
+    }
+
+    .section-title {
+        font-size: var(--fs-h3);
+    }
+
+    #quiz-options {
+        width: 100%;
+    }
 }
