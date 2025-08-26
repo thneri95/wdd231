@@ -33,13 +33,24 @@ Loaded data asynchronously with **Fetch API**.
 Integrated external APIs for “Word of the Day” and dynamic resources.  
 
 ### Week 7 → Final Project: **Spanish Hub**  
+🔗 [Live Demo – Spanish Hub](https://thneri95.github.io/wdd231/final/)  
+
+ Features
+🏠 Dynamic Homepage – Featured courses and “Word of the Day” right on the landing page
+📚 Interactive Courses Page – Filter by level (Beginner, Intermediate, Advanced) with detailed modal views
+🛠 Engaging Resources Page – “Phrase of the Day” plus interactive vocabulary quiz
+📡 JSON + API Integration – Course data, phrases, and vocabulary loaded via local JSON and external APIs
+📱 Fully Responsive Design – Works perfectly on desktop, tablet, and mobile
+♿ SEO & Accessibility – Open Graph meta tags plus ARIA attributes for accessibility
+
+
 A full responsive platform for Spanish learning:  
 - 📚 Courses by level (Beginner, Intermediate, Advanced).  
 - 🛠 Resources page with quizzes + “Phrase of the Day”.  
 - 📡 Content powered by **local JSON + external APIs**.  
-- ♿ Accessibility & SEO with ARIA + Open Graph tags.  
+- ♿ Accessibility & SEO with ARIA + Open Graph tags.
 
-🔗 [Live Demo – Spanish Hub](https://thneri95.github.io/wdd231/final/)  
+
 
 ---
 
