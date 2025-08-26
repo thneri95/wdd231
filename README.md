@@ -87,7 +87,7 @@ At the same time, I plan to offer **free courses** to help children and teenager
 
 ---
 
-## 🙌 Credits & About
+##  Credits & About 🙌
 
 👨‍💻 **Created by Tiago Borges (@thneri95)**  
 🎓 Software Development Student @ BYU-Idaho  
