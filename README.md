@@ -1,87 +1,76 @@
 # 🌐 WDD 231 – Web Front-End Dev I  
-### 🚀 Personal Portfolio & Course Progress Tracker  
+### 🚀 Personal Portfolio & Final Project: Spanish Hub  
 > *“Learning by doing. Building by learning.”*
 
-Hi! I'm **Tiago Borges**, and this is where my front-end journey levels up!  
-This repo is my digital playground for **WDD-231** at **BYU-Idaho**, where I’m sharpening real-world web dev skills, one commit at a time. 🔥
+Hi! I'm **Tiago Borges**, and this repo is my digital playground for **WDD-231** at **BYU-Idaho**.  
+Over 7 weeks I sharpened my skills in **semantic HTML, modern CSS, and modular JavaScript** — and it all comes together in my **final project: Spanish Hub**.  
 
 ---
 
 ## 🎯 What’s Inside?
-This isn’t just coursework. It’s a **live portfolio**, a **learning tracker**, and a **showcase of growth** in web development.
+This repo is more than coursework. It’s a **portfolio**, a **progress tracker**, and a **real-world project** I plan to expand beyond the classroom.
 
 Built with:
-- ✅ **Semantic HTML5** – Structure that speaks.
-- 🎨 **Modern CSS** – Flexbox, Grid, custom variables, and mobile-first magic.
-- ⚙️ **JavaScript** – DOM, Events, localStorage, interactivity unleashed.
-- 🧠 **Git + GitHub** – Because version control is power.
-- 📈 **UX & Performance** – Not just pretty, but smart.
+- ✅ **Semantic HTML5** – Clean, accessible structure.  
+- 🎨 **Modern CSS** – Variables, Flexbox, Grid, and mobile-first magic.  
+- ⚙️ **JavaScript (ES6+)** – DOM, events, async/await, localStorage, modular code.  
+- 📡 **JSON & APIs** – Dynamic data loading and external integrations.  
+- 📈 **UX & Performance** – Fast, responsive, user-focused.  
 
 ---
 
-## 🧭 Week 1: Launching the Home Page
+## 🧭 Weekly Journey Highlights
 
-Let’s kick it off strong 💥  
-I’ve built a **responsive, interactive homepage** that sets the stage for everything to come.
+### Week 1 → Responsive Homepage  
+🔗 [Live Demo – Home Page Tiago]([https://thneri95.github.io/wdd231/final/](https://thneri95.github.io/wdd231/))  
 
-🔗 [Live Preview Here](https://thneri95.github.io/wdd231/)
+📱 Mobile-first design, 🍔 hamburger menu, 🧭 course tracker.  
 
-It features:
-- 📱 Mobile-first design  
-- 🍔 Hamburger menu  
-- 🧭 Course Tracker w/ real-time updates  
+### Week 3 → JSON + Dynamic Content  
+Loaded data asynchronously with **Fetch API**.  
+
+### Week 5 → APIs & Interactivity  
+Integrated external APIs for “Word of the Day” and dynamic resources.  
+
+### Week 7 → Final Project: **Spanish Hub**  
+A full responsive platform for Spanish learning:  
+- 📚 Courses by level (Beginner, Intermediate, Advanced).  
+- 🛠 Resources page with quizzes + “Phrase of the Day”.  
+- 📡 Content powered by **local JSON + external APIs**.  
+- ♿ Accessibility & SEO with ARIA + Open Graph tags.  
+
+🔗 [Live Demo – Spanish Hub](https://thneri95.github.io/wdd231/final/)  
 
 ---
 
-## 💡 Highlights
+## 💡 Why Spanish Hub?  
 
-### 📱 Responsive Design
-- Mobile-first, scales up beautifully
-- Hamburger nav on small screens, horizontal nav on desktop
-- Fluid layouts (320px → 1200px+)
-- Zero horizontal scrolling — buttery smooth UX
+I chose this theme because I was a Spanish teacher in the past and I intend to use this project in the **real world**.  
+I am currently creating full Spanish courses on the **Hotmart platform**, which will feature a members-only area.  
+This website will serve as a **showcase (vitrine)** for those courses.  
 
-### 🔍 Semantic HTML5
-- Proper structure with `header`, `nav`, `main`, `section`, `footer`
-- Auto-updating footer with current year + last modified
-- Clean, accessible markup
-
-### 🎨 Advanced CSS
-- CSS variables for theming
-- Flexbox + Grid layouts
-- Mukta font + consistent spacing & colors
-- Subtle hover effects for interactivity
-
-### ⚙️ Dynamic JavaScript
-- Toggle menu, dynamic dates, and more
-- Real-time **Course Tracker**:
-  - 🔄 Filter by: All | WDD | CSE
-  - 🏁 Highlight completed courses
-  - 📊 Credit counter that updates live
+At the same time, I plan to offer **free courses** to help children and teenagers improve their Spanish skills.  
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Tech           | Used For                        |
-|----------------|----------------------------------|
-| `HTML5`        | Markup and structure             |
-| `CSS3`         | Layouts, themes, responsiveness  |
-| `JavaScript`   | DOM, Events, interactivity       |
-| `Google Fonts` | Typography (Mukta)               |
-| `Font Awesome` | Icons                            |
-| `normalize.css`| CSS reset for cross-browser UX   |
+| Tech            | Used For                                  |
+|-----------------|--------------------------------------------|
+| `HTML5`         | Semantic markup and accessibility          |
+| `CSS3`          | Layouts, themes, Flexbox, Grid             |
+| `JavaScript`    | DOM, async/await, interactivity            |
+| `JSON`          | Local storage of courses & phrases         |
+| `External APIs` | Word/Phrase of the Day, future integrations|
+| `Git + GitHub`  | Version control & hosting                  |
 
 ---
 
 ## 🙌 Credits & About
 
-👨‍💻 **Created by Tiago Borges**  
-🎓 Software Dev Student @ BYU-Idaho  
-📅 Term 4 just started — and I’m all in!  
-💬 Let’s connect on!
+👨‍💻 **Created by Tiago Borges (thneri95)**  
+🎓 Software Development Student @ BYU-Idaho  
+📅 WDD 231 – Term 4  
 
----
-
-> This isn’t just code — it’s my evolution in real-time!
-> Stay tuned, More coming every week 🔥
+> This isn’t just code — it’s my evolution in real-time.  
+> From a class project to a platform I’ll use in the real world. 🚀
