@@ -22,7 +22,7 @@ Built with:
 ## 🧭 Weekly Journey Highlights
 
 ### Week 1 → Responsive Homepage  
-🔗 [Live Demo – Home Page Tiago]([https://thneri95.github.io/wdd231/final/](https://thneri95.github.io/wdd231/))  
+🔗 [Live Demo – Home Page Tiago](https://thneri95.github.io/wdd231/final/](https://thneri95.github.io/wdd231/)
 
 📱 Mobile-first design, 🍔 hamburger menu, 🧭 course tracker.  
 
