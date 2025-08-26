@@ -30,6 +30,15 @@ Built with:
 
 ---
 
+### 📍 Week 2 →  Parallel Project: Chamber of Commerce
+
+From Week 2 to Week 5, I also worked on a parallel project called Maringá Chamber of Commerce
+There, I applied the same concepts that were later used in my final project, such as responsive layouts, interactivity with JavaScript, and structured data with JSON.
+
+👉 You can access the Chamber of Commerce project here:
+
+🔗 [Live Demo – Chamber of Commerce Project](https://thneri95.github.io/wdd231/chamber/index.html)  
+
 ### 📍 Week 3 → JSON + Dynamic Content  
 - Loaded asynchronous data with **Fetch API**  
 - Organized modular JavaScript for scalability  
