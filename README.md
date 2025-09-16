@@ -93,5 +93,5 @@ At the same time, I plan to offer **free courses** to help children and teenager
 🎓 Software Development Student @ BYU-Idaho  
 📅 WDD 231 – Term 4  
 
-> This isn’t just code — it’s my evolution in real-time.  
-> From a class project to a platform I’ll use in the real world. 🚀
+> This isn’t just code — it’s my evolution in real-time
+> From a class project to a platform I’ll use in the real world! 🚀
